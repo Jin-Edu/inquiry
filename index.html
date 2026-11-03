@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 디지털 리터러시 인쿼리 교육과정</title>
+<meta name="description" content="AI 디지털 리터러시 인쿼리 교육과정 · 옐로우, 그린, 레드, 블랙 4단계">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AD%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1d2a26; --muted:#5d6b66; --line:rgba(20,50,40,.10); --bg:#f6faf8;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100vh; color:var(--ink); background:var(--bg);
+  font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:17px; line-height:1.65; word-break:keep-all; overflow-x:hidden;
+}
+/* soft color blobs */
+.bg{position:fixed; inset:0; z-index:-1; overflow:hidden; background:
+  radial-gradient(1100px 600px at 12% -8%, #fff3c4 0%, transparent 60%),
+  radial-gradient(900px 560px at 92% 4%, #d4f0df 0%, transparent 58%),
+  radial-gradient(900px 600px at 8% 108%, #fbdcdc 0%, transparent 55%),
+  radial-gradient(900px 600px at 96% 104%, #dfe4e2 0%, transparent 55%), var(--bg);}
+.wrap{max-width:1180px; margin:0 auto; padding:0 24px}
+
+/* hero */
+.hero{padding:64px 0 28px; text-align:center}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px; padding:6px 16px; border-radius:999px;
+  background:rgba(255,255,255,.8); border:1px solid var(--line); backdrop-filter:blur(6px);
+  font-size:15px; font-weight:700; color:#2b5a45;
+}
+.eyebrow i{width:9px; height:9px; border-radius:50%; background:#2e8b57; display:inline-block}
+h1{
+  margin:20px 0 14px; font-size:clamp(34px,6vw,60px); line-height:1.18; letter-spacing:-.02em; font-weight:900;
+}
+h1 .hl{
+  background:linear-gradient(90deg,#d99a00,#2e8b57 45%,#d64545 78%,#222b28);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.lead{margin:0 auto; max-width:640px; font-size:clamp(17px,2.4vw,21px); color:var(--muted)}
+.facts{display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:26px}
+.facts span{
+  padding:7px 16px; border-radius:999px; background:#fff; border:1px solid var(--line);
+  font-size:15.5px; font-weight:700; color:#33463f; box-shadow:0 2px 8px rgba(20,60,45,.05);
+}
+
+/* roadmap */
+.road{padding:30px 0 20px}
+.road-h{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:14px}
+.road-h h2{margin:0; font-size:24px; font-weight:900}
+.road-h small{color:var(--muted); font-size:15px; font-weight:500}
+.track{height:8px; border-radius:99px; margin:6px 0 26px; position:relative;
+  background:linear-gradient(90deg,#f2b705 0%,#2e8b57 36%,#d64545 68%,#222b28 100%); opacity:.9}
+.track::after{content:""; position:absolute; right:-2px; top:50%; width:0; height:0; transform:translateY(-50%);
+  border-left:14px solid #222b28; border-top:9px solid transparent; border-bottom:9px solid transparent}
+.grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+
+.card{
+  --c:#999; --ink2:#fff; --soft:#eee;
+  position:relative; display:flex; flex-direction:column; text-decoration:none; color:inherit;
+  background:#fff; border:1px solid var(--line); border-radius:26px; overflow:hidden;
+  box-shadow:0 8px 24px rgba(20,60,45,.08);
+  transition:transform .22s ease, box-shadow .22s ease;
+  opacity:0; transform:translateY(14px); animation:rise .6s ease forwards;
+}
+.card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.15s}
+.card:nth-child(3){animation-delay:.25s}.card:nth-child(4){animation-delay:.35s}
+@keyframes rise{to{opacity:1; transform:none}}
+a.card:hover,a.card:focus-visible{transform:translateY(-6px); box-shadow:0 18px 40px rgba(20,60,45,.16)}
+a.card:focus-visible{outline:4px solid var(--c); outline-offset:3px}
+.band{position:relative; background:var(--c); color:var(--ink2); padding:22px 22px 20px; overflow:hidden}
+.band::after{content:""; position:absolute; right:-30px; top:-40px; width:140px; height:140px; border-radius:50%; background:rgba(255,255,255,.16)}
+.step{font-size:14.5px; font-weight:700; letter-spacing:.04em; opacity:.9}
+.name{margin:2px 0 0; font-size:36px; font-weight:900; line-height:1.15}
+.no{position:absolute; right:20px; bottom:6px; font-size:84px; font-weight:900; line-height:1; opacity:.22}
+.lock{position:absolute; left:auto; right:18px; top:16px; font-size:22px; z-index:1}
+.body{padding:20px 22px 8px; flex:1}
+.body h3{margin:0 0 6px; font-size:21px; font-weight:900}
+.body p{margin:0 0 12px; color:var(--muted); font-size:16.5px}
+.body ul{list-style:none; margin:0; padding:0; display:grid; gap:7px}
+.body li{position:relative; padding-left:22px; font-size:16px; color:#2f403a}
+.body li::before{content:""; position:absolute; left:2px; top:.55em; width:9px; height:9px; border-radius:50%; background:var(--c)}
+.meta{display:flex; flex-wrap:wrap; gap:6px; padding:6px 22px 0}
+.meta span{padding:3px 11px; border-radius:999px; background:var(--soft); font-size:14px; font-weight:700; color:#33463f}
+.foot{padding:16px 22px 22px}
+.cta{
+  display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:13px 16px;
+  border-radius:16px; font-size:18px; font-weight:900; background:var(--c); color:var(--ink2);
+}
+.cta .ar{transition:transform .2s}
+a.card:hover .cta .ar{transform:translateX(5px)}
+.open-chip{
+  position:absolute; left:18px; top:16px; z-index:1; display:inline-flex; align-items:center; gap:7px;
+  padding:3px 11px 3px 9px; border-radius:999px; background:rgba(255,255,255,.92); color:#1c5b3a; font-size:13.5px; font-weight:900;
+}
+.open-chip i{width:9px; height:9px; border-radius:50%; background:#2fbf71; animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,191,113,.55)}100%{box-shadow:0 0 0 9px rgba(47,191,113,0)}}
+.card.ready .step{margin-top:26px}
+
+/* locked */
+.card.locked{box-shadow:0 4px 14px rgba(20,60,45,.05); cursor:default}
+.card.locked .band{filter:saturate(.55) brightness(1.04)}
+.card.locked .body h3,.card.locked .body p,.card.locked .body li{color:#7a8782}
+.card.locked .body li::before{background:#c3cbc8}
+.card.locked .meta span{background:#f0f2f1; color:#7a8782}
+.card.locked .cta{background:#e9edeb; color:#6c7a75}
+
+.now{margin:34px auto 0; max-width:760px; text-align:center; padding:16px 22px; border-radius:20px; background:rgba(255,255,255,.82); border:1px solid var(--line); color:#33463f; font-weight:500}
+.now b{font-weight:900; color:#1d6a41}
+footer{padding:34px 24px 46px; text-align:center; color:#7d8a85; font-size:14.5px}
+
+@media (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}.track{display:none}}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .hero{padding:44px 0 18px}
+  .grid{grid-template-columns:1fr; gap:16px}
+  .name{font-size:32px}
+}
+@media (prefers-reduced-motion:reduce){
+  .card{animation:none; opacity:1; transform:none; transition:none}
+  .open-chip i{animation:none}
+  .cta .ar{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"></div>
+
+<header class="hero wrap">
+  <span class="eyebrow"><i></i>AIDL Inquiry · 2급 과정</span>
+  <h1><span class="hl">AI 디지털 리터러시</span><br>인쿼리 교육과정</h1>
+  <p class="lead">네 단계를 차근차근 올라가며, 직접 해 보고 확인하고 탐구보고서로 정리해요.</p>
+  <div class="facts" aria-label="교육과정 안내">
+    <span>4단계</span><span>단계별 12차시</span><span>탐구보고서 중심</span>
+  </div>
+</header>
+
+<main class="road wrap" aria-labelledby="road-title">
+  <div class="road-h">
+    <h2 id="road-title">단계 고르기</h2>
+    <small>열려 있는 단계를 눌러서 시작해요</small>
+  </div>
+  <div class="track" aria-hidden="true"></div>
+  <div class="grid" id="grid"></div>
+  <p class="now" id="now"></p>
+  <noscript><p class="now"><a href="green/">2단계 그린 시작하기</a></p></noscript>
+</main>
+
+<footer>AI 디지털 리터러시 인쿼리 교육과정</footer>
+
+<script>
+/* ─────────────────────────────────────────────
+   단계 설정: 새 단계를 열 때는 해당 단계의
+   ready 를 true 로, href 를 폴더 주소로 바꿔요.
+   (예: 옐로우 폴더를 올리면 ready:true, href:'yellow/')
+   ───────────────────────────────────────────── */
+var STAGES = [
+  { no:1, name:'옐로우', color:'#f2b705', ink:'#2b2300', soft:'#fff3c4',
+    href:'yellow/', ready:false,
+    title:'AI 개념 탐구',
+    desc:'AI가 무엇인지, 어떻게 구분하고 학습하는지 실험하며 알아봐요.',
+    items:['AI는 무엇일까? (입력과 출력)','AI는 어떻게 구분할까? (특징과 알고리즘)','AI는 어떻게 학습할까? (지도학습)'] },
+  { no:2, name:'그린', color:'#2e8b57', ink:'#ffffff', soft:'#e6f5ec',
+    href:'green/', ready:true,
+    title:'AI로 앱·게임 만들기',
+    desc:'생활에 필요한 앱과 게임을 말로 설명해서 만들고, 더 좋게 고쳐요.',
+    items:['AI 요청문 쓰기','오류 찾고 고치기','앱 개선과 탐구보고서','내가 정한 자유 주제로 도전'] },
+  { no:3, name:'레드', color:'#d64545', ink:'#ffffff', soft:'#fde8e8',
+    href:'red/', ready:false,
+    title:'준비 중이에요',
+    desc:'새로운 탐구가 준비되고 있어요.', items:[] },
+  { no:4, name:'블랙', color:'#222b28', ink:'#ffffff', soft:'#e9ecea',
+    href:'black/', ready:false,
+    title:'준비 중이에요',
+    desc:'새로운 탐구가 준비되고 있어요.', items:[] }
+];
+
+(function(){
+  var grid = document.getElementById('grid');
+  var html = STAGES.map(function(s){
+    var style = '--c:'+s.color+';--ink2:'+s.ink+';--soft:'+s.soft;
+    var list = s.items.length ? '<ul>'+s.items.map(function(t){return '<li>'+t+'</li>'}).join('')+'</ul>' : '';
+    var meta = '<div class="meta"><span>12차시</span><span>탐구보고서</span></div>';
+    var band = '<div class="band">'
+      + (s.ready ? '<span class="open-chip"><i></i>지금 열려 있어요</span>' : '<span class="lock" aria-hidden="true">🔒</span>')
+      + '<div class="step">'+s.no+'단계</div><div class="name">'+s.name+'</div><div class="no" aria-hidden="true">'+s.no+'</div></div>';
+    var body = '<div class="body"><h3>'+s.title+'</h3><p>'+s.desc+'</p>'+list+'</div>';
+    var inner = band + body + (s.ready || s.items.length ? meta : '')
+      + '<div class="foot"><span class="cta">'
+      + (s.ready ? '시작하기 <span class="ar" aria-hidden="true">→</span>' : '준비 중')
+      + '</span></div>';
+    if (s.ready){
+      return '<a class="card ready" style="'+style+'" href="'+s.href+'" aria-label="'+s.no+'단계 '+s.name+' 시작하기">'+inner+'</a>';
+    }
+    return '<div class="card locked" style="'+style+'" role="group" aria-label="'+s.no+'단계 '+s.name+' 준비 중">'+inner+'</div>';
+  }).join('');
+  grid.innerHTML = html;
+
+  var open = STAGES.filter(function(s){return s.ready}).map(function(s){return s.name+'('+s.no+'단계)'});
+  var now = document.getElementById('now');
+  now.innerHTML = open.length ? '지금 열려 있는 단계: <b>'+open.join(', ')+'</b>' : '단계가 곧 열려요.';
+})();
+</script>
+</body>
+</html>
