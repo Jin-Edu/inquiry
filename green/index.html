@@ -125,7 +125,6 @@ table{border-collapse:collapse;width:100%}
 @keyframes demoSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .demo-app-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .demo-app-header b{font-family:Jua,"Noto Sans KR",sans-serif;font-size:24px;color:#e8743b;font-weight:400}
-.demo-badge{display:inline-block;background:#ff8a5c;color:#fff;font-size:14px;font-weight:700;border-radius:999px;padding:2px 12px;margin-right:8px;vertical-align:2px}
 .demo-close-btn{background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:8px}
 .demo-close-btn:hover{background:var(--soft);color:var(--ink)}
 
@@ -143,6 +142,8 @@ table{border-collapse:collapse;width:100%}
 .mini-item{background:#fff8ee;border:2px solid #ffe3c2;border-radius:18px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:17px}
 .mini-item.done{text-decoration:line-through;color:#a89b8c;background:#f3f0ea}
 .mini-item input[type=checkbox],.chip input{width:22px;height:22px;accent-color:#ff8a5c;vertical-align:-5px}
+.mini-acts{display:flex;gap:6px;align-items:center}
+.mini-item .edit-btn{background:#e3efff;border:0;cursor:pointer;font-size:15px;width:30px;height:30px;border-radius:50%}
 .mini-item .del-btn{background:#ffe1e6;border:0;color:#d6455d;font-weight:900;cursor:pointer;font-size:15px;width:30px;height:30px;border-radius:50%}
 .chip{background:#fff;border:3px solid #ffe3d0;border-radius:999px;padding:4px 14px;cursor:pointer;font-weight:700}
 .chip:has(input:checked){background:#fff3bf;border-color:#ffc93c}
@@ -151,6 +152,61 @@ table{border-collapse:collapse;width:100%}
 .btn-demo-toggle{font-family:Jua,"Noto Sans KR",sans-serif;font-weight:400;border:3px solid #ffb48a;color:#e8743b;box-shadow:0 4px 0 #ffd0b5}
 .btn-demo-toggle:hover{background:#fff3e8}
 .btn-demo-toggle.active{background:#ff8a5c;border-color:#ff8a5c;color:#fff;box-shadow:0 4px 0 #d9622f}
+.mini-btn.dayb{display:flex;flex-direction:column;align-items:center;line-height:1.15;padding:7px 14px;border:3px solid transparent}
+.mini-btn.alt.dayb{padding:7px 14px}
+.mini-btn .dd{font-family:"Noto Sans KR",sans-serif;font-size:12px;font-weight:700;opacity:.9}
+.mini-btn.sat{background:#4d8fe8;box-shadow:0 4px 0 #2f6fc2}
+.mini-btn.sun{background:#ee5a6f;box-shadow:0 4px 0 #c43c52}
+.mini-btn.sat:active{box-shadow:0 1px 0 #2f6fc2}
+.mini-btn.sun:active{box-shadow:0 1px 0 #c43c52}
+.mini-btn.alt.sat{background:#fff;color:#2f6fc2;border-color:#bcd6fb;box-shadow:0 4px 0 #bcd6fb}
+.mini-btn.alt.sun{background:#fff;color:#c43c52;border-color:#ffc4cc;box-shadow:0 4px 0 #ffc4cc}
+.p11-tabs{display:flex;gap:10px;margin:2px 0 12px}
+.p11-tabs .mini-btn{flex:1;font-size:19px}
+.p11-stage{background:linear-gradient(#e8f8ef,#f4fbe8);border:3px solid #cdeedb;border-radius:24px;padding:12px;text-align:center}
+.p11-stage.eye{background:linear-gradient(#e0f4ff,#e8fbef);border-color:#bfe6ff}
+.p11-svg{width:100%;max-width:560px;height:auto;max-height:290px;display:block;margin:0 auto}
+.p11-pick{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 10px}
+.p11-pick .mini-btn{font-size:16px;padding:7px 16px}
+.p11-say{background:#fff;border:3px solid #cfe8f7;border-radius:18px;padding:8px 14px;margin:0 auto 10px;max-width:520px}
+.p11-say small{display:block;font-weight:900;color:#2f8fd4;font-size:13px}
+.p11-say b{font-size:17px}
+.p11-chk{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px;text-align:left}
+.p11-chk label{display:flex;gap:10px;align-items:flex-start;background:#fff;border:2px solid #d6f0e0;border-radius:16px;padding:8px 12px;cursor:pointer;font-size:16px;line-height:1.45}
+.p11-chk li.on label{background:#e9f9ee;border-color:#8fd8ac}
+.p11-chk input{width:22px;height:22px;accent-color:#2e8b57;margin-top:2px;flex:none}
+.p11-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.p11-ex{background:#fff;border:3px solid #ffe3d0;border-radius:18px;padding:8px 4px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.p11-ex span{font-size:26px}
+.p11-ex.on{background:#fff3bf;border-color:#ffc93c}
+.p11-course{background:#fff;border:3px solid #cfe8f7;border-radius:20px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;text-align:left}
+.p11-bar{height:12px;background:#e1f1ff;border-radius:999px;overflow:hidden;margin-top:10px}
+.p11-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7cc9ff,#3fa4ff);transition:width .3s}
+.p11-tip{margin-top:10px;background:#fff3bf;color:#8a5a00;border-radius:14px;padding:8px 14px;font-weight:700;font-size:15px}
+@media (max-width:520px){.p11-grid{grid-template-columns:repeat(2,1fr)}}
+@keyframes p11Sit{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes p11Spine{0%,100%{stroke:#10b981;stroke-width:4.5;filter:drop-shadow(0 0 2px #10b981)}50%{stroke:#047857;stroke-width:6;filter:drop-shadow(0 0 6px #34d399)}}
+@keyframes p11Gaze{to{stroke-dashoffset:-20}}
+@keyframes p11Scan{0%{transform:translateY(0);opacity:.9}50%{transform:translateY(170px);opacity:.4}100%{transform:translateY(0);opacity:.9}}
+@keyframes p11Stand{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.015) translateY(-2px)}}
+@keyframes p11Belly{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.3) translateY(-2px)}}
+@keyframes p11Zzz{0%{transform:translate(0,0) scale(.8);opacity:0}50%{opacity:.9}100%{transform:translate(14px,-18px) scale(1.2);opacity:0}}
+@keyframes p11Blink{0%,92%,100%{transform:scaleY(0);opacity:0}95%{transform:scaleY(1);opacity:1}98%{transform:scaleY(0);opacity:0}}
+@keyframes p11Blink2{0%,100%{transform:scaleY(0);opacity:0}35%,65%{transform:scaleY(1);opacity:1}}
+@keyframes p11Roll{0%{transform:translate(0,0)}20%{transform:translate(0,-15px)}40%{transform:translate(16px,0)}60%{transform:translate(0,15px)}80%{transform:translate(-16px,0)}100%{transform:translate(0,-15px)}}
+@keyframes p11Focus{0%,100%{transform:scale(1);filter:drop-shadow(0 0 2px #38bdf8)}50%{transform:scale(.75);filter:drop-shadow(0 0 8px #0284c7)}}
+.p11-sit{animation:p11Sit 3.2s ease-in-out infinite;transform-origin:center bottom}
+.p11-spine{animation:p11Spine 2.4s ease-in-out infinite}
+.p11-gaze{animation:p11Gaze 1.2s linear infinite}
+.p11-stand{animation:p11Stand 3.5s ease-in-out infinite;transform-origin:center bottom}
+.p11-belly{animation:p11Belly 3.6s ease-in-out infinite;transform-origin:175px 125px}
+.p11-z1{animation:p11Zzz 3s ease-out infinite}
+.p11-z2{animation:p11Zzz 3s ease-out infinite 1.2s}
+.p11-iris{transition:transform .4s cubic-bezier(.25,1,.5,1);transform-origin:0 0}
+.p11-iris.roll{animation:p11Roll 2.6s linear infinite}
+.p11-iris.focus{animation:p11Focus 2s ease-in-out infinite}
+.p11-lid{animation:p11Blink 4s ease-in-out infinite;transform-origin:center}
+.p11-lid.fast{animation:p11Blink2 1.2s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.mini-btn,.demo-app-container{transition:none;animation:none}}
 
 @media (max-width:820px){
@@ -169,6 +225,8 @@ table{border-collapse:collapse;width:100%}
 .pmt{margin:12px 0;background:var(--acc-s);border:0;border-radius:12px;padding:12px 16px;color:#25503a;font-size:17px}
 .pmt b{display:block;color:var(--acc-d);font-size:18px;font-weight:900;margin-bottom:2px}
 .pmt p{margin:4px 0 0;line-height:1.7}
+.pmt p b{display:inline;font-size:inherit;margin:0}
+.qt .qtx{font-style:normal;flex:1}
 
 .prompt-form{display:grid;gap:12px;margin:12px 0}
 .prompt-group{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--soft)}
@@ -372,6 +430,17 @@ body{line-height:1.8}
 #lesson .l6 .scale{display:flex;justify-content:space-between;font-size:14.5px;color:var(--muted)}
 #lesson .l6 .lvl{display:inline-block;margin-top:8px;padding:6px 16px;border-radius:999px;font-weight:900;font-size:19px;background:var(--acc-s);color:var(--acc-d)}
 #lesson .l6 .lvl.warn{background:#fff4e2;color:#7a4a0a}
+#lesson .l6 .gauge.acc .g1{width:30%;background:#dc2626}
+#lesson .l6 .gauge.acc .g2{width:40%;background:#f59e0b}
+#lesson .l6 .gauge.acc .g3{width:20%;background:#8bd450}
+#lesson .l6 .gauge.acc .g4{width:10%;background:#10b981}
+#lesson .l6 .btn.off{opacity:.55;pointer-events:none}
+#lesson .l6 .cmw{overflow-x:auto;margin-top:10px}
+#lesson .l6 .cm{width:100%;border-collapse:collapse;text-align:center;font-size:17px;background:#fff}
+#lesson .l6 .cm th,#lesson .l6 .cm td{border:1px solid var(--line);padding:9px 8px}
+#lesson .l6 .cm th{background:var(--soft)}
+#lesson .l6 .cm .ok{color:var(--acc-d);font-weight:900}
+#lesson .l6 .cm .bad{background:#ffe3e3;color:#b42318;font-weight:900}
 
 #lesson .l6 .leak-card{background:#fff3e0;border:2px solid #ffb74d;border-radius:14px;padding:16px 18px;margin:14px 0}
 #lesson .l6 .leak-card b{color:#d35400;font-size:19px}
@@ -423,7 +492,7 @@ body{line-height:1.8}
     <div class="ir"><dt>진행 방식</dt><dd>영상을 보고 따라 쓰고(1·2교시), 내가 정한 자유 주제로 스스로 써 봐요(3교시)</dd></div>
     <div class="ir"><dt>6차시</dt><dd>AI canvas 교육 · 1교시: 가상 실험실 칼로리 예측 / 2교시: AI canvas 영상 시청 및 데이터 유출 학습 퀴즈 / 3교시: 햄버거 메뉴 성분 분석 실습 및 탐구보고서</dd></div>
     <div class="ir"><dt>복습 퀴즈</dt><dd>앞 차시를 되돌아보는 3문제 (3·5·8·10차시 1교시 시작, 11차시 3교시 정리 / 점수 없이 해설 중심)</dd></div>
-    <div class="ir"><dt>결과물</dt><dd>1~5·7~11차시: 차시마다 앱 또는 게임 1개와 탐구보고서 1편 (5·10차시는 게임 제작) · 6차시: AI 가상 실험실 및 AI Canvas 실습 보고서 · 12차시: AI canvas 교육</dd></div>
+    <div class="ir"><dt>결과물</dt><dd>1~5·7~11차시: 차시마다 앱 또는 게임 1개와 탐구보고서 1편 (5·10차시는 게임 제작) · 6차시: AI 가상 실험실 및 AI Canvas 실습 보고서 · 12차시: AI 가상 실험실(독버섯 분류) 및 AI Canvas 실습 보고서</dd></div>
   </dl>
   <blockquote class="key"><b>코딩 문법보다, 원하는 앱을 분명하게 설명하고 확인하기</b>
   필요한 내용을 문장으로 나누어 요청하면 생각이 정리되고, AI가 만든 결과와 내가 원한 결과를 비교할 기준이 생겨요.</blockquote>
@@ -474,17 +543,17 @@ const $=id=>document.getElementById(id);
 function toast(t){$('toast').textContent=t;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),1500)}
 
 const TOPICS=[
-{title:'하루 시간표 도우미',context:'초등학생이 수업과 방과 후 일정을 정리하는 앱',screen:'일정 입력칸, 시간순 일정 목록, 완료 표시',task:'일정 이름과 시간을 추가하고, 시간순으로 정렬하며, 완료 체크·수정·삭제를 할 수 있게 해줘. 기록은 이 브라우저에 저장해 새로고침해도 남게 해줘.',guard:'이름·학교·주소 등 개인정보를 묻거나 전송하지 마. 입력하지 않은 일정을 만들어내지 마.',examples:'“수학 숙제, 오후 4시”를 입력하면 “오후 4시 수학 숙제”가 보여야 해. 완료를 누르면 완료 표시가 켜져야 해.',debug:'일정 이름과 시간을 입력하고 추가했는데 목록에 나타나지 않아. 입력 후 추가 버튼을 누르면 시간순 목록에 보여야 해. 문제를 고치고 완료 체크와 삭제도 다시 확인해줘.',upgrade:'요일별 색깔 표시를 추가해줘. 요일을 선택하면 해당 요일 일정만 보이고, 기존 추가·완료·삭제 기능은 유지해줘.',report:'일정을 추가·정렬·완료 처리해 본 결과와 발견한 오류, 수정한 내용, 요일별 색깔 표시를 추가한 뒤 달라진 점을 정리해요.'},
-{title:'준비물 체크리스트',context:'초등학생이 요일별 준비물을 확인하는 앱',screen:'요일 선택, 준비물 입력칸, 체크리스트',task:'요일과 준비물 이름을 입력해 항목을 추가하고, 선택한 요일의 준비물만 보여줘. 준비한 항목에 체크하고 수정·삭제할 수 있게 해줘. 기록은 브라우저에 저장해줘.',guard:'학생 이름·학교 이름·주소를 받지 마. 체크하지 않은 준비물을 챙긴 것으로 표시하지 마.',examples:'월요일과 알림장을 입력하면 “월요일 ☐ 알림장”이 보여야 해. 체크하면 체크 표시가 켜져야 해.',debug:'요일을 선택하고 준비물을 추가했는데 다른 요일에도 함께 보여. 선택한 요일의 준비물만 보여야 해. 고친 뒤 체크와 삭제도 확인해줘.',upgrade:'준비물 전체를 한 번에 체크 해제하는 버튼을 추가해줘. 선택한 요일의 항목에만 적용하고 기존 기능은 유지해줘.',report:'요일별 준비물 추가와 체크 결과, 오류와 수정 방법, 한 번에 체크 해제 기능의 동작을 정리해요.'},
+{title:'하루 시간표 도우미',context:'초등학생이 수업과 방과 후 일정을 정리하는 앱',screen:'오늘 날짜 표시, 일정 입력칸과 시간 칸, 시간순 일정 목록, 완료 표시',task:'일정 이름과 시간을 추가하고, 시간순으로 정렬하며, 완료 체크·수정·삭제를 할 수 있게 해줘. 화면 위에 오늘 날짜(예: 2026년 11월 11일 수요일)를 보여주고, 시간 입력 칸은 오전 또는 오후와 시·분이 모두 보이게 넉넉한 너비로 만들어줘. 기록은 이 브라우저에 저장해 새로고침해도 남게 해줘.',guard:'이름·학교·주소 등 개인정보를 묻거나 전송하지 마. 입력하지 않은 일정을 만들어내지 마.',examples:'“수학 숙제, 오후 4시”를 입력하면 “오후 4시 수학 숙제”가 보여야 해. 완료를 누르면 완료 표시가 켜져야 해. 수정 버튼을 누르면 일정 이름과 시간을 바꿀 수 있어야 해. 화면 위에 “오늘은 2026년 11월 11일 수요일이에요”처럼 오늘 날짜가 보여야 해.',debug:'시간을 고르는 칸이 너무 좁아서 오전 09:00이 아니라 09:0까지만 보여 몇 분인지 알 수 없어. 시간 칸에 오전 또는 오후와 시·분이 모두 보여야 해. 이 문제를 고치고 일정 추가와 시간순 정렬도 다시 확인해줘.',upgrade:'요일별 색깔 표시를 추가해줘. 요일을 선택하면 해당 요일 일정만 보이고, 기존 추가·완료·삭제 기능은 유지해줘.',done:'일정 이름과 시간을 추가하고 수정해 보고, 시간이 모두 보이는지, 시간순 정렬과 완료 체크와 삭제가 되는지, 새로고침해도 일정이 남는지, 오늘 날짜가 화면 위에 보이는지 직접 확인하면 완성이야.',repro:'앱을 열고 시간 칸을 보며 오전 또는 오후와 시·분이 모두 보이는지, 분 숫자가 잘리는지 확인해줘.',keep:'기존의 일정 추가, 수정, 시간순 정렬, 완료 체크, 삭제 기능과 화면 모양은 그대로 유지해줘.',verify:'시간 칸에 오전 또는 오후와 시·분이 모두 보이고 일정 추가도 잘 되면 해결이야.',upkeep:'기존의 일정 추가, 수정, 시간순 정렬, 완료 체크, 삭제, 저장 기능은 계속 작동해야 해.',updone:'요일을 눌러 해당 요일 일정만 보이는지, 요일별 색깔이 보이는지, 기존 기능도 그대로 작동하는지 직접 확인해줘.',report:'일정을 추가·정렬·완료 처리해 본 결과, 시간 칸이 잘리던 오류의 수정, 오늘 날짜 표시, 요일별 색깔 표시를 추가한 뒤 달라진 점을 정리해요.'},
+{title:'준비물 체크리스트',context:'초등학생이 요일별로 학교와 학원 준비물을 확인하는 앱',screen:'월요일부터 일요일까지 요일 선택 버튼과 날짜, 선택한 날짜 안내, 준비물 입력칸, 체크리스트',task:'월요일부터 일요일까지 7개의 요일 버튼을 만들고, 토요일은 파란색, 일요일은 빨간색으로 보여줘. 각 요일 버튼에는 이번 주의 날짜(예: 11/9)를 함께 보여주고, 오늘 요일에는 “오늘”을 표시한 뒤 앱을 열면 오늘 요일이 먼저 선택되게 해줘. 선택한 요일의 날짜와 준비물만 보여주고, 학교와 학원, 독서실 준비물도 추가할 수 있게 해줘. 준비한 항목에 체크하고 삭제할 수 있게 해줘. “전체 체크 해제” 버튼을 누르면 체크가 모두 해제되게 해줘. 기록은 브라우저에 저장해줘.',guard:'학생 이름·학교 이름·주소를 받지 마. 체크하지 않은 준비물을 챙긴 것으로 표시하지 마. 요일을 바꿔도 체크한 상태가 사라지지 않게 해줘.',examples:'월요일과 알림장을 입력하면 “월요일 ☐ 알림장”이 보여야 해. 체크하면 체크 표시가 켜져야 해. 토요일 버튼에는 “토요일 11/14”처럼 날짜가 함께 보여야 해. 새로고침해도 추가한 준비물과 체크가 그대로 남아 있어야 해.',debug:'준비물에 체크한 뒤 다른 요일을 눌렀다가 돌아오면 체크가 모두 사라져 있어. 요일을 바꿔도 체크한 상태가 그대로 남아 있어야 해. 이 문제를 고치고 추가와 삭제도 다시 확인해줘.',upgrade:'요일별 준비물을 모두 체크하면 “가방 챙기기 완료” 응원 메시지를 보여주는 기능을 추가해줘. 체크한 개수를 “2 / 3”처럼 보여주고 모두 체크하면 응원 메시지가 나타나게 해줘.',done:'요일 7개를 눌러 보고, 토요일과 일요일의 색과 날짜가 보이는지, 준비물을 추가하고 체크하고 삭제해 보고, 새로고침해도 그대로 남는지 직접 확인하면 완성이야.',repro:'앱을 열고 준비물에 체크한 뒤 다른 요일을 눌렀다가 다시 돌아와 체크가 사라지는지 확인해줘.',keep:'기존의 요일 선택, 준비물 추가, 체크, 삭제 기능과 화면 모양은 그대로 유지해줘.',verify:'같은 순서로 체크하고 요일을 바꿨다 돌아왔을 때 체크가 그대로 남아 있으면 해결이야.',upkeep:'기존의 요일 선택, 준비물 추가, 체크, 삭제, 전체 체크 해제, 저장 기능은 계속 작동해야 해.',updone:'준비물을 하나씩 체크해 개수가 올라가고, 모두 체크하면 응원 메시지가 나오는지 직접 확인해줘.',report:'요일별 날짜와 준비물 추가·체크 결과, 체크가 사라지던 오류의 수정, 가방 챙기기 완료 메시지 기능의 동작을 정리해요.'},
 {title:'독서 기록장',context:'읽은 책과 학생이 직접 쓴 감상을 기록하는 앱',screen:'책 제목·날짜·느낀 점 입력칸과 기록 목록',task:'책 제목, 읽은 날짜, 기억에 남는 점을 입력해 저장하고 목록으로 보여줘. 제목 검색과 수정·삭제 기능을 만들어줘. 기록은 브라우저에 저장해줘.',guard:'감상이나 줄거리를 지어내지 마. 학생 이름·학교 정보는 묻지 마.',examples:'“마당을 나온 암탉 / 주인공의 용기가 기억에 남았다”를 저장하면 입력한 내용 그대로 목록에 보여야 해. 제목에 “마당”을 검색하면 해당 기록만 보여야 해.',debug:'책 제목 일부를 검색해도 기록이 걸러지지 않아. 검색어가 제목에 포함된 기록만 보여야 해. 수정·삭제도 함께 확인해줘.',upgrade:'읽은 책 권수를 세어 보여주는 기능을 추가해줘. 기록을 삭제하면 권수도 다시 계산하고 기존 기록 기능은 유지해줘.',report:'독서 기록 저장과 검색 결과, 오류 수정 과정, 책 권수 세기 기능이 제대로 바뀌는지 정리해요.'},
 {title:'용돈 기록장',context:'받은 용돈과 쓴 돈을 기록하고 남은 금액을 확인하는 앱',screen:'받음·씀 선택, 금액·내용 입력칸, 내역과 잔액',task:'받은 돈 또는 쓴 돈을 선택하고 금액과 내용을 입력해 기록하게 해줘. 받은 돈은 더하고 쓴 돈은 빼서 잔액을 계산해줘. 내역 수정·삭제 시 잔액도 다시 계산하고 브라우저에 저장해줘.',guard:'은행 계좌나 실제 결제와 연결하지 마. 0원 이하나 숫자가 아닌 금액은 저장하지 마.',examples:'5,000원을 받고 1,500원을 쓰면 잔액은 3,500원이어야 해. 내역을 삭제하면 잔액도 다시 계산되어야 해.',debug:'받은 돈과 쓴 돈을 입력했는데 쓴 돈이 잔액에 더해져. 받은 돈은 더하고 쓴 돈은 빼도록 고쳐줘. 삭제 후 잔액도 확인해줘.',upgrade:'받은 돈과 쓴 돈의 합계를 따로 보여주는 요약을 추가해줘. 내역을 바꾸면 합계도 다시 계산해줘.',report:'받은 돈·쓴 돈 입력에 따른 잔액 계산, 오류와 수정 결과, 합계 요약 기능을 확인해 정리해요.'},
-{game:true,title:'과일 팡팡 게임',context:'초등학생이 같은 과일을 쏘아 합치며 점수를 얻는 게임',screen:'과일 바구니 게임 화면, 점수와 최고 과일 표시, 다음 과일과 그 다음 과일 미리보기, 과일 쏘기 버튼과 다시하기 버튼',task:'화면에서 발사 방향을 정하고 과일 쏘기 버튼을 누르면 과일이 날아가게 해줘. 같은 과일이 닿으면 한 단계 더 큰 과일로 합쳐지고 점수가 올라가게 해줘. 과일은 딸기, 귤, 사과, 배, 복숭아, 멜론, 파인애플, 수박 순서로 커지게 해줘. 과일이 바구니 위 선까지 가득 차면 게임이 끝나게 해줘.',guard:'과일이 바구니 밖으로 나가지 않게 해줘. 이름·학교·주소 등 개인정보를 묻거나 저장하지 마. 점수나 과일 크기를 마음대로 바꾸지 마.',examples:'딸기 두 개가 닿으면 귤 한 개로 바뀌고 점수가 올라가야 해. 수박 두 개가 합쳐지면 “수박 팡” 글자와 보너스 점수가 나와야 해.',debug:'같은 과일 두 개가 닿았는데 합쳐지지 않고 그대로 있어. 같은 과일이 닿으면 한 단계 더 큰 과일로 합쳐지고 점수가 올라가도록 고쳐줘.',upgrade:'연속으로 합치면 콤보 점수를 더 주는 기능을 추가해줘. 콤보가 끊기면 다시 1부터 세고 기존 발사와 합치기 기능은 유지해줘.',report:'과일을 쏘고 합친 결과와 점수 변화, 합쳐지지 않던 오류의 수정, 콤보 점수 기능이 잘 되는지 정리해요.'},
+{game:true,title:'과일 팡팡 게임',context:'초등학생이 같은 과일을 쏘아 쌓고 합치며 수박을 터뜨려 점수를 얻는 게임',screen:'직사각형 게임 상자와 위쪽 가운데 발사대, 발사대에 보이는 다음 과일과 조준 점선, 점수와 과일 순서 안내, 게임이 끝나는 빨간 점선과 다시하기 버튼',task:'마우스로 가리킨 방향을 점선으로 보여주고, 클릭하거나 터치하면 위쪽 가운데에서 그 방향으로 과일이 곧게 날아가게 해줘. 다음에 쏠 과일은 딸기, 귤, 사과 중에서 무작위로 보여줘. 과일이 벽이나 바닥, 다른 과일에 닿으면 중력으로 아래로 떨어져 상자 아래쪽에 쌓이게 해줘. 같은 과일이 닿으면 한 단계 더 큰 과일로 합쳐지고 점수가 올라가게 해줘. 과일은 딸기, 귤, 사과, 배, 수박 순서로 커지게 해줘. 배 두 개가 합쳐지면 수박이 되고, 수박 두 개가 닿으면 펑 하고 터져 사라지고 보너스 점수를 주게 해줘. 과일이 빨간 점선 위까지 2초 넘게 쌓여 있으면 게임이 끝나게 하고, 다시하기 버튼으로 처음부터 시작하게 해줘.',guard:'과일이 게임 상자 밖으로 나가지 않게 해줘. 한 번 쏜 뒤에는 잠깐 기다려야 다시 쏠 수 있게 해줘. 이름·학교·주소 등 개인정보를 묻거나 저장하지 마. 점수와 과일 크기를 마음대로 바꾸지 마.',examples:'딸기 두 개가 닿으면 귤 한 개로 바뀌고 점수가 올라가야 해. 수박 두 개가 닿으면 수박이 터져 사라지고 보너스 점수가 나와야 해.',done:'마우스로 방향을 정해 과일을 쏴 보고, 과일이 쌓이고 합쳐지고 수박이 터지는지, 빨간 점선까지 쌓이면 게임이 끝나는지 직접 해 보면 완성이야.',debug:'딸기 두 개가 닿았는데 합쳐지지 않고 튕겨 나가기만 해. 같은 과일이 닿으면 한 단계 더 큰 과일로 합쳐지고 점수가 올라가야 해. 이 문제를 고치고 쏘기와 쌓이기도 다시 확인해줘.',repro:'게임을 열고 같은 과일을 두 개 쏘아 서로 닿게 한 뒤, 합쳐지지 않고 튕겨 나가는 문제가 다시 나타나는지 확인해줘.',keep:'기존의 쏘기, 쌓이기, 수박 터지기, 게임 끝 기능과 화면 모양은 그대로 유지해줘.',verify:'같은 순서로 같은 과일 두 개를 닿게 해 보고, 한 단계 더 큰 과일로 합쳐지고 점수가 오르면 해결이야.',upgrade:'과일을 합친 뒤 2초 안에 또 합치면 콤보 점수를 더 주는 기능을 추가해줘. 콤보 횟수를 화면에 보여주고 2초 안에 합치지 못하면 다시 1부터 세게 해줘.',upkeep:'기존의 쏘기, 쌓기, 합치기, 수박 터지기 기능은 계속 작동해야 해.',updone:'여러 번 연속으로 합쳐 콤보 점수가 오르고, 합치지 못하면 콤보가 1부터 다시 시작하는지 직접 확인해줘.',report:'과일을 쏘고 쌓고 합친 결과와 점수 변화, 합쳐지지 않던 오류의 수정, 콤보 점수 기능이 잘 되는지 정리해요.'},
 {title:'AI canvas 교육',context:'음식의 칼로리를 예측하는 인공지능 가상 실험실',screen:'데이터 선택, 데이터 전처리, 학습하기, 학습 과정, 성능 확인, AI 활용하기 6단계',task:'AI 가상 실험실에서 데이터를 전처리하고 알고리즘을 선택해 학습시켜줘.',guard:'개인정보를 입력받지 마.',examples:'데이터를 전처리하고 학습을 실행하면 성능이 나타나야 해.',debug:'데이터를 선택하지 않고 학습 버튼을 눌렀을 때 안내가 나오지 않아. 먼저 데이터를 선택하라는 안내가 나오도록 고쳐줘.',upgrade:'새로운 음식 데이터를 입력해 칼로리를 예측하는 기능을 확인해줘.',report:'데이터 준비, 학습 과정, 성능 확인 결과를 바탕으로 탐구보고서를 작성해요.'},
 {title:'급식 메뉴 알레르기 확인표',context:'사용자가 직접 입력한 급식 메뉴와 확인 항목을 비교하는 연습용 앱',screen:'메뉴 입력칸, 확인할 항목 선택, 비교 결과와 주의 안내',task:'사용자가 입력한 메뉴 글과 확인 항목을 비교해 겹치는 항목을 눈에 띄게 표시해줘. 결과와 함께 입력한 정보만 비교했음을 알려줘.',guard:'알레르기를 진단하거나 안전을 보장하지 마. 실제 식사 전에는 보호자나 학교의 공식 안내를 확인하라고 표시해. 건강 정보를 전송하지 마.',examples:'메뉴 “달걀말이, 밥”, 확인 항목 “달걀”이면 주의 항목에 달걀을 표시해줘. 메뉴에 확인 항목이 없더라도 공식 안내를 확인하라는 문구를 보여줘.',debug:'메뉴에 달걀이 있는데 확인 결과에 표시되지 않아. 입력한 메뉴와 확인 항목이 겹치면 주의 항목에 표시하도록 고쳐줘.',upgrade:'메뉴를 아침·점심·저녁으로 나누어 입력하는 기능을 추가해줘. 각 끼니의 결과에 안전 보장 문구가 나오지 않게 해줘.',report:'입력한 메뉴와 확인 항목의 비교 결과, 놓친 표시를 수정한 과정, 끼니별 입력 기능을 정리해요.'},
 {title:'감정 날씨 일기',context:'오늘의 기분을 날씨 아이콘과 짧은 글로 기록하는 앱',screen:'기분 날씨 선택, 짧은 메모 입력칸, 날짜별 기록 목록',task:'맑음·흐림·비·무지개 중 기분을 고르고 이유를 적어 날짜별로 저장해줘. 기록을 다시 보고 수정·삭제할 수 있게 해줘.',guard:'어떤 감정도 나쁘다고 평가하거나 진단하지 마. 위급한 내용에는 믿을 수 있는 어른에게 말하라는 안내를 보여줘. 기록은 브라우저에만 저장해줘.',examples:'“맑음, 체육 시간에 재미있게 놀았다”를 저장하면 선택한 기분과 메모가 보여야 해. “비, 조금 속상했다”도 판단 없이 기록해줘.',debug:'기분을 바꾸어 저장해도 이전 아이콘이 계속 보여. 새로 선택한 기분이 기록과 목록에 모두 표시되도록 고쳐줘.',upgrade:'이번 주 기분 기록을 날씨 아이콘 개수로 보여주는 요약을 추가해줘. 기록이 없는 날은 임의로 채우지 마.',report:'다양한 기분 기록과 수정 결과, 아이콘이 바뀌지 않던 오류의 해결, 주간 요약 기능을 살펴 정리해요.'},
 {title:'물 마시기 도우미',context:'학생이 하루 목표 횟수를 정하고 마신 물을 직접 기록하는 앱',screen:'목표 횟수 설정, 물 마셨어요 버튼, 현재 횟수와 진행 표시',task:'사용자가 정한 목표 횟수를 보여주고, 버튼을 누를 때마다 마신 횟수를 1 늘려줘. 횟수와 목표를 진행 표시로 보여주고 되돌리기와 오늘 기록 초기화를 제공해줘.',guard:'사용자가 누르지 않았는데 횟수를 늘리지 마. 의학적인 권장량을 정답처럼 말하지 마. 목표는 직접 입력하게 해.',examples:'목표 5회에서 버튼을 두 번 누르면 “5번 중 2번”으로 보여줘. 되돌리기를 누르면 1번으로 줄어야 해.',debug:'물 마시기 버튼을 한 번 눌렀는데 횟수가 2씩 늘어나. 한 번 누를 때 1씩만 늘어나도록 고쳐줘.',upgrade:'목표를 달성하면 축하 그림을 보여주는 기능을 추가해줘. 목표를 바꾸면 진행 표시도 다시 계산해줘.',report:'버튼을 누른 횟수와 표시 결과, 두 번씩 증가하던 오류의 수정, 목표 달성 그림 기능을 정리해요.'},
-{game:true,title:'냥이 우주택배 게임',context:'초등학생이 우주냥이 우주선을 움직여 별을 모으고 운석을 피하는 게임',screen:'우주 게임 화면, 점수·하트·최고 기록 표시, 모은 별 상자와 미션 안내, 별 방패 버튼과 처음부터 버튼',task:'방향키나 마우스, 터치로 우주선을 움직이게 해줘. 떨어지는 별가루를 모으면 점수가 오르고 8개를 모으면 포털이 열려 다음 행성으로 가게 해줘. 운석에 부딪히면 하트가 하나씩 줄고 하트가 모두 없어지면 게임이 끝나게 해줘. 최고 기록은 이 브라우저에 저장해줘.',guard:'이름·학교·주소 등 개인정보를 묻거나 저장하지 마. 우주선이 화면 밖으로 나가지 않게 해줘. 소리는 버튼으로 켜고 끌 수 있게 해줘.',examples:'별가루를 8개 모으면 포털이 나타나야 해. 운석에 부딪히면 하트가 하나 줄어야 해.',debug:'별가루를 8개 모았는데 포털이 나타나지 않아. 별가루 8개를 모으면 포털이 열려 다음 행성으로 갈 수 있도록 고쳐줘.',upgrade:'별 방패를 모으면 운석을 한 번 막아 주는 기능을 추가해줘. 별 방패 개수를 화면에 보여주고 기존 별 모으기와 포털 기능은 유지해줘.',report:'우주선 움직임과 별 모으기 결과, 포털이 열리지 않던 오류의 수정, 별 방패가 운석을 막는지 정리해요.'},
-{title:'바른 자세·눈 휴식 타이머',context:'공부 시간을 정하고 쉬는 때를 알려주는 간단한 타이머 앱',screen:'시간 설정, 남은 시간, 시작·멈춤·다시 시작·초기화 버튼',task:'사용자가 공부 시간을 분 단위로 정하고 시작 버튼을 누르면 초 단위로 줄어드는 타이머를 만들어줘. 멈춤·다시 시작·초기화가 되게 하고 시간이 끝나면 쉬는 안내를 보여줘.',guard:'시작 버튼을 누르기 전에는 움직이지 마. 알림 권한이나 소리를 자동으로 켜지 마. 의학적 진단을 하지 마.',examples:'1분으로 설정해 시작하면 01:00부터 줄어야 해. 시간이 0이 되면 “잠깐 쉬면서 눈과 몸을 편하게 해요!”라고 보여줘.',debug:'멈춤을 눌렀는데 숫자가 계속 줄어들어. 멈춘 동안에는 시간이 그대로이고 다시 시작하면 이어지도록 고쳐줘.',upgrade:'공부·운동·독서 시간 선택 버튼을 추가해줘. 선택한 시간으로 타이머를 설정하고 기존 조작 버튼은 유지해줘.',report:'시작·멈춤·재시작·초기화 시험 결과, 멈춤 중 시간이 줄던 오류 수정, 시간 선택 기능을 정리해요.'},
+{game:true,title:'냥이 우주택배 게임',context:'초등학생이 우주냥이 우주선을 움직여 별을 모으고 운석과 혜성을 피하며 행성을 하나씩 지나가는 게임',screen:'위에서 아래로 별이 떨어지는 우주 게임 화면, 단계 이름과 별 모으기 진행 막대, 하트와 점수와 최고 점수 표시, 시작·왼쪽·오른쪽 버튼과 소리 켜고 끄는 버튼',task:'마우스나 손가락으로 끌거나 방향키로 우주선을 왼쪽과 오른쪽으로 움직이게 해줘. 위에서 떨어지는 별을 모으면 점수가 오르고 연속으로 모으면 콤보 점수를 더 주게 해줘. 단계마다 정해진 별을 모으면 포털이 열려 다음 행성으로 가게 해줘. 달은 8개, 화성은 10개, 목성은 12개, 토성은 14개를 모으게 하고 갈수록 더 빠르게 해줘. 운석과 혜성에 부딪히면 하트가 하나씩 줄고 하트가 모두 없어지면 게임이 끝나게 해줘. 방패는 부딪힘을 한 번 막아 주고, 자석은 별을 끌어당기고, 하트는 목숨을 하나 채워 주게 해줘. 토성까지 모두 끝내면 택배 배달 완료 화면과 점수를 보여주고 시작 버튼으로 다시 하게 해줘.',guard:'우주선이 화면 밖으로 나가지 않게 해줘. 소리는 시작 버튼을 누른 뒤에만 나오고 소리 버튼으로 켜고 끌 수 있게 해줘. 이름·학교·주소 등 개인정보를 묻거나 저장하지 마.',examples:'달 단계에서 별을 8개 모으면 포털이 열리고 화성 단계가 시작되어야 해. 운석에 부딪히면 하트가 하나 줄고, 방패가 있으면 하트는 그대로이고 방패만 사라져야 해.',done:'우주선을 좌우로 움직여 별을 모으고, 운석에 부딪히면 하트가 줄어드는지, 별을 다 모으면 다음 행성으로 넘어가는지, 하트가 모두 없어지면 게임이 끝나는지 직접 해 보면 완성이야.',debug:'별을 목표 개수만큼 모아 포털이 열리는 순간 화면이 멈춰 버려. 포털이 열리면 다음 행성 단계가 이어서 시작되어야 해. 이 문제를 고치고 별 모으기와 하트도 다시 확인해줘.',repro:'게임을 시작해 달 단계에서 별을 8개 모아 포털이 열리는 순간 화면이 멈추는 문제가 다시 나타나는지 확인해줘.',keep:'기존의 우주선 움직임, 별 모으기, 하트, 게임 끝 기능과 화면 모양은 그대로 유지해줘.',verify:'같은 순서로 별을 모아 포털이 열린 뒤 다음 행성 단계가 이어서 시작되면 해결이야.',upgrade:'최고 점수를 이 브라우저에 저장해 새로고침해도 남아 있게 하는 기능을 추가해줘. 저장하는 것은 이름 없이 점수 숫자만이고 화면에 최고 점수를 보여줘.',upkeep:'기존의 우주선 움직임, 별 모으기, 단계 넘어가기 기능은 계속 작동해야 해.',updone:'점수를 올린 뒤 새로고침해도 최고 점수가 남아 있는지, 점수가 더 낮을 때는 바뀌지 않는지 직접 확인해줘.',report:'우주선 움직임과 별 모으기 결과, 포털이 열릴 때 멈추던 오류의 수정, 최고 점수 저장이 잘 되는지 정리해요.'},
+{title:'바른 자세·눈 휴식 타이머',context:'초등학생이 바른 자세와 눈 휴식 방법을 움직이는 그림으로 배우는 앱',screen:'바른 자세 탭과 눈 휴식 탭, 앉은 자세·선 자세·누운 자세 그림 선택, 자세 체크 목록, 눈 한 쌍 그림과 눈 운동 버튼, 30초 눈 휴식 코스 타이머',task:'위쪽에 바른 자세 탭과 눈 휴식 탭을 만들어 눌러서 바꿔 보게 해줘. 바른 자세 탭에는 책상에 앉은 자세, 선 자세, 누운 자세 버튼을 만들고, 누르면 그 자세의 움직이는 그림이 나오게 해줘. 그림 아래에 자세 체크 목록 네 가지를 보여주고, 따라 해 본 항목을 체크하면 몇 개 했는지 알려줘. 눈 휴식 탭에는 눈 한 쌍 그림을 그리고, 깜빡이기, 위아래, 좌우, 360도 굴리기, 먼 곳 보기, 손바닥 온찜질 버튼을 누르면 눈동자가 그 방법대로 움직이게 해줘. 30초 눈 휴식 코스 버튼을 누르면 남은 시간과 진행 막대가 움직이고 단계마다 눈 운동이 차례로 나오게 해줘. 20분 화면을 본 뒤 20초 동안 먼 곳을 보는 20-20-20 규칙도 알려줘.',guard:'그림이 화면 밖으로 나가지 않게 해줘. 의학적인 진단이나 치료처럼 말하지 말고 쉬운 생활 습관만 알려줘. 이름·학교·주소 등 개인정보를 묻거나 저장하지 마.',examples:'앉은 자세 버튼을 누르면 책상에 앉은 그림이 움직이고 체크 목록 네 가지가 보여야 해. 눈 휴식 탭에서 위아래 버튼을 누르면 눈동자가 위와 아래로 움직여야 해.',done:'두 탭을 눌러 보고, 세 가지 자세 그림과 체크 목록이 나오는지, 눈 운동 버튼마다 눈동자가 다르게 움직이는지, 30초 코스가 끝까지 진행되는지 직접 확인하면 완성이야.',debug:'눈 휴식 탭에서 위아래 운동 중에 좌우 버튼을 눌렀는데 눈동자가 계속 위아래로도 움직여서 겹쳐 보여. 새 운동을 누르면 이전 운동이 멈추고 새 운동만 보여야 해. 이 문제를 고치고 30초 코스와 손바닥 온찜질도 다시 확인해줘.',repro:'눈 휴식 탭에서 위아래 버튼을 누른 뒤 곧바로 좌우 버튼을 눌러 이전 움직임이 남아 있는지 확인해줘.',keep:'기존의 두 탭, 세 가지 자세 그림과 체크 목록, 눈 운동 버튼, 30초 코스는 그대로 유지해줘.',verify:'같은 순서로 버튼을 눌러 보고, 이전 운동이 멈추고 새 운동만 보이면 해결이야.',upgrade:'30초 코스를 끝낼 때마다 “눈 휴식 완료” 칭찬 메시지와 오늘 마친 횟수를 보여주는 기능을 추가해줘. 횟수는 화면을 다시 열어도 이어서 세도록 이 브라우저에 숫자만 저장해줘.',upkeep:'기존의 탭 바꾸기, 자세 그림, 체크 목록, 눈 운동, 30초 코스 기능은 계속 작동해야 해.',updone:'30초 코스를 끝까지 해 보고 칭찬 메시지와 횟수가 올라가는지, 새로고침해도 횟수가 남는지 직접 확인해줘.',report:'두 탭의 그림과 체크 목록, 눈 운동 결과, 이전 운동이 겹쳐 움직이던 오류의 수정, 코스 횟수 기능을 정리해요.'},
 {title:'AI canvas 교육',context:'AI canvas 심화 프로젝트',screen:'AI canvas 화면',task:'AI canvas로 나만의 인공지능 프로젝트를 완성해요.',guard:'개인정보를 입력받지 마.',examples:'완성된 모델을 확인해요.',debug:'',upgrade:'—',report:''}
 ];
 
@@ -513,17 +582,17 @@ function makeNav(){
 const periods=function(x){
   const t=x.topic,role=t.game?'너는 초등학생이 즐기기 쉬운 웹 게임을 만드는 친절한 개발 도우미야.':'너는 초등학생이 쓰기 쉬운 웹앱을 만드는 친절한 개발 도우미야.',
   purposes=[
-    '사용자는 수업과 방과 후 일정을 한눈에 확인하고 해야 할 일을 잊지 않으려 해.',
-    '사용자는 요일별 준비물을 확인해 등교 전에 빠뜨리지 않고 챙기려 해.',
+    '사용자는 오늘 날짜를 보며 수업과 방과 후 일정을 한눈에 확인하고 해야 할 일을 잊지 않으려 해.',
+    '사용자는 요일별 날짜를 보며 학교와 학원 준비물을 확인해 빠뜨리지 않고 챙기려 해.',
     '사용자는 읽은 책과 직접 쓴 감상을 날짜별로 모아 다시 살펴보려 해.',
     '사용자는 용돈을 받은 내역과 쓴 내역을 기록해 남은 금액을 알고 싶어 해.',
-    '사용자는 같은 과일을 쏘아 합쳐서 더 큰 과일을 만들고 높은 점수를 얻고 싶어 해.',
+    '사용자는 같은 과일을 쏘아 쌓고 합쳐서 더 큰 과일을 만들고, 수박을 터뜨려 높은 점수를 얻고 싶어 해.',
     '사용자는 음식의 칼로리를 맞히는 인공지능 모델을 직접 만들어 보고 싶어 해.',
     '사용자는 입력한 급식 메뉴와 확인할 항목을 비교해 주의할 내용을 살펴보려 해.',
     '사용자는 오늘의 기분과 그 이유를 편안하게 기록하고 싶어 해.',
     '사용자는 하루 목표를 정하고 물을 마신 횟수를 직접 기록하고 싶어 해.',
-    '사용자는 별을 모으고 운석을 피하며 다음 행성까지 날아가고 싶어 해.',
-    '사용자는 공부 시간을 정하고 시간이 끝나면 쉬는 때를 알고 싶어 해.',
+    '사용자는 별을 모으고 운석과 혜성을 피하며 행성을 하나씩 지나 택배를 끝까지 배달하고 싶어 해.',
+    '사용자는 바른 자세와 눈 휴식 방법을 그림으로 보고 따라 하며 몸과 눈을 건강하게 지키고 싶어 해.',
     '사용자는 AI canvas를 활용하여 인공지능 프로젝트를 완성하고 싶어 해.'
   ],
   context=[t.context+'이야.',purposes[x.n-1]],
@@ -538,10 +607,10 @@ const periods=function(x){
   const row=(label,value)=>`<label class="prompt-row"><span>${esc(label)}</span><input type="text" value="${esc(value)}" aria-label="${esc(label)}"></label>`;
   const group=(title,rows)=>`<section class="prompt-group"><h4>${esc(title)}</h4><div class="prompt-rows">${rows.join('')}</div><div class="line-actions"><button type="button" class="btn add-line" ${rows.length>=12?'disabled':''}>＋ 문장 추가</button><button type="button" class="btn remove-line" ${rows.length<=1?'disabled':''}>－ 마지막 문장 지우기</button></div></section>`;
   const tabs='<div class="tabs">'+['1교시 · AI 요청문 작성','2교시 · 오류 찾고 고치기','3교시 · 앱 개선·탐구보고서'].map((v,i)=>`<button class="tab${i?'':' on'}" data-i="${i}">${v}</button>`).join('')+'</div>';
-  const promptForm=`<div class="pmt"><b>🎯 영상 보며 AI 요청문을 완성해요</b><p>각 항목에 필요한 만큼 모범 문장이 들어 있어요. 기본 한 줄 이상으로 시작하며, 문장은 칼럼마다 최대 12줄까지 추가할 수 있어요. 영상을 보며 입력하거나 앱 주제에 맞게 고쳐 보세요.</p></div><form class="prompt-form">${group('역할',[row('1',role)])}${group('배경과 목적',context.map((v,i)=>row(String(i+1),v)))}${group('만들어야 할 화면',screens.map((v,i)=>row(String(i+1),v)))}${group('기능과 순서',tasks.map((v,i)=>row(String(i+1),v)))}${group('지켜야 할 점',guards.map((v,i)=>row(String(i+1),v)))}${group('예시',examples.map((v,i)=>row(String(i+1),v)))}${group('완성 확인',[row('1','입력, 버튼, 저장 기능을 직접 사용해 보고, 잘못된 입력에도 알기 쉬운 안내가 나오면 완성이야.')])}<div class="actions"><button type="button" class="btn copy-student">완성한 AI 요청문 복사</button><span class="copy-msg" aria-live="polite"></span></div></form><div class="pmt"><b>확인하기</b><p>역할, 배경과 목적, 화면, 기능, 지킬 점, 예시, 완성 확인 문장이 모두 들어갔나요?</p></div>`;
+  const promptForm=`<div class="pmt"><b>🎯 영상 보며 AI 요청문을 완성해요</b><p>각 항목에 필요한 만큼 모범 문장이 들어 있어요. 기본 한 줄 이상으로 시작하며, 문장은 칼럼마다 최대 12줄까지 추가할 수 있어요. 영상을 보며 입력하거나 앱 주제에 맞게 고쳐 보세요.</p></div><form class="prompt-form">${group('역할',[row('1',role)])}${group('배경과 목적',context.map((v,i)=>row(String(i+1),v)))}${group('만들어야 할 화면',screens.map((v,i)=>row(String(i+1),v)))}${group('기능과 순서',tasks.map((v,i)=>row(String(i+1),v)))}${group('지켜야 할 점',guards.map((v,i)=>row(String(i+1),v)))}${group('예시',examples.map((v,i)=>row(String(i+1),v)))}${group('완성 확인',[row('1',t.done||'입력, 버튼, 저장 기능을 직접 사용해 보고, 잘못된 입력에도 알기 쉬운 안내가 나오면 완성이야.')])}<div class="actions"><button type="button" class="btn copy-student">완성한 AI 요청문 복사</button><span class="copy-msg" aria-live="polite"></span></div></form><div class="pmt"><b>확인하기</b><p>역할, 배경과 목적, 화면, 기능, 지킬 점, 예시, 완성 확인 문장이 모두 들어갔나요?</p></div>`;
   const debug=t.debug.split(/(?<=[.!?])\s+/).filter(Boolean),upgrade=t.upgrade.split(/(?<=[.!?])\s+/).filter(Boolean);
-  const debugForm=`<div class="pmt"><b>🪲 영상 보며 오류를 고치는 요청을 완성해요</b><p>각 입력칸의 모범 문장을 참고해 오류 상황과 고칠 점을 한 문장씩 입력해요.</p></div><form class="prompt-form">${group('기대와 실제',[row('1',debug[1]||'기능을 사용하면 입력한 내용이 목록에 나타나야 해.'),row('2',debug[0]||'기능을 사용했는데 예상한 결과가 나타나지 않아.')])}${group('문제 재현',[row('1','앱을 열고 필요한 내용을 입력한 뒤 해당 버튼을 눌러 같은 문제가 나타나는지 확인해줘.')])}${group('수정 요청',[row('1',debug[debug.length-1]||t.debug),row('2','기존에 잘 작동하는 기능과 화면 모양은 그대로 유지해줘.')])}${group('수정 확인',[row('1','같은 순서로 다시 실행해 보고, 기대한 결과가 나오면 해결이야.')])}<div class="actions"><button type="button" class="btn copy-student">수정 요청 복사</button><span class="copy-msg" aria-live="polite"></span></div></form>`;
-  const upForm=`<div class="pmt"><b>🚀 영상 보며 앱 개선 요청을 완성해요</b><p>새 기능과 필요한 까닭, 사용 방법을 문장별로 입력해 하나의 요청문을 만들어요.</p></div><form class="prompt-form">${group('추가할 기능',[row('1',upgrade[0]||t.upgrade)])}${group('필요한 까닭과 사용 방법',[row('1',purposes[x.n-1]),row('2',upgrade[1]||'사용자가 기능을 선택하면 결과가 화면에 바로 나타나게 해줘.')])}${group('지켜야 할 점',[row('1',t.guard.split(/(?<=[.!?])\s+/).filter(Boolean).slice(-1)[0]||'개인정보를 입력받지 마.'),row('2','기존의 입력, 저장, 수정 기능은 계속 작동해야 해.')])}${group('완성 확인',[row('1','직접 사용해 새 기능과 기존 기능이 모두 작동하는지 확인해줘.')])}<div class="actions"><button type="button" class="btn copy-student">앱 개선 요청 복사</button><span class="copy-msg" aria-live="polite"></span></div></form>`;
+  const debugForm=`<div class="pmt"><b>🪲 영상 보며 오류를 고치는 요청을 완성해요</b><p>각 입력칸의 모범 문장을 참고해 오류 상황과 고칠 점을 한 문장씩 입력해요.</p></div><form class="prompt-form">${group('기대와 실제',[row('1',debug[1]||'기능을 사용하면 입력한 내용이 목록에 나타나야 해.'),row('2',debug[0]||'기능을 사용했는데 예상한 결과가 나타나지 않아.')])}${group('문제 재현',[row('1',t.repro||'앱을 열고 필요한 내용을 입력한 뒤 해당 버튼을 눌러 같은 문제가 나타나는지 확인해줘.')])}${group('수정 요청',[row('1',debug[debug.length-1]||t.debug),row('2',t.keep||'기존에 잘 작동하는 기능과 화면 모양은 그대로 유지해줘.')])}${group('수정 확인',[row('1',t.verify||'같은 순서로 다시 실행해 보고, 기대한 결과가 나오면 해결이야.')])}<div class="actions"><button type="button" class="btn copy-student">수정 요청 복사</button><span class="copy-msg" aria-live="polite"></span></div></form>`;
+  const upForm=`<div class="pmt"><b>🚀 영상 보며 앱 개선 요청을 완성해요</b><p>새 기능과 필요한 까닭, 사용 방법을 문장별로 입력해 하나의 요청문을 만들어요.</p></div><form class="prompt-form">${group('추가할 기능',[row('1',upgrade[0]||t.upgrade)])}${group('필요한 까닭과 사용 방법',[row('1',purposes[x.n-1]),row('2',upgrade[1]||'사용자가 기능을 선택하면 결과가 화면에 바로 나타나게 해줘.')])}${group('지켜야 할 점',[row('1',t.guard.split(/(?<=[.!?])\s+/).filter(Boolean).slice(-1)[0]||'개인정보를 입력받지 마.'),row('2',t.upkeep||'기존의 입력, 저장, 수정 기능은 계속 작동해야 해.')])}${group('완성 확인',[row('1',t.updone||'직접 사용해 새 기능과 기존 기능이 모두 작동하는지 확인해줘.')])}<div class="actions"><button type="button" class="btn copy-student">앱 개선 요청 복사</button><span class="copy-msg" aria-live="polite"></span></div></form>`;
   
   const guide=(period)=>{
     const specs=[
@@ -577,15 +646,18 @@ function initDemoToggle(n){
   if(close)close.onclick=toggle;
 }
 
+function demoWeek(){const t=new Date(),m=new Date(t);m.setDate(t.getDate()-(t.getDay()+6)%7);return ['월','화','수','목','금','토','일'].map((n,i)=>{const d=new Date(m);d.setDate(m.getDate()+i);return {n,d,label:(d.getMonth()+1)+'/'+d.getDate(),today:d.toDateString()===t.toDateString()}})}
 function buildDemoApp(n){
   if(n===1){
     return `<div class="mini-box"><p style="margin:0 0 8px;font-size:16px;color:var(--muted)">⏰ 하루 일정을 추가하고 완료해 보세요.</p>`
-      +`<div class="mini-row"><input type="time" id="app1Time" value="09:00" class="mini-input" style="max-width:120px"><input type="text" id="app1Text" placeholder="할 일 입력 (예: 수학 숙제)" class="mini-input"><button type="button" class="mini-btn" id="app1Add">추가</button></div>`
+      +`<div id="app1Today" style="display:inline-block;background:#ffe9a8;color:#8a5a00;border-radius:999px;padding:4px 16px;font-weight:700;font-size:16px;margin:0 0 8px"></div>`
+      +`<div class="mini-row"><input type="time" id="app1Time" value="09:00" class="mini-input" style="flex:0 0 auto;width:176px"><input type="text" id="app1Text" placeholder="할 일 입력 (예: 수학 숙제)" class="mini-input"><button type="button" class="mini-btn" id="app1Add">추가</button></div>`
       +`<div class="mini-list" id="app1List"></div></div>`;
   }
   if(n===2){
     return `<div class="mini-box"><p style="margin:0 0 8px;font-size:16px;color:var(--muted)">🎒 요일을 선택하고 준비물을 체크하세요.</p>`
-      +`<div class="mini-row" id="app2Days">`+['월','화','수','목','금'].map((d,i)=>`<button type="button" class="mini-btn ${i===0?'':'alt'}" data-d="${d}">${d}요일</button>`).join('')+`</div>`
+      +`<div class="mini-row" id="app2Days">`+demoWeek().map((w,i)=>{const c=i===5?' sat':i===6?' sun':'';return `<button type="button" class="mini-btn dayb${w.today?'':' alt'}${c}" data-d="${w.n}" data-c="${c}"><span>${w.n}요일</span><small class="dd">${w.label}${w.today?' · 오늘':''}</small></button>`}).join('')+`</div>`
+      +`<div id="app2Date" style="font-weight:700;color:#8a5a00;margin:2px 0 6px"></div>`
       +`<div class="mini-row"><input type="text" id="app2Text" placeholder="준비물 입력 (예: 알림장, 실내화)" class="mini-input"><button type="button" class="mini-btn" id="app2Add">추가</button><button type="button" class="mini-btn alt" id="app2Clear">전체 체크 해제</button></div>`
       +`<div class="mini-list" id="app2List"></div></div>`;
   }
@@ -602,10 +674,10 @@ function buildDemoApp(n){
       +`<div class="mini-list" id="app4List"></div></div>`;
   }
   if(n===5){
-    return `<div class="mini-box game-canvas-wrap"><p style="margin:0;font-size:16px;color:var(--muted)">🍉 위쪽 가운데에서 과일을 쏘아요! 같은 과일끼리 부딪히면 합쳐지고, 수박이 되면 팡! 터져요.</p>`
-      +`<div class="mini-row"><b>점수: <span id="app5Score" style="color:#e8743b;font-size:22px">0</span></b><span style="font-size:15px;color:var(--muted)">🍓 ➔ 🍊 ➔ 🍎 ➔ 🍐 ➔ 🍉💥</span><button type="button" class="mini-btn alt" id="app5Reset">다시하기</button></div>`
+    return `<div class="mini-box game-canvas-wrap"><p style="margin:0;font-size:16px;color:var(--muted)">🍉 위쪽 가운데에서 과일을 쏘아요! 과일은 아래로 떨어져 쌓이고, 같은 과일끼리 부딪히면 합쳐져요. 수박 두 개가 만나면 팡! 터져요.</p>`
+      +`<div class="mini-row"><b>점수: <span id="app5Score" style="color:#e8743b;font-size:22px">0</span></b><span style="font-size:15px;color:var(--muted)">🍓 ➔ 🍊 ➔ 🍎 ➔ 🍐 ➔ 🍉  /  🍉+🍉 = 💥</span><button type="button" class="mini-btn alt" id="app5Reset">다시하기</button></div>`
       +`<canvas id="app5Canvas" width="340" height="400" class="game-cv"></canvas>`
-      +`<p id="app5Msg" style="font-size:14px;color:var(--muted);margin:4px 0">마우스로 방향을 정하고 클릭(터치)하면 발사! 판에 과일이 14개를 넘으면 끝나요.</p></div>`;
+      +`<p id="app5Msg" style="font-size:14px;color:var(--muted);margin:4px 0">마우스로 방향을 정하고 클릭(터치)하면 발사! 과일이 빨간 점선 위까지 쌓이면 끝나요.</p></div>`;
   }
   if(n===7){
     return `<div class="mini-box"><p style="margin:0 0 8px;font-size:16px;color:var(--muted)">🥗 식단 메뉴를 입력하고 주의해야 할 알레르기 식품이 있는지 확인해요.</p>`
@@ -633,19 +705,25 @@ function buildDemoApp(n){
       +`<p id="app9Msg" style="font-size:16px;color:var(--muted);margin:8px 0 0">건강을 위해 물을 자주 마셔요!</p></div></div>`;
   }
   if(n===10){
-    return `<div class="mini-box game-canvas-wrap"><p style="margin:0;font-size:16px;color:var(--muted)">🚀 냥이 우주선을 움직여 별을 모으고 운석을 피하세요! 별을 다 모으면 다음 행성으로 가요.</p>`
-      +`<div class="mini-row"><b>🌍 <span id="app10Stage" style="color:#e8743b">1단계 · 달</span></b><b>별가루: <span id="app10Stars" style="color:#e8743b">0 / 6</span></b><b>목숨: <span id="app10Lives" style="color:#d6455d">❤️❤️❤️</span></b><button type="button" class="mini-btn alt" id="app10Start">게임 시작/재시작</button></div>`
-      +`<canvas id="app10Canvas" width="340" height="300" class="game-cv"></canvas>`
-      +`<div class="mini-row" style="justify-content:center"><button type="button" class="mini-btn" id="app10Left">◀ 왼쪽</button><button type="button" class="mini-btn" id="app10Right">오른쪽 ▶</button></div>`
-      +`<p id="app10Msg" style="font-size:15px;color:var(--muted);margin:0">별을 다 모으면 포털이 열려요! (마우스·터치로 끌거나 ←→ 키)</p></div>`;
+    return `<div class="mini-box game-canvas-wrap"><p style="margin:0;font-size:16px;color:var(--muted)">🚀 냥이 우주선을 움직여 ⭐ 별을 모아요! 🪨 운석은 피하고, 별을 다 모으면 다음 행성으로 가요.</p>`
+      +`<canvas id="app10Canvas" width="340" height="440" class="game-cv"></canvas>`
+      +`<div class="mini-row" style="justify-content:center"><button type="button" class="mini-btn" id="app10Left">◀ 왼쪽</button><button type="button" class="mini-btn" id="app10Start">🚀 시작!</button><button type="button" class="mini-btn" id="app10Right">오른쪽 ▶</button><button type="button" class="mini-btn alt" id="app10Snd" aria-pressed="true">🔊</button></div>`
+      +`<p id="app10Msg" style="font-size:15px;color:var(--muted);margin:0;text-align:center">마우스·손가락으로 끌거나 ←→ 키로 움직여요. 🛡️ 방패, 🧲 자석, ❤️ 하트를 잡으면 좋은 일이 생겨요!</p></div>`;
   }
   if(n===11){
-    return `<div class="mini-box"><p style="margin:0 0 8px;font-size:16px;color:var(--muted)">⏱️ 공부 시간을 정하고 집중 후 쉬는 시간을 가져요.</p>`
-      +`<div class="mini-row" id="app11Presets"><button type="button" class="mini-btn" data-s="60">1분 집중</button><button type="button" class="mini-btn alt" data-s="180">3분 집중</button><button type="button" class="mini-btn alt" data-s="300">5분 집중</button></div>`
-      +`<div style="text-align:center;padding:22px;background:#fff;border-radius:14px;border:1px solid var(--line);margin:10px 0">`
-      +`<div id="app11Clock" style="font-size:52px;font-weight:900;color:var(--ink);font-variant-numeric:tabular-nums">01:00</div>`
-      +`<div class="mini-row" style="justify-content:center;gap:12px;margin-top:14px"><button type="button" class="mini-btn" id="app11Run" style="padding:10px 24px">시작</button><button type="button" class="mini-btn alt" id="app11Pause">일시정지</button><button type="button" class="mini-btn alt" id="app11Reset">초기화</button></div>`
-      +`<p id="app11Msg" style="font-size:16px;color:var(--muted);margin:10px 0 0">바른 자세로 눈을 깜빡이며 공부해요.</p></div></div>`;
+    return `<div class="mini-box" id="p11Root"><p style="margin:0 0 8px;font-size:16px;color:var(--muted)">🧍👀 탭을 눌러 바른 자세와 눈 휴식을 움직이는 그림으로 배워요.</p>`
+      +`<div class="p11-tabs"><button type="button" class="mini-btn" id="p11TabPose">🧍 바른 자세</button><button type="button" class="mini-btn alt" id="p11TabEye">👀 눈 휴식</button></div>`
+      +`<div id="p11Pose"><div class="p11-pick" id="p11Pick"><button type="button" class="mini-btn" data-p="sit">🪑 책상에 앉은 자세</button><button type="button" class="mini-btn alt" data-p="stand">🧍 선 자세</button><button type="button" class="mini-btn alt" data-p="lie">🛏️ 누운 자세</button></div>`
+      +`<div class="p11-stage"><div class="p11-say"><small id="p11Tag"></small><b id="p11PTitle"></b></div>`
+      +`<div data-svg="sit"><svg viewBox="0 0 340 230" class="p11-svg" role="img" aria-label="책상에 앉은 바른 자세"><line x1="20" y1="210" x2="320" y2="210" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><rect x="220" y="110" width="12" height="100" rx="3" fill="#94a3b8"/><rect x="200" y="105" width="120" height="12" rx="4" fill="#64748b"/><rect x="260" y="90" width="8" height="18" fill="#475569"/><rect x="245" y="103" width="38" height="5" rx="2" fill="#334155"/><rect x="238" y="45" width="62" height="46" rx="5" fill="#334155"/><rect x="242" y="49" width="54" height="38" rx="3" fill="#38bdf8"/><line x1="247" y1="62" x2="280" y2="62" stroke="#bae6fd" stroke-width="2.5" stroke-linecap="round"/><line x1="247" y1="72" x2="272" y2="72" stroke="#bae6fd" stroke-width="2.5" stroke-linecap="round"/><rect x="70" y="140" width="75" height="12" rx="4" fill="#64748b"/><rect x="66" y="65" width="14" height="85" rx="6" fill="#475569"/><line x1="105" y1="152" x2="105" y2="210" stroke="#64748b" stroke-width="5" stroke-linecap="round"/><line x1="80" y1="210" x2="130" y2="210" stroke="#475569" stroke-width="4" stroke-linecap="round"/><g class="p11-sit"><circle cx="126" cy="50" r="18" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/><path d="M112,42 Q125,32 140,43" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/><circle cx="132" cy="49" r="2.5" fill="#451a03"/><path d="M130,58 Q134,61 138,58" fill="none" stroke="#b45309" stroke-width="1.8" stroke-linecap="round"/><line class="p11-gaze" x1="140" y1="50" x2="238" y2="58" stroke="#0ea5e9" stroke-width="2" stroke-dasharray="5,5"/><path class="p11-spine" d="M121,68 Q111,96 116,122 Q118,138 108,144" fill="none" stroke-linecap="round"/><path d="M121,68 L117,140" stroke="#3b82f6" stroke-width="15" stroke-linecap="round"/><path d="M122,76 L150,110 L195,110" fill="none" stroke="#f59e0b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="110" r="4.5" fill="#ea580c"/><path d="M110,144 L158,144 L158,206" fill="none" stroke="#1e293b" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><circle cx="158" cy="144" r="5" fill="#ea580c"/><rect x="150" y="202" width="28" height="9" rx="3" fill="#0f172a"/></g><rect x="142" y="103" width="12" height="12" fill="none" stroke="#ea580c" stroke-width="1.8"/><text x="148" y="100" font-size="10" font-weight="900" fill="#ea580c" text-anchor="middle">90°</text><rect x="150" y="141" width="12" height="12" fill="none" stroke="#ea580c" stroke-width="1.8"/><text x="174" y="141" font-size="10" font-weight="900" fill="#ea580c">90°</text><text x="165" y="224" font-size="11" font-weight="bold" fill="#059669" text-anchor="middle">발바닥 100% 접지</text></svg></div><div data-svg="stand" hidden><svg viewBox="0 0 340 230" class="p11-svg" role="img" aria-label="선 상태의 바른 자세"><line x1="40" y1="210" x2="300" y2="210" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/><line x1="170" y1="15" x2="170" y2="210" stroke="#0288d1" stroke-width="2.5" stroke-dasharray="6,4"/><rect x="167" y="20" width="6" height="28" rx="3" fill="#38bdf8" opacity=".8" style="animation:p11Scan 2.8s ease-in-out infinite"/><g class="p11-stand"><circle cx="170" cy="40" r="18" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/><path d="M156,32 Q170,24 184,33" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/><circle cx="177" cy="39" r="2.5" fill="#451a03"/><circle cx="170" cy="40" r="4.5" fill="#ef4444"/><path class="p11-spine" d="M170,58 Q163,88 171,114 Q173,130 170,140" fill="none" stroke-linecap="round"/><path d="M170,58 L170,138" stroke="#3b82f6" stroke-width="16" stroke-linecap="round"/><circle cx="170" cy="68" r="4.5" fill="#ef4444"/><path d="M166,68 L158,105 L158,135" fill="none" stroke="#f59e0b" stroke-width="6.5" stroke-linecap="round"/><circle cx="170" cy="138" r="5" fill="#ef4444"/><path d="M166,138 L166,206" stroke="#1e293b" stroke-width="9.5" stroke-linecap="round"/><path d="M174,138 L174,206" stroke="#1e293b" stroke-width="9.5" stroke-linecap="round"/><circle cx="170" cy="202" r="5" fill="#ef4444"/><rect x="156" y="202" width="16" height="9" rx="3" fill="#0f172a"/><rect x="172" y="202" width="16" height="9" rx="3" fill="#0f172a"/></g><g font-size="11" font-weight="bold" fill="#0369a1"><text x="80" y="44" text-anchor="end">① 귓볼</text><line x1="86" y1="40" x2="160" y2="40" stroke="#0288d1" stroke-width="1.2" stroke-dasharray="3,3"/><text x="80" y="72" text-anchor="end">② 어깨 중심</text><line x1="86" y1="68" x2="160" y2="68" stroke="#0288d1" stroke-width="1.2" stroke-dasharray="3,3"/><text x="80" y="142" text-anchor="end">③ 골반 중심</text><line x1="86" y1="138" x2="160" y2="138" stroke="#0288d1" stroke-width="1.2" stroke-dasharray="3,3"/><text x="80" y="205" text-anchor="end">④ 복사뼈</text><line x1="86" y1="202" x2="160" y2="202" stroke="#0288d1" stroke-width="1.2" stroke-dasharray="3,3"/></g><rect x="195" y="100" width="125" height="24" rx="12" fill="#e0f2fe"/><text x="257" y="116" font-size="11" font-weight="900" fill="#0288d1" text-anchor="middle">수직 일직선 정렬!</text></svg></div><div data-svg="lie" hidden><svg viewBox="10 92 320 122" class="p11-svg" role="img" aria-label="누운 상태의 바른 자세"><rect x="20" y="145" width="300" height="18" rx="4" fill="#cbd5e1"/><rect x="25" y="155" width="12" height="45" fill="#64748b"/><rect x="303" y="155" width="12" height="45" fill="#64748b"/><path d="M42,145 Q58,122 80,132 Q95,145 100,145 Z" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/><text x="70" y="186" font-size="10.5" font-weight="900" fill="#b45309" text-anchor="middle">▲ 경추 베개 6~8cm</text><circle cx="62" cy="128" r="16" fill="#fde68a" stroke="#f59e0b" stroke-width="2"/><path d="M50,118 Q62,112 74,120" fill="none" stroke="#78350f" stroke-width="3.5" stroke-linecap="round"/><line x1="66" y1="128" x2="72" y2="128" stroke="#451a03" stroke-width="2" stroke-linecap="round"/><text class="p11-z1" x="78" y="112" font-size="14" font-weight="900" fill="#a855f7">z</text><text class="p11-z2" x="88" y="100" font-size="17" font-weight="900" fill="#7e22ce">Z</text><path d="M78,138 Q120,140 160,138 Q220,141 285,142" fill="none" stroke="#3b82f6" stroke-width="14" stroke-linecap="round"/><g class="p11-belly"><ellipse cx="145" cy="130" rx="24" ry="10" fill="#93c5fd"/><text x="145" y="110" font-size="10.5" font-weight="bold" fill="#1d4ed8" text-anchor="middle">복식 호흡 (배 팽창)</text></g><path class="p11-spine" d="M78,134 Q105,130 135,136 Q165,132 195,137 Q240,139 275,140" fill="none" stroke-linecap="round"/><ellipse cx="230" cy="140" rx="16" ry="8" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.8"/><path d="M210,140 Q230,126 250,140" stroke="#f59e0b" stroke-width="7" stroke-linecap="round" fill="none"/><text x="230" y="165" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">무릎 받침(허리 편함)</text><path d="M90,135 L130,135 L150,131" fill="none" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/></svg></div></div>`
+      +`<ul class="p11-chk" id="p11Checks"></ul><div class="p11-tip" id="p11Count"></div>`
+      +`<div class="p11-tip" style="background:#e9f9ee;color:#1f7a55">⏰ 50분 공부하고 10분은 일어나 기지개를 켜고 자세를 다시 점검해요!</div></div>`
+      +`<div id="p11Eye" hidden><div class="p11-stage eye"><div class="p11-say"><small id="e11Badge">기본 준비 상태</small><b id="e11Msg">아래 눈 운동 버튼을 누르거나 30초 코스를 시작해 보세요!</b></div><svg viewBox="0 0 360 170" class="p11-svg" role="img" aria-label="눈 한 쌍 그림"><path d="M45,40 Q90,18 135,38" fill="none" stroke="#475569" stroke-width="6.5" stroke-linecap="round"/><path d="M225,38 Q270,18 315,40" fill="none" stroke="#475569" stroke-width="6.5" stroke-linecap="round"/><g transform="translate(90,95)"><ellipse rx="54" ry="38" fill="#fff" stroke="#cbd5e1" stroke-width="3"/><clipPath id="e11CL"><ellipse rx="52" ry="36"/></clipPath><g clip-path="url(#e11CL)"><g id="e11IL" class="p11-iris"><circle r="24" fill="#0284c7" stroke="#0369a1" stroke-width="2"/><circle r="19" fill="#0ea5e9"/><circle r="11" fill="#0f172a"/><circle cx="-6" cy="-7" r="5" fill="#fff" opacity=".95"/><circle cx="6" cy="6" r="2.5" fill="#fff" opacity=".8"/></g></g><circle cx="48" r="4" fill="#fecdd3" opacity=".8"/><path id="e11LL" class="p11-lid" d="M-54,0 Q0,-42 54,0 Q0,42 -54,0 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="1"/></g><g transform="translate(270,95)"><ellipse rx="54" ry="38" fill="#fff" stroke="#cbd5e1" stroke-width="3"/><clipPath id="e11CR"><ellipse rx="52" ry="36"/></clipPath><g clip-path="url(#e11CR)"><g id="e11IR" class="p11-iris"><circle r="24" fill="#0284c7" stroke="#0369a1" stroke-width="2"/><circle r="19" fill="#0ea5e9"/><circle r="11" fill="#0f172a"/><circle cx="-6" cy="-7" r="5" fill="#fff" opacity=".95"/><circle cx="6" cy="6" r="2.5" fill="#fff" opacity=".8"/></g></g><circle cx="-48" r="4" fill="#fecdd3" opacity=".8"/><path id="e11LR" class="p11-lid" d="M-54,0 Q0,-42 54,0 Q0,42 -54,0 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="1"/></g><g id="e11Palm" style="opacity:0;transition:opacity .3s;pointer-events:none"><rect x="25" y="30" width="135" height="130" rx="36" fill="#f59e0b" opacity=".92"/><rect x="200" y="30" width="135" height="130" rx="36" fill="#f59e0b" opacity=".92"/><text x="92" y="105" font-size="34" text-anchor="middle">🤲</text><text x="267" y="105" font-size="34" text-anchor="middle">🤲</text><text x="180" y="152" font-size="13" font-weight="900" fill="#78350f" text-anchor="middle">따뜻한 손바닥으로 빛을 가리고 휴식 중</text></g></svg>`
+      +`<div class="p11-tip" id="e11Far" hidden style="background:#e9f9ee;color:#1f7a55">🌲⛰️☁️ 화면 너머 먼 숲이나 하늘 구름을 20초 동안 지그시 바라보세요!</div></div>`
+      +`<div class="p11-grid" id="e11Grid"><button type="button" class="p11-ex" data-m="blink"><span>👀</span>깜빡이기</button><button type="button" class="p11-ex" data-m="updown"><span>↕️</span>위아래</button><button type="button" class="p11-ex" data-m="leftright"><span>↔️</span>좌우</button><button type="button" class="p11-ex" data-m="roll"><span>🔄</span>360° 굴리기</button><button type="button" class="p11-ex" data-m="far"><span>🌲</span>먼 곳 보기</button><button type="button" class="p11-ex" data-m="palm"><span>🤲</span>손바닥 온찜질</button></div>`
+      +`<div class="p11-course"><div><b style="font-family:Jua,'Noto Sans KR',sans-serif;font-size:19px">30초 눈 휴식 코스</b><div style="font-size:14px;color:var(--muted)">깜빡이기 ➔ 위아래 ➔ 좌우 ➔ 굴리기 ➔ 먼 곳 보기</div></div><div style="display:flex;align-items:center;gap:10px"><b id="e11Time" style="font-family:Jua,'Noto Sans KR',sans-serif;font-size:26px;color:#2f8fd4">00:30</b><button type="button" class="mini-btn" id="e11Run">▶ 코스 시작</button></div></div>`
+      +`<div class="p11-bar"><i id="e11Bar"></i></div>`
+      +`<div class="p11-tip">📐 20-20-20 규칙: 20분 화면을 본 뒤 20초 동안 먼 곳을 바라봐요.</div></div></div>`;
   }
   return `<div class="mini-box"><p style="margin:0 0 8px;font-size:16px;color:var(--muted)">🌐 AI canvas 프로젝트 갤러리와 완성 앱 연결 공간이에요.</p>`
     +`<div style="padding:16px;background:#fff;border-radius:12px;border:1px solid var(--line);text-align:center"><div style="font-size:36px;margin-bottom:8px">✨🎨📱</div><b>나만의 인공지능 프로젝트 완성하기</b><p style="color:var(--muted);font-size:16px;margin:8px 0">AI canvas 환경에서 제작한 모델을 웹 앱에 연결해 보세요.</p><a href="https://application.ai-canvas.io" target="_blank" class="mini-btn" style="display:inline-block;text-decoration:none;margin-top:8px">AI Canvas 열기 ↗</a></div></div>`;
@@ -653,45 +731,64 @@ function buildDemoApp(n){
 
 function wireDemoApp(n){
   if(n===1){
-    let tasks=[{time:'09:00',text:'국어 교과서 읽기',done:false},{time:'14:00',text:'수학 숙제 및 오답노트',done:false}];
+    $('app1Today').textContent='📅 오늘은 '+new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'long'})+'이에요';
+    const KEY='aidl-green-demo1';
+    let tasks=[{time:'09:00',text:'국어 교과서 읽기',done:false},{time:'14:00',text:'수학 숙제 및 오답노트',done:false}], editing=-1;
+    try{const v=JSON.parse(localStorage.getItem(KEY));if(Array.isArray(v))tasks=v.filter(t=>t&&typeof t.text==='string'&&typeof t.time==='string')}catch(e){}
+    const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(tasks))}catch(e){}};
     const draw=()=>{
       tasks.sort((a,b)=>a.time.localeCompare(b.time));
-      $('app1List').innerHTML=tasks.map((t,i)=>`<div class="mini-item ${t.done?'done':''}"><span><input type="checkbox" data-c="${i}" ${t.done?'checked':''}> <b>${esc(t.time)}</b> ${esc(t.text)}</span><button type="button" class="del-btn" data-d="${i}">✕</button></div>`).join('')||'<div style="text-align:center;color:var(--muted);padding:10px">일정이 없어요. 새 일정을 추가해 보세요!</div>';
-      $('app1List').querySelectorAll('[data-c]').forEach(c=>c.onchange=()=>{tasks[+c.dataset.c].done=c.checked;draw()});
-      $('app1List').querySelectorAll('[data-d]').forEach(d=>d.onclick=()=>{tasks.splice(+d.dataset.d,1);draw()});
+      const box=$('app1List');
+      box.innerHTML=tasks.map((t,i)=>i===editing
+        ?`<div class="mini-item"><span style="display:flex;gap:8px;flex:1;flex-wrap:wrap"><input type="time" class="mini-input" data-et value="${esc(t.time)}" style="flex:0 0 auto;width:176px"><input type="text" class="mini-input" data-ex value="${esc(t.text)}"></span><span class="mini-acts"><button type="button" class="mini-btn" data-es>저장</button><button type="button" class="mini-btn alt" data-ec>취소</button></span></div>`
+        :`<div class="mini-item ${t.done?'done':''}"><span><input type="checkbox" data-c="${i}" ${t.done?'checked':''}> <b>${esc(t.time)}</b> ${esc(t.text)}</span><span class="mini-acts"><button type="button" class="edit-btn" data-e="${i}" title="수정">✏️</button><button type="button" class="del-btn" data-d="${i}" title="삭제">✕</button></span></div>`).join('')||'<div style="text-align:center;color:var(--muted);padding:10px">일정이 없어요. 새 일정을 추가해 보세요!</div>';
+      box.querySelectorAll('[data-c]').forEach(c=>c.onchange=()=>{tasks[+c.dataset.c].done=c.checked;save();draw()});
+      box.querySelectorAll('[data-d]').forEach(d=>d.onclick=()=>{tasks.splice(+d.dataset.d,1);editing=-1;save();draw()});
+      box.querySelectorAll('[data-e]').forEach(e=>e.onclick=()=>{editing=+e.dataset.e;draw();const x=box.querySelector('[data-ex]');if(x)x.focus()});
+      if(editing>=0){
+        const ok=()=>{const tx=box.querySelector('[data-ex]').value.trim(),tm=box.querySelector('[data-et]').value;if(!tx)return;tasks[editing].text=tx;if(tm)tasks[editing].time=tm;editing=-1;save();draw()};
+        const no=()=>{editing=-1;draw()};
+        box.querySelector('[data-es]').onclick=ok;box.querySelector('[data-ec]').onclick=no;
+        box.querySelector('[data-ex]').onkeydown=e=>{if(e.key==='Enter')ok();if(e.key==='Escape')no()};
+      }
     };
     $('app1Add').onclick=()=>{
       const text=$('app1Text').value.trim(), time=$('app1Time').value;
       if(!text)return;
-      tasks.push({time,text,done:false});
+      tasks.push({time:time||'09:00',text,done:false});
+      editing=-1;save();
       $('app1Text').value='';
       draw();
     };
     draw();
   }
   if(n===2){
-    let chk={}, day='월', store={'월':['알림장','필기도구'],'화':['체육복','물통'],'수':['실내화'],'목':['그림도구'],'금':['주간학습안내']};
+    const KEY2='aidl-green-demo2';
+    let chk={}, WK=demoWeek(), day=(WK.find(w=>w.today)||WK[0]).n, store={'월':['알림장','필기도구'],'화':['체육복','물통'],'수':['실내화'],'목':['그림도구'],'금':['주간학습안내'],'토':['학원 교재','간식'],'일':['독서실 책','필통']};
+    try{const v=JSON.parse(localStorage.getItem(KEY2));if(v&&v.store&&typeof v.store==='object'){store=v.store;Object.keys(store).forEach(k=>{if(!Array.isArray(store[k]))store[k]=[]});chk=v.chk&&typeof v.chk==='object'?v.chk:{}}}catch(e){}
+    const save2=()=>{try{localStorage.setItem(KEY2,JSON.stringify({store,chk}))}catch(e){}};
     const draw=()=>{
-      const list=store[day]||[];
+      const list=store[day]||[], w=WK.find(x=>x.n===day);
+      $('app2Date').textContent='📅 '+(w.d.getMonth()+1)+'월 '+w.d.getDate()+'일 '+day+'요일'+(w.today?' (오늘)':'')+' 준비물';
       $('app2List').innerHTML=list.map((item,i)=>`<div class="mini-item"><span><label><input type="checkbox" class="app2-chk" data-k="${day}:${i}" ${chk[day+':'+i]?'checked':''}> ${esc(item)}</label></span><button type="button" class="del-btn" data-d="${i}">✕</button></div>`).join('')||'<div style="text-align:center;color:var(--muted);padding:10px">등록된 준비물이 없어요.</div>';
-      $('app2List').querySelectorAll('.app2-chk').forEach(c=>c.onchange=()=>{chk[c.dataset.k]=c.checked});
-      $('app2List').querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{list.splice(+b.dataset.d,1);Object.keys(chk).forEach(k=>{if(k.startsWith(day+':'))delete chk[k]});draw()});
+      $('app2List').querySelectorAll('.app2-chk').forEach(c=>c.onchange=()=>{chk[c.dataset.k]=c.checked;save2()});
+      $('app2List').querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{list.splice(+b.dataset.d,1);Object.keys(chk).forEach(k=>{if(k.startsWith(day+':'))delete chk[k]});save2();draw()});
     };
     $('app2Days').querySelectorAll('button').forEach(b=>b.onclick=()=>{
-      $('app2Days').querySelectorAll('button').forEach(x=>x.className='mini-btn alt');
-      b.className='mini-btn';
+      $('app2Days').querySelectorAll('button').forEach(x=>x.className='mini-btn dayb alt'+x.dataset.c);
+      b.className='mini-btn dayb'+b.dataset.c;
       day=b.dataset.d;
       draw();
     });
     $('app2Add').onclick=()=>{
       const v=$('app2Text').value.trim();if(!v)return;
       if(!store[day])store[day]=[];
-      store[day].push(v);
+      store[day].push(v);save2();
       $('app2Text').value='';
       draw();
     };
     $('app2Clear').onclick=()=>{
-      chk={};draw();
+      chk={};save2();draw();
     };
     draw();
   }
@@ -739,36 +836,45 @@ function wireDemoApp(n){
     draw();
   }
   if(n===5){
-    const cv=$('app5Canvas'), ctx=cv.getContext('2d'), W=340, H=400, SX=W/2, SY=26, MAXN=14;
+    const cv=$('app5Canvas'), ctx=cv.getContext('2d'), W=340, H=400, SX=W/2, SY=26, DANGER=75, G=.35;
     const F=[{e:'🍓',r:17,c:'#ffc2ca',s:10},{e:'🍊',r:23,c:'#ffd9a8',s:20},{e:'🍎',r:29,c:'#ffb3ab',s:40},{e:'🍐',r:35,c:'#e6f0b8',s:80},{e:'🍉',r:42,c:'#a8e6cc',s:200}];
-    let items=[], fx=[], score=0, over=false, cool=0, aim={x:SX,y:220};
+    let items=[], fx=[], score=0, over=false, cool=0, overCnt=0, aim={x:SX,y:220};
     const rnd=()=>Math.floor(Math.random()*3);
     let nextT=rnd();
     const showScore=()=>{$('app5Score').textContent=score};
     const msg=t=>{$('app5Msg').textContent=t};
-    $('app5Reset').onclick=()=>{items=[];fx=[];score=0;over=false;cool=0;nextT=rnd();showScore();msg('마우스로 방향을 정하고 클릭(터치)하면 발사!')};
+    $('app5Reset').onclick=()=>{items=[];fx=[];score=0;over=false;cool=0;overCnt=0;nextT=rnd();showScore();msg('마우스로 방향을 정하고 클릭(터치)하면 발사!')};
     const pos=e=>{const r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)*W/r.width,y:(e.clientY-r.top)*H/r.height}};
     cv.onpointermove=e=>{aim=pos(e)};
     cv.onclick=e=>{
       aim=pos(e);if(over||cool>0)return;
-      const dx=aim.x-SX, dy=Math.max(aim.y-SY,20), d=Math.hypot(dx,dy), sp=9;
-      items.push({x:SX,y:SY+F[nextT].r,vx:dx/d*sp,vy:dy/d*sp,t:nextT});
+      const dx=aim.x-SX, dy=Math.max(aim.y-SY,20), d=Math.hypot(dx,dy), sp=11;
+      items.push({x:SX,y:SY+F[nextT].r,vx:dx/d*sp,vy:dy/d*sp,t:nextT,fly:true,hold:0});
       nextT=rnd();cool=25;
     };
     function burst(x,y){for(let k=0;k<12;k++){const a=k/12*Math.PI*2;fx.push({x,y,vx:Math.cos(a)*4,vy:Math.sin(a)*4,l:40,e:k%2?'🍉':'✨'})}}
     function step(){
       if(!cv.isConnected)return;
+      try{frame()}catch(e){console.error(e);items=items.filter(Boolean)}
+      requestAnimationFrame(step);
+    }
+    function frame(){
       if(cool>0)cool--;
       if(!over){
+        let high=false;
         for(const a of items){
           const r=F[a.t].r;
-          a.x+=a.vx;a.y+=a.vy;a.vx*=.988;a.vy*=.988;
-          if(Math.hypot(a.vx,a.vy)<.04){a.vx=0;a.vy=0}
-          if(a.x<r+4){a.x=r+4;a.vx=Math.abs(a.vx)}
-          if(a.x>W-r-4){a.x=W-r-4;a.vx=-Math.abs(a.vx)}
-          if(a.y<r+4){a.y=r+4;a.vy=Math.abs(a.vy)}
-          if(a.y>H-r-4){a.y=H-r-4;a.vy=-Math.abs(a.vy)}
+          if(!a.fly)a.vy+=G;
+          a.x+=a.vx;a.y+=a.vy;
+          if(!a.fly){a.vx*=.99;a.vy*=.995}
+          if(a.x<r+4){a.x=r+4;a.vx=Math.abs(a.vx)*.5;a.fly=false}
+          if(a.x>W-r-4){a.x=W-r-4;a.vx=-Math.abs(a.vx)*.5;a.fly=false}
+          if(a.y<r+4){a.y=r+4;a.vy=Math.abs(a.vy)*.5}
+          if(a.y>H-r-4){a.y=H-r-4;a.vy=-a.vy*.2;a.vx*=.85;a.fly=false;if(Math.abs(a.vy)<1)a.vy=0}
+          if(!a.fly&&a.y-r<DANGER)high=true;
         }
+        overCnt=high?overCnt+1:0;
+        if(overCnt>120){over=true;msg('😵 과일이 빨간 선 위까지 쌓였어요! 「다시하기」를 눌러요. 점수: '+score)}
         const born=[];
         for(let i=0;i<items.length;i++)for(let j=i+1;j<items.length;j++){
           const a=items[i], b=items[j];
@@ -777,22 +883,22 @@ function wireDemoApp(n){
           if(dist>=R||dist===0)continue;
           if(a.t===b.t){
             a.dead=b.dead=true;
-            const nt=a.t+1, mx=(a.x+b.x)/2, my=(a.y+b.y)/2;
-            score+=F[nt].s;showScore();
-            if(nt>=F.length-1){burst(mx,my);msg('🍉 수박이 팡! 터졌어요! +'+F[nt].s+'점')}
-            else born.push({x:mx,y:my,vx:(a.vx+b.vx)/2,vy:(a.vy+b.vy)/2,t:nt});
+            const mx=(a.x+b.x)/2, my=(a.y+b.y)/2;
+            if(a.t===F.length-1){score+=300;showScore();burst(mx,my);msg('🍉 수박 두 개가 팡! 터졌어요! +300점')}
+            else{const nt=a.t+1;score+=F[nt].s;showScore();born.push({x:mx,y:my,vx:(a.vx+b.vx)/2,vy:(a.vy+b.vy)/2,t:nt,fly:false,hold:0})}
           }else{
             const nx=dx/dist, ny=dy/dist, ov=R-dist, ma=ra*ra, mb=rb*rb;
             a.x-=nx*ov*mb/(ma+mb);a.y-=ny*ov*mb/(ma+mb);b.x+=nx*ov*ma/(ma+mb);b.y+=ny*ov*ma/(ma+mb);
+            a.fly=b.fly=false;
             const rv=(b.vx-a.vx)*nx+(b.vy-a.vy)*ny;
-            if(rv<0){const J=-1.9*rv/(1/ma+1/mb);a.vx-=J*nx/ma;a.vy-=J*ny/ma;b.vx+=J*nx/mb;b.vy+=J*ny/mb}
+            if(rv<0){const J=-1.3*rv/(1/ma+1/mb);a.vx-=J*nx/ma;a.vy-=J*ny/ma;b.vx+=J*nx/mb;b.vy+=J*ny/mb}
           }
         }
         items=items.filter(a=>!a.dead).concat(born);
-        if(items.length>MAXN){over=true;msg('😵 판이 가득 찼어요! 「다시하기」를 눌러요. 점수: '+score)}
       }
       fx=fx.filter(p=>p.l>0);fx.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.l--});
       ctx.fillStyle='#fff6e8';ctx.fillRect(0,0,W,H);
+      ctx.setLineDash([8,6]);ctx.strokeStyle='#ff6b6b';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(0,DANGER);ctx.lineTo(W,DANGER);ctx.stroke();
       ctx.setLineDash([6,8]);ctx.strokeStyle='#ffb48a';ctx.lineWidth=3;
       const dx=aim.x-SX, dy=Math.max(aim.y-SY,20), d=Math.hypot(dx,dy);
       ctx.beginPath();ctx.moveTo(SX,SY);ctx.lineTo(SX+dx/d*140,SY+dy/d*140);ctx.stroke();ctx.setLineDash([]);
@@ -805,8 +911,7 @@ function wireDemoApp(n){
         ctx.font=(f.r*1.15)+'px sans-serif';ctx.fillText(f.e,a.x,a.y+2);
       }
       ctx.font='22px sans-serif';fx.forEach(p=>{ctx.globalAlpha=p.l/40;ctx.fillText(p.e,p.x,p.y)});ctx.globalAlpha=1;
-      ctx.font='700 15px "Noto Sans KR",sans-serif';ctx.textAlign='right';ctx.fillStyle='#a89b8c';ctx.fillText(items.length+' / '+MAXN,W-10,H-12);
-      requestAnimationFrame(step);
+      ctx.font='700 15px "Noto Sans KR",sans-serif';ctx.textAlign='right';ctx.fillStyle='#a89b8c';ctx.fillStyle='#ff6b6b';ctx.fillText('여기까지 쌓이면 끝!',W-10,DANGER-8);
     }
     showScore();step();
   }
@@ -863,109 +968,206 @@ function wireDemoApp(n){
     update();
   }
   if(n===10){
-    const cv=$('app10Canvas'), ctx=cv.getContext('2d');
-    const ST=[{n:'달',e:'🌙',g:6,v:2,rk:.3,bg:'#2b2d5b'},{n:'화성',e:'🔴',g:8,v:2.6,rk:.4,bg:'#4a2340'},{n:'목성',e:'🟠',g:10,v:3.2,rk:.45,bg:'#3d2a1e'},{n:'토성',e:'🪐',g:12,v:3.8,rk:.5,bg:'#1f3a4a'}];
-    const SPOTS=Array.from({length:26},(_,i)=>({x:(i*97)%340,y:(i*53)%300}));
-    let catX=170, stage=0, stars=0, lives=3, items=[], mode='play', timer=0, tick=0;
-    const msg=h=>{$('app10Msg').innerHTML=h};
-    const ui=()=>{
-      $('app10Stage').textContent=(stage+1)+'단계 · '+ST[stage].n;
-      $('app10Stars').textContent=stars+' / '+ST[stage].g;
-      $('app10Lives').textContent='❤️'.repeat(Math.max(0,lives));
-    };
-    function resetGame(){catX=170;stage=0;stars=0;lives=3;items=[];mode='play';timer=0;ui();msg('🐱 '+ST[0].n+'까지 택배를 배달해요! 별 '+ST[0].g+'개를 모아요.')}
-    $('app10Start').onclick=resetGame;
-    $('app10Left').onclick=()=>{catX=Math.max(20,catX-35)};
-    $('app10Right').onclick=()=>{catX=Math.min(320,catX+35)};
-    cv.onpointermove=e=>{const r=cv.getBoundingClientRect();catX=Math.max(20,Math.min(320,(e.clientX-r.left)*340/r.width))};
-    const key=e=>{if(!cv.isConnected){document.removeEventListener('keydown',key);return}if(e.key==='ArrowLeft')catX=Math.max(20,catX-35);if(e.key==='ArrowRight')catX=Math.min(320,catX+35)};
-    document.addEventListener('keydown',key);
-    function loop(){
-      if(!cv.isConnected)return;
-      const s=ST[stage]; tick++;
-      ctx.fillStyle=s.bg;ctx.fillRect(0,0,340,300);
-      ctx.fillStyle='#fff';SPOTS.forEach((p,i)=>{ctx.globalAlpha=.4+.4*Math.sin((tick+i*9)/20);ctx.fillRect(p.x,p.y,2,2)});ctx.globalAlpha=1;
-      ctx.font='30px sans-serif';ctx.textAlign='center';ctx.fillText(s.e,310,34);
-      if(mode==='play'&&Math.random()<.04+stage*.01){
-        items.push({x:20+Math.random()*300,y:0,type:Math.random()<s.rk?'rock':'star',vy:s.v+Math.random()*1.5});
-      }
-      for(let i=items.length-1;i>=0;i--){
-        const it=items[i];it.y+=it.vy;
-        ctx.font='22px sans-serif';ctx.fillText(it.type==='star'?'⭐':'🪨',it.x,it.y);
-        if(mode==='play'&&Math.hypot(it.x-catX,it.y-260)<24){
-          items.splice(i,1);
-          if(it.type==='star'){
-            stars++;ui();
-            if(stars>=s.g){
-              items=[];
-              if(stage>=ST.length-1){mode='win';msg('🎉 <b style="color:#e8743b">택배 배달 완료! 모든 행성에 도착했어요!</b> 다시 하려면 시작 버튼!')}
-              else{mode='portal';timer=100;msg('🌀 <b style="color:#e8743b">포털이 열렸어요! '+ST[stage+1].n+'(으)로 출발해요!</b>')}
-            }
-          }else{
-            lives--;ui();
-            if(lives<=0){mode='over';msg('💥 <b style="color:#d6455d">게임 오버! 시작 버튼을 눌러 다시 도전해요.</b>')}
-          }
-          continue;
-        }
-        if(it.y>320)items.splice(i,1);
-      }
-      if(mode==='portal'){
-        timer--;
-        ctx.font='64px sans-serif';ctx.fillText('🌀',170,130+Math.sin(tick/6)*8);
-        ctx.font='700 20px "Noto Sans KR",sans-serif';ctx.fillStyle='#fff';ctx.fillText((stage+2)+'단계 · '+ST[stage+1].n+' 도착!',170,190);
-        if(timer<=0){stage++;stars=0;items=[];mode='play';ui();msg('🐱 이번엔 별 '+ST[stage].g+'개! 운석이 더 빨라졌어요.')}
-      }else if(mode==='win'){
-        ctx.font='54px sans-serif';ctx.fillText('🎉',170,120);ctx.font='700 20px "Noto Sans KR",sans-serif';ctx.fillStyle='#fff';ctx.fillText('배달 완료!',170,175);
-      }else if(mode==='over'){
-        ctx.font='54px sans-serif';ctx.fillText('💥',170,120);ctx.font='700 20px "Noto Sans KR",sans-serif';ctx.fillStyle='#fff';ctx.fillText('게임 오버',170,175);
-      }
-      ctx.font='32px sans-serif';ctx.fillText('🐱',catX,270);
-      requestAnimationFrame(loop);
+    const cv=$('app10Canvas'), ctx=cv.getContext('2d'), W=340, H=440, CY=H-70;
+    const ST=[{n:'달',e:'🌙',g:8,v:2.2,rate:.045,rk:.22,ck:0,bg:['#1b1e4b','#3a2e7a']},
+      {n:'화성',e:'🔴',g:10,v:2.7,rate:.055,rk:.28,ck:.08,bg:['#3a1530','#7a2e3a']},
+      {n:'목성',e:'🟠',g:12,v:3.2,rate:.06,rk:.3,ck:.14,bg:['#2d1f12','#7a4a1e']},
+      {n:'토성',e:'🪐',g:14,v:3.6,rate:.065,rk:.32,ck:.2,bg:['#0f2f3f','#1e6a7a']}];
+    const EM={star:'⭐',rock:'🪨',comet:'☄️',shield:'🛡️',magnet:'🧲',heart:'❤️'};
+    const BG=Array.from({length:60},(_,i)=>({x:(i*73)%W,y:(i*41)%H,z:1+i%3}));
+    let sfx=true, ac=null;
+    const beep=(f,d=.09,t='sine',v=.05)=>{if(!sfx)return;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type=t;o.frequency.value=f;g.gain.value=v;o.connect(g);g.connect(ac.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(e){}};
+    const jingle=a=>a.forEach((f,i)=>setTimeout(()=>beep(f,.16,'triangle',.07),i*110));
+    let mode='ready',stage=0,stars=0,lives=3,score=0,best=0,combo=0,items=[],ps=[],tx=[],shield=false,magnet=0,timer=0,shake=0,hurt=0,tick=0,catX=W/2,target=W/2,hold=0,kL=0,kR=0,planetY=-60;
+    const msg=t=>{$('app10Msg').innerHTML=t};
+    const boom=(x,y,c,n=10)=>{for(let k=0;k<n;k++){const a=Math.random()*6.28,s=1+Math.random()*3;ps.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:30+Math.random()*15,c})}};
+    const pop=(x,y,t,c='#fff')=>tx.push({x,y,t,l:45,c});
+    function banner(i){mode='banner';timer=110;stage=i;stars=0;items=[];msg('🐱 '+ST[i].n+'까지 별 '+ST[i].g+'개를 모아요!')}
+    function start(){lives=3;score=0;combo=0;ps=[];tx=[];shield=false;magnet=0;catX=target=W/2;banner(0)}
+    function spawn(){
+      const s=ST[stage],r=Math.random();let type='star';
+      if(r<s.rk)type='rock';else if(r<s.rk+s.ck)type='comet';else if(r<s.rk+s.ck+.05)type='shield';else if(r<s.rk+s.ck+.09)type='magnet';else if(r<s.rk+s.ck+.12&&lives<3)type='heart';
+      const it={type,x:24+Math.random()*(W-48),y:-20,vy:s.v+Math.random()*1.2,vx:0,rot:0};
+      if(type==='comet'){it.vy=s.v*1.5;it.vx=(Math.random()<.5?-1:1)*1.6;it.x=it.vx>0?30+Math.random()*120:W-30-Math.random()*120}
+      items.push(it);
     }
-    resetGame();
+    function clearStage(){
+      items=[];score+=50*(stage+1)+lives*20;
+      if(stage>=ST.length-1){mode='win';best=Math.max(best,score);jingle([523,659,784,1047,1319]);boom(W/2,H/2,'#ffe066',40);msg('🎉 <b style="color:#e8743b">택배 배달 완료!</b> 모든 행성에 도착했어요! 🚀 버튼으로 다시 도전!')}
+      else{mode='portal';timer=120;jingle([523,659,784]);msg('🌀 <b style="color:#e8743b">포털이 열렸어요! '+ST[stage+1].n+'(으)로 출발!</b>')}
+    }
+    function hit(){
+      if(shield){shield=false;beep(300,.12,'square');pop(catX,CY-34,'🛡️ 막았어요!','#7cc9ff');boom(catX,CY,'#7cc9ff',14);return}
+      lives--;combo=0;shake=14;hurt=40;beep(110,.25,'sawtooth',.08);boom(catX,CY,'#ff6b6b',16);
+      if(lives<=0){mode='over';best=Math.max(best,score);msg('💥 <b style="color:#d6455d">게임 오버!</b> 🚀 버튼을 눌러 다시 도전해요.')}
+    }
+    function take(it){
+      if(it.type==='star'){
+        stars++;combo++;const gain=10*(1+Math.floor(combo/3));score+=gain;
+        beep(660+Math.min(combo,10)*40,.08,'triangle');boom(it.x,it.y,'#ffe066',8);pop(it.x,it.y-10,'+'+gain,'#ffe066');
+        if(stars>=ST[stage].g)clearStage();
+      }else if(it.type==='shield'){shield=true;beep(880,.15);pop(it.x,it.y,'🛡️ 방패!','#7cc9ff')}
+      else if(it.type==='magnet'){magnet=360;beep(520,.15);pop(it.x,it.y,'🧲 자석!','#ff9bd2')}
+      else{lives=Math.min(3,lives+1);beep(740,.15);pop(it.x,it.y,'❤️ +1','#ff6b8a')}
+    }
+    function update(){
+      const dir=kR-kL+hold; if(dir)target=Math.max(28,Math.min(W-28,target+dir*6));
+      catX+=(target-catX)*.25;
+      if(shake>0)shake--;if(hurt>0)hurt--;if(magnet>0)magnet--;
+      if(mode==='banner'&&--timer<=0)mode='play';
+      if(mode==='portal'&&--timer<=0)banner(stage+1);
+      if(mode==='play'&&Math.random()<ST[stage].rate)spawn();
+      for(let i=items.length-1;i>=0;i--){
+        const it=items[i];if(!it)continue;
+        if(magnet>0&&it.type==='star'){const dx=catX-it.x,dy=CY-it.y;if(Math.hypot(dx,dy)<140){it.x+=dx*.08;it.y+=dy*.05}}
+        it.x+=it.vx;it.y+=it.vy;it.rot+=.05;
+        if(mode==='play'&&Math.hypot(it.x-catX,it.y-CY)<28){items.splice(i,1);if(it.type==='rock'||it.type==='comet')hit();else take(it);if(mode!=='play')break;continue}
+        if(it.y>H+20||it.x<-30||it.x>W+30){if(it.type==='star'&&mode==='play')combo=0;items.splice(i,1)}
+      }
+      ps=ps.filter(p=>p.l>0);ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.l--});
+      tx=tx.filter(t=>t.l>0);tx.forEach(t=>{t.y-=.8;t.l--});
+    }
+    function overlay(emoji,title,sub){
+      ctx.fillStyle='rgba(10,10,40,.55)';ctx.fillRect(0,0,W,H);ctx.textAlign='center';ctx.fillStyle='#fff';
+      ctx.font='64px sans-serif';ctx.fillText(emoji,W/2,H/2-40);
+      ctx.font='28px Jua,"Noto Sans KR",sans-serif';ctx.fillText(title,W/2,H/2+14);
+      ctx.font='700 16px "Noto Sans KR",sans-serif';ctx.fillText(sub,W/2,H/2+46);
+    }
+    function draw(){
+      const s=ST[stage],g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,s.bg[0]);g.addColorStop(1,s.bg[1]);
+      ctx.save();if(shake>0)ctx.translate((Math.random()-.5)*8,(Math.random()-.5)*8);
+      ctx.fillStyle=g;ctx.fillRect(-10,-10,W+20,H+20);
+      ctx.fillStyle='#fff';BG.forEach(p=>{p.y+=p.z*.5;if(p.y>H)p.y=0;ctx.globalAlpha=.25+.2*p.z;ctx.fillRect(p.x,p.y,p.z,p.z)});ctx.globalAlpha=1;
+      planetY+=.35;if(planetY>H+90)planetY=-90;ctx.textAlign='center';ctx.font='84px sans-serif';ctx.globalAlpha=.3;ctx.fillText(s.e,270,planetY);ctx.globalAlpha=1;
+      for(const it of items){ctx.save();ctx.translate(it.x,it.y);if(it.type==='rock'||it.type==='comet')ctx.rotate(it.rot);
+        if(it.type!=='rock'&&it.type!=='comet'){ctx.shadowColor='#ffe066';ctx.shadowBlur=12}
+        ctx.font='26px sans-serif';ctx.fillText(EM[it.type],0,8);ctx.restore()}
+      // 냥이 우주선
+      if(!(hurt>0&&tick%6<3)){
+        ctx.save();ctx.translate(catX,CY);ctx.rotate((target-catX)/60);
+        ctx.fillStyle='hsl('+(20+Math.random()*25)+',100%,60%)';ctx.beginPath();ctx.moveTo(-9,18);ctx.lineTo(9,18);ctx.lineTo(0,34+Math.random()*10);ctx.fill();
+        ctx.fillStyle='rgba(160,220,255,.3)';ctx.strokeStyle='rgba(255,255,255,.85)';ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(0,0,24,0,6.28);ctx.fill();ctx.stroke();
+        ctx.font='34px sans-serif';ctx.fillText('🐱',0,12);
+        if(shield){ctx.strokeStyle='#7cc9ff';ctx.lineWidth=4;ctx.beginPath();ctx.arc(0,0,31+Math.sin(tick/5)*2,0,6.28);ctx.stroke()}
+        ctx.restore();
+      }
+      for(const p of ps){ctx.globalAlpha=Math.min(1,p.l/25);ctx.fillStyle=p.c;ctx.fillRect(p.x,p.y,4,4)}ctx.globalAlpha=1;
+      ctx.font='700 18px "Noto Sans KR",sans-serif';for(const t of tx){ctx.globalAlpha=Math.min(1,t.l/20);ctx.fillStyle=t.c;ctx.fillText(t.t,t.x,t.y)}ctx.globalAlpha=1;
+      ctx.restore();
+      // 화면 위 정보(HUD)
+      ctx.textAlign='left';ctx.fillStyle='#fff';ctx.font='700 15px "Noto Sans KR",sans-serif';
+      ctx.fillText(s.e+' '+(stage+1)+'단계 · '+s.n,10,22);
+      ctx.fillStyle='rgba(255,255,255,.25)';ctx.fillRect(10,30,140,10);ctx.fillStyle='#ffe066';ctx.fillRect(10,30,140*Math.min(1,stars/s.g),10);
+      ctx.fillStyle='#fff';ctx.font='700 12px "Noto Sans KR",sans-serif';ctx.fillText('⭐ '+stars+' / '+s.g,156,40);
+      ctx.font='16px sans-serif';ctx.fillText('❤️'.repeat(Math.max(0,lives)),10,62);
+      if(magnet>0){ctx.fillStyle='#ff9bd2';ctx.fillRect(10,70,60*magnet/360,5)}
+      ctx.textAlign='right';ctx.fillStyle='#fff';ctx.font='700 15px "Noto Sans KR",sans-serif';ctx.fillText('점수 '+score,W-10,22);
+      ctx.font='700 12px "Noto Sans KR",sans-serif';ctx.fillStyle='#ffe9a8';ctx.fillText('최고 '+best,W-10,40);
+      if(combo>=2){ctx.fillStyle='#ffe066';ctx.font='22px Jua,"Noto Sans KR",sans-serif';ctx.textAlign='center';ctx.fillText('콤보 x'+combo+'!',W/2,92)}
+      if(mode==='ready')overlay('🐱','냥이 우주택배','🚀 시작 버튼이나 화면을 눌러요!');
+      else if(mode==='banner'){ctx.fillStyle='rgba(10,10,40,.5)';ctx.fillRect(0,H/2-60,W,110);ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='54px sans-serif';ctx.fillText(s.e,W/2-80,H/2+4);ctx.font='26px Jua,"Noto Sans KR",sans-serif';ctx.fillText((stage+1)+'단계 · '+s.n,W/2+30,H/2-8);ctx.font='700 15px "Noto Sans KR",sans-serif';ctx.fillText('별 '+s.g+'개를 모아요!',W/2+30,H/2+24)}
+      else if(mode==='portal'){ctx.fillStyle='rgba(10,10,40,.5)';ctx.fillRect(0,0,W,H);ctx.save();ctx.translate(W/2,H/2-20);ctx.rotate(tick/12);ctx.font='96px sans-serif';ctx.textAlign='center';ctx.fillText('🌀',0,30);ctx.restore();ctx.textAlign='center';ctx.fillStyle='#fff';ctx.font='26px Jua,"Noto Sans KR",sans-serif';ctx.fillText(ST[stage+1].n+'(으)로 출발!',W/2,H/2+80)}
+      else if(mode==='win')overlay('🎉','택배 배달 완료!','점수 '+score+' · 최고 '+best+' · '+'⭐'.repeat(Math.max(1,lives)));
+      else if(mode==='over')overlay('💥','게임 오버','점수 '+score+' · 최고 '+best);
+    }
+    function loop(){if(!cv.isConnected)return;tick++;try{update();draw()}catch(e){console.error(e);items=items.filter(Boolean)}requestAnimationFrame(loop)}
+    const begin=()=>{if(mode==='ready'||mode==='over'||mode==='win')start()};
+    $('app10Start').onclick=start;
+    $('app10Snd').onclick=e=>{sfx=!sfx;e.currentTarget.textContent=sfx?'🔊':'🔇';e.currentTarget.setAttribute('aria-pressed',sfx)};
+    const pt=e=>{const r=cv.getBoundingClientRect();target=Math.max(28,Math.min(W-28,(e.clientX-r.left)*W/r.width))};
+    cv.onpointerdown=e=>{pt(e);begin()};cv.onpointermove=pt;
+    const bind=(id,d)=>{const b=$(id);b.onpointerdown=()=>{hold=d};b.onpointerup=b.onpointerleave=()=>{hold=0}};
+    bind('app10Left',-1);bind('app10Right',1);
+    const kd=e=>{if(!cv.isConnected){document.removeEventListener('keydown',kd);document.removeEventListener('keyup',ku);return}
+      if(e.key==='ArrowLeft'||e.key==='ArrowRight'){if(mode==='play'||mode==='banner')e.preventDefault();e.key==='ArrowLeft'?kL=1:kR=1}};
+    const ku=e=>{if(e.key==='ArrowLeft')kL=0;if(e.key==='ArrowRight')kR=0};
+    document.addEventListener('keydown',kd);document.addEventListener('keyup',ku);
     loop();
   }
   if(n===11){
-    let total=60, left=60, timerId=null;
-    const fmt=s=>`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
-    const draw=()=>{
-      $('app11Clock').textContent=fmt(left);
+    const POSE={
+      sit:{e:'🪑',t:'책상에 앉은 바른 자세',tag:'공부할 때',pts:[['시선 거리 40~50cm','화면 상단이 눈높이보다 약간 아래에 오게 해요.'],['팔꿈치 & 무릎 90°','어깨 힘을 빼고 관절을 편안한 직각으로 둬요.'],['허리 등받이 밀착','엉덩이를 끝까지 넣어 등받이에 딱 붙여요.'],['발바닥 바닥 접지','두 발이 공중에 뜨지 않고 바닥에 평평해야 해요.']]},
+      stand:{e:'🧍',t:'선 상태의 바른 자세',tag:'발표·서 있을 때',pts:[['수직 일직선','옆에서 볼 때 귓볼-어깨-골반-복사뼈가 한 줄로 서요.'],['턱 당기고 가슴 펴기','거북목을 막기 위해 턱을 목 쪽으로 살짝 당겨요.'],['배에 가벼운 힘','배를 앞으로 내밀지 말고 배꼽을 등 쪽으로 당겨요.'],['50:50 양발 지지','짝다리를 짚지 않고 양쪽 발에 체중을 골고루 실어요.']]},
+      lie:{e:'🛏️',t:'누운 상태의 바른 자세',tag:'잠잘 때',pts:[['베개 높이 6~8cm','목뼈가 꺾이지 않고 편안한 C자 곡선을 받쳐줘요.'],['천장 똑바로 보기','등과 어깨 전체를 바닥에 골고루 밀착해요.'],['무릎 밑 작은 베개','허리가 붕 떠서 아프다면 무릎 밑에 받쳐요.'],['엎드려 자기 금지','목과 척추가 심하게 비틀어지므로 피해요.']]}
     };
-    $('app11Presets').querySelectorAll('button').forEach(b=>b.onclick=()=>{
-      $('app11Presets').querySelectorAll('button').forEach(x=>x.className='mini-btn alt');
-      b.className='mini-btn';
-      clearInterval(timerId);timerId=null;
-      total=parseInt(b.dataset.s,10);left=total;
-      $('app11Run').textContent='시작';
-      $('app11Msg').textContent='바른 자세로 집중을 준비하세요.';
-      draw();
-    });
-    $('app11Run').onclick=()=>{
-      if(timerId)return;
-      $('app11Run').textContent='진행 중';
-      $('app11Msg').textContent='🚀 열심히 집중하고 있어요!';
-      timerId=setInterval(()=>{
-        if(!$('app11Clock')){clearInterval(timerId);return}
-        left--;draw();
+    const MODES={
+      blink:['촉촉한 깜빡임 모드','눈을 꼭 감았다가 번쩍 뜨며 눈물을 고루 퍼지게 해요!'],
+      updown:['상하 스트레칭 모드','고개는 가만히 두고, 눈동자만 위로 3초! 아래로 3초!'],
+      leftright:['좌우 스트레칭 모드','눈동자를 왼쪽 끝까지 지그시! 오른쪽 끝까지 지그시!'],
+      roll:['360도 원 굴리기 모드','시계 방향으로 커다란 동그라미를 그리듯 눈동자를 굴려요!'],
+      far:['원거리 조절 (20-20-20)','가까운 화면에서 눈을 떼고, 먼 창밖 하늘을 바라보세요!'],
+      palm:['손바닥 체온 온찜질','따뜻해진 손바닥으로 눈을 살포시 덮고 편안하게 숨 쉬어요.']
+    };
+    const STEPS=[[5,'blink','1단계: 깜빡이기','눈을 꼭 감았다가 깜빡여 눈을 촉촉하게 적셔요!'],[6,'updown','2단계: 위아래 스트레칭','눈동자만 천천히 위로, 아래로 쭉 뻗어주세요!'],[6,'leftright','3단계: 좌우 스트레칭','왼쪽 귀를 보듯, 오른쪽 귀를 보듯 옆으로 스트레칭!'],[6,'roll','4단계: 360도 원 굴리기','둥글게 둥글게 원을 그리며 눈 근육을 풀어요.'],[7,'far','5단계: 먼 곳 바라보기','화면 너머 먼 창밖 숲이나 하늘을 지그시 바라보세요.']];
+    const alive=()=>!!$('p11Root');
+    const every=(ms,fn)=>{const id=setInterval(()=>{if(!alive()){clearInterval(id);return}fn()},ms);return id};
+    const root=$('p11Root');
+    // ── 바른 자세 탭
+    let pose='sit'; const done={sit:[],stand:[],lie:[]};
+    function drawPose(){
+      const P=POSE[pose];
+      root.querySelectorAll('[data-svg]').forEach(s=>s.hidden=s.dataset.svg!==pose);
+      $('p11Pick').querySelectorAll('button').forEach(b=>b.className='mini-btn'+(b.dataset.p===pose?'':' alt'));
+      $('p11Tag').textContent=P.tag;$('p11PTitle').textContent=P.e+' '+P.t;
+      $('p11Checks').innerHTML=P.pts.map((p,i)=>`<li class="${done[pose][i]?'on':''}"><label><input type="checkbox" data-i="${i}" ${done[pose][i]?'checked':''}><span><b>${p[0]}:</b> ${p[1]}</span></label></li>`).join('');
+      $('p11Checks').querySelectorAll('input').forEach(c=>c.onchange=()=>{done[pose][+c.dataset.i]=c.checked;drawPose()});
+      const n=done[pose].filter(Boolean).length;
+      $('p11Count').textContent='✅ '+n+' / 4 따라 해 봤어요'+(n===4?' 🎉 '+P.t+' 박사!':'');
+    }
+    $('p11Pick').querySelectorAll('button').forEach(b=>b.onclick=()=>{pose=b.dataset.p;drawPose()});
+    // ── 눈 휴식 탭
+    const iL=$('e11IL'), iR=$('e11IR'), lids=[$('e11LL'),$('e11LR')];
+    let ivl=null, cid=null, running=false, left=30;
+    const move=(x,y)=>{iL.style.transform=iR.style.transform='translate('+x+'px,'+y+'px)'};
+    function resetEye(){
+      clearInterval(ivl);ivl=null;
+      [iL,iR].forEach(i=>i.classList.remove('roll','focus'));
+      lids.forEach(l=>l.classList.remove('fast'));
+      $('e11Palm').style.opacity=0;$('e11Far').hidden=true;move(0,0);
+    }
+    function setMode(m,keepText){
+      resetEye();
+      $('e11Grid').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.m===m));
+      if(!keepText){$('e11Badge').textContent=MODES[m][0];$('e11Msg').textContent=MODES[m][1]}
+      if(m==='blink')lids.forEach(l=>l.classList.add('fast'));
+      if(m==='updown'){let up=true;move(0,-18);ivl=every(1400,()=>{up=!up;move(0,up?-18:18)})}
+      if(m==='leftright'){let l=true;move(-22,0);ivl=every(1400,()=>{l=!l;move(l?-22:22,0)})}
+      if(m==='roll')[iL,iR].forEach(i=>i.classList.add('roll'));
+      if(m==='far'){$('e11Far').hidden=false;[iL,iR].forEach(i=>i.classList.add('focus'))}
+      if(m==='palm')$('e11Palm').style.opacity=1;
+    }
+    function stopCourse(){
+      running=false;clearInterval(cid);cid=null;
+      $('e11Run').textContent='▶ 코스 시작';$('e11Time').textContent='00:30';$('e11Bar').style.width='0%';
+      resetEye();$('e11Grid').querySelectorAll('button').forEach(b=>b.classList.remove('on'));
+    }
+    function startCourse(){
+      running=true;left=30;$('e11Run').textContent='■ 코스 멈춤';
+      let si=0, sl=STEPS[0][0];
+      const apply=i=>{setMode(STEPS[i][1],true);$('e11Badge').textContent=STEPS[i][2];$('e11Msg').textContent=STEPS[i][3];sl=STEPS[i][0]};
+      apply(0);
+      cid=every(1000,()=>{
+        left--;sl--;
+        $('e11Time').textContent='00:'+String(Math.max(left,0)).padStart(2,'0');
+        $('e11Bar').style.width=((30-left)/30*100)+'%';
+        if(sl<=0&&left>0&&si+1<STEPS.length){si++;apply(si)}
         if(left<=0){
-          clearInterval(timerId);timerId=null;
-          $('app11Run').textContent='시작';
-          $('app11Msg').innerHTML='🎉 <b style="color:var(--acc-d)">시간 종료! 눈을 감고 몸을 스트레칭해요!</b>';
+          stopCourse();setMode('palm');
+          $('e11Badge').textContent='🎉 30초 코스 완료!';$('e11Msg').textContent='수고했어요! 마지막으로 손바닥을 비벼 따뜻하게 눈을 감싸 주세요.';
+          $('e11Time').textContent='00:00';$('e11Bar').style.width='100%';
         }
-      },1000);
-    };
-    $('app11Pause').onclick=()=>{
-      clearInterval(timerId);timerId=null;
-      $('app11Run').textContent='다시 시작';
-      $('app11Msg').textContent='⏸️ 잠시 쉬어가는 중이에요.';
-    };
-    $('app11Reset').onclick=()=>{
-      clearInterval(timerId);timerId=null;left=total;
-      $('app11Run').textContent='시작';
-      $('app11Msg').textContent='바른 자세로 눈을 깜빡이며 공부해요.';
-      draw();
-    };
-    draw();
+      });
+    }
+    $('e11Grid').querySelectorAll('button').forEach(b=>b.onclick=()=>{if(running)stopCourse();setMode(b.dataset.m)});
+    $('e11Run').onclick=()=>running?stopCourse():startCourse();
+    // ── 탭 바꾸기
+    function tab(t){
+      $('p11Pose').hidden=t!=='pose';$('p11Eye').hidden=t!=='eye';
+      $('p11TabPose').className='mini-btn'+(t==='pose'?'':' alt');$('p11TabEye').className='mini-btn'+(t==='eye'?'':' alt');
+      if(t==='pose'){if(running)stopCourse();else resetEye();$('e11Grid').querySelectorAll('button').forEach(b=>b.classList.remove('on'))}
+    }
+    $('p11TabPose').onclick=()=>tab('pose');$('p11TabEye').onclick=()=>tab('eye');
+    drawPose();
   }
 }
 
@@ -975,7 +1177,7 @@ const makeLesson=function(){
     +'<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><p>'+x.q+'</p></div>'
     +'<button type="button" class="btn-demo-toggle" id="demoToggleBtn" aria-expanded="false"><span>📱</span> <b>예시 앱 보기</b> <i class="demo-arrow">▼</i></button></div>'
     +'<div class="demo-app-container" id="demoAppBox" hidden>'
-    +'<div class="demo-app-header"><div><span class="demo-badge">체험용 시제품</span><b>'+x.title+' 예시 앱</b></div><button type="button" class="demo-close-btn" id="demoCloseBtn" title="닫기">✕</button></div>'
+    +'<div class="demo-app-header"><div><b>'+x.title+' 예시 앱</b></div><button type="button" class="demo-close-btn" id="demoCloseBtn" title="닫기">✕</button></div>'
     +'<div id="demoAppBody"></div></div>'
     +periods(x)+'<div class="deliver"><b>오늘의 결과물</b> · '+x.out+'</div>';
   
@@ -1028,17 +1230,17 @@ let render=function(){makeNav();makeLessonWithRationale();addTeacherRationale()}
 
 L.forEach(x=>{
   const t=x.topic,purpose=[
-    '수업과 방과 후 일정을 한눈에 확인하고 해야 할 일을 잊지 않으려는 학생에게 도움이 되기 때문입니다.',
-    '요일별 준비물을 확인해 등교 전에 빠뜨리지 않고 챙기려는 학생에게 도움이 되기 때문입니다.',
+    '오늘 날짜를 보며 수업과 방과 후 일정을 한눈에 확인하고 해야 할 일을 잊지 않으려는 학생에게 도움이 되기 때문입니다.',
+    '요일별 날짜를 보며 학교와 학원 준비물을 확인해 빠뜨리지 않고 챙기려는 학생에게 도움이 되기 때문입니다.',
     '읽은 책과 직접 쓴 감상을 날짜별로 모아 다시 살펴보려는 학생에게 도움이 되기 때문입니다.',
     '용돈을 받은 내역과 쓴 내역을 기록해 남은 금액을 알고 싶은 학생에게 도움이 되기 때문입니다.',
-    '같은 과일을 쏘아 합쳐 보며 즐겁게 놀고 싶은 학생에게 재미를 주기 때문입니다.',
+    '같은 과일을 쏘아 쌓고 합치며 수박을 터뜨리는 놀이를 즐기고 싶은 학생에게 재미를 주기 때문입니다.',
     '음식의 칼로리를 예측하는 인공지능을 직접 만들어 보고 싶은 학생에게 도움이 되기 때문입니다.',
     '입력한 급식 메뉴와 확인할 항목을 비교해 주의할 내용을 살펴보려는 학생에게 도움이 되기 때문입니다.',
     '오늘의 기분과 그 이유를 편안하게 기록하고 싶은 학생에게 도움이 되기 때문입니다.',
     '하루 목표를 정하고 물을 마신 횟수를 직접 기록하고 싶은 학생에게 도움이 되기 때문입니다.',
-    '별을 모으고 운석을 피하며 우주를 여행하는 놀이를 즐기고 싶은 학생에게 재미를 주기 때문입니다.',
-    '공부 시간을 정하고 시간이 끝나면 쉬는 때를 알고 싶은 학생에게 도움이 되기 때문입니다.',
+    '별을 모으고 운석과 혜성을 피하며 행성을 지나 택배를 배달하는 놀이를 즐기고 싶은 학생에게 재미를 주기 때문입니다.',
+    '움직이는 그림으로 바른 자세와 눈 휴식 방법을 익혀 몸과 눈을 건강하게 지키고 싶은 학생에게 도움이 되기 때문입니다.',
     'AI canvas로 인공지능을 배우고 활용하고 싶은 학생에게 도움이 되기 때문입니다.'
   ][x.n-1];
   t.report='예시 답안입니다. 저는 '+t.title+eul(t.title)+' 만들었습니다. '+(t.game?'게임':'앱')+'을 만든 까닭은 '+purpose+' 1교시에는 필요한 화면과 기능, 지켜야 할 점을 AI 요청문에 적고, “'+t.debug+'”와 같은 오류 상황을 설명해 기대한 대로 고쳐 달라고 요청했습니다. 2교시에는 “'+t.upgrade+'” 기능을 더해 사용해 보았습니다. 직접 시험한 결과를 기록하고, 예상과 달랐던 부분은 다시 고쳤습니다. 다음에는 친구의 의견을 듣고 '+t.title+eul(t.title)+(t.game?' 더 재미있게':' 더 편리하게')+' 만들고 싶습니다.';
@@ -1046,7 +1248,7 @@ L.forEach(x=>{
 
 L[5].overview={context:'음식 칼로리 가상실험실 & 맥도날드 영양성분 AI 분석',screen:'1교시 가상실험실 ➔ 2교시 영상학습(데이터 유출 퀴즈) ➔ 3교시 AI Canvas 실습',upgrade:'데이터 유출 방지 및 AI 보고서 생성'};
 L[5].title='AI canvas 교육';
-L[11].overview={context:'AI canvas 심화 프로젝트',screen:'AI canvas를 활용한 심화 활동',upgrade:'—'};
+L[11].overview={context:'독버섯 분류 가상실험실 & 버섯 독성 유무 예측 AI 분석',screen:'1교시 가상실험실 ➔ 2교시 영상학습(혼동 행렬 퀴즈) ➔ 3교시 AI Canvas 실습',upgrade:'치명적 오분류 이해 및 AI 보고서 생성'};
 L[11].title='AI canvas 교육';
 L[5].empty=true;
 L[11].empty=true;
@@ -1270,7 +1472,7 @@ L[11].empty=true;
   function renderLab(){
     makeNav();
     $('lesson').innerHTML='<div class="head"><div><div class="tags"><span class="tag mint">AI canvas 교육</span><span class="tag">인공지능 가상 실험실 & AI Canvas</span><span class="tag">결과물 1개</span></div><h2>06차시 · AI canvas 교육</h2><p class="intro">초등학교 3~4학년 · 가상실험실 체험 ➔ AI Canvas 영상 학습 ➔ 햄버거 메뉴 성분 분석 실습</p></div><div class="period-count">3교시</div></div>'
-      +'<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><p>AI Canvas로 음식의 영양 성분을 예측할 때, \'데이터 유출(커닝)\'을 막으려면 어떻게 해야 할까요?</p></div>'
+      +'<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><p>AI는 음식의 영양 성분 정보를 보고 칼로리를 얼마나 정확하게 예측할 수 있을까요?</p></div>'
       +'</div>'
       +'<div class="tabs">'+LAB_TABS.map((t,i)=>'<button class="tab'+(i===0?' on':'')+'" data-i="'+i+'" type="button">'+t+'</button>').join('')+'</div>'
       +'<div class="panes">'+L6_PANES.map((h,i)=>'<div class="pane'+(i===0?' on':'')+'" data-i="'+i+'"><div class="l6">'+h+'</div></div>').join('')+'</div>';
@@ -1308,8 +1510,8 @@ L[11].empty=true;
     mape();
   }
 
-  function initL6Quiz(){
-    const box = $('l6QuizBox');
+  function initL6Quiz(bid='l6QuizBox',pid='l6Prog',rid='l6Reset'){
+    const box = $(bid);
     if(!box) return;
     box.addEventListener('click', e => {
       const b = e.target.closest('.qo button');
@@ -1328,9 +1530,9 @@ L[11].empty=true;
       ex.hidden = false;
       ex.className = 'qe ' + (i === a ? 'good' : 'try');
       const n = box.querySelectorAll('.qq[data-done]').length;
-      $('l6Prog').textContent = n + ' / 4 풀었어요' + (n === 4 ? ' · 해설을 확인하고 3교시 실습으로 넘어가요!' : '');
+      $(pid).textContent = n + ' / 4 풀었어요' + (n === 4 ? ' · 해설을 확인하고 3교시 실습으로 넘어가요!' : '');
     });
-    const reset = $('l6Reset');
+    const reset = $(rid);
     if(reset) reset.onclick = () => {
       box.querySelectorAll('.qq').forEach(qq => {
         delete qq.dataset.done;
@@ -1342,8 +1544,221 @@ L[11].empty=true;
         ex.hidden = true;
         ex.textContent = '';
       });
-      $('l6Prog').textContent = '0 / 4 풀었어요';
+      $(pid).textContent = '0 / 4 풀었어요';
     };
+  }
+
+  // ===== 12차시 · AI 가상 실험실 (독버섯 분류) =====
+  const LAB12_URL='https://application.ai-canvas.io/application/NjkzZjZiM2NhYjJiYzRlZWE3Zjc5MDJkL25vZGUtcHVibGlzaC00MTE4NmQwYTJiMjQwNDU5YjRjNzg5';   // 독버섯 분류 AI 가상 실험실 주소
+  const LAB12_TABS=['📌 1교시 · AI 가상 실험실 (독버섯 분류)','📌 2교시 · 영상 시청 & 학습 퀴즈 (혼동 행렬)','📌 3교시 · AI Canvas 실습 & 탐구보고서'];
+  const L12_PANES=[
+    `
+    <div class="step-h watch"><i>①</i>1교시 도입 · AI 가상 실험실 열기<small>독버섯을 가려내는 AI를 직접 만들어요</small></div>
+    <div class="cta-row"><a class="btn primary lab12-link" target="_blank" rel="noopener">🧪 AI 가상 실험실 바로 열기 ↗</a><span class="hint">새 창에서 열려요. 미션 1~6을 순서대로 진행해요.</span></div>
+
+    <div class="road" aria-label="실험실 미션 순서">
+      <div class="rg"><h4>준비 단계</h4><ol><li><i>1</i>데이터 선택</li><li><i>2</i>데이터 전처리</li></ol></div>
+      <div class="rg"><h4>학습 단계</h4><ol><li><i>3</i>학습하기(분류)</li><li><i>4</i>학습 과정(7:3 분할)</li></ol></div>
+      <div class="rg"><h4>평가 단계</h4><ol><li><i>5</i>성능 확인(정확도·재현율)</li><li><i>6</i>AI 활용·예측</li></ol></div>
+    </div>
+
+    <details class="words">
+      <summary>📖 오늘의 핵심 낱말 6개 (눌러서 확인)</summary>
+      <div class="wgrid">
+        <div><b>데이터(특징)</b> · AI가 학습하는 재료 정보(버섯 냄새, 포자 가루 색, 뿌리 형태 등).</div>
+        <div><b>전처리</b> · 데이터를 AI가 배우기 좋게 깨끗이 다듬는 일.</div>
+        <div><b>분류(Classification)</b> · 식용 버섯과 독버섯처럼 ‘종류’를 구분하는 알고리즘.</div>
+        <div><b>학습용 70% / 검증용 30%</b> · 배울 때 쓰는 문제와 시험 볼 문제를 나누기.</div>
+        <div><b>정확도(Accuracy)</b> · 전체 판별 중에서 맞힌 비율(%). 높을수록 정확함!</div>
+        <div><b>재현율(Recall)·F1</b> · 찾아야 할 것을 빠뜨리지 않고 찾았는지 보는 값, F1은 종합 분류 지표(1에 가까울수록 좋아요).</div>
+      </div>
+    </details>
+
+    <h3 class="mis">1교시 미션 체크리스트</h3>
+    <ul class="checks">
+      <li><label><input type="checkbox">데이터 선택: 독버섯을 가려내는 데 도움이 되는 특징을 골라 데이터 미리보기로 확인했어요.</label></li>
+      <li><label><input type="checkbox">데이터 전처리: 선택한 데이터를 하나씩 다듬어 ‘전처리 완료’를 모두 채웠어요.</label></li>
+      <li><label><input type="checkbox">알고리즘 선택: 식용인지 독버섯인지 구분하기에 알맞은 ‘분류’ 알고리즘을 골랐어요.</label></li>
+      <li><label><input type="checkbox">데이터 분할: 학습용 70%와 검증용 30%로 나누어 AI를 학습시키고 학습 과정을 지켜봤어요.</label></li>
+      <li><label><input type="checkbox">성능 확인: 정확도, 재현율, F1-Score를 확인하고 성능 기준표에서 내 AI의 등급을 찾았어요.</label></li>
+      <li><label><input type="checkbox">AI 활용: 버섯 특징을 골라 식용인지 독버섯인지 예측하고, 예측 기록을 본 뒤 실험 보고서를 만들었어요.</label></li>
+    </ul>
+
+    <div class="act">
+      <h4><span>체험 기록</span>데이터 분할 & 정확도 확인</h4>
+      <p>전체 데이터를 <b>70% 학습용 / 30% 검증용</b>으로 나누면 각각 몇 개일까요?</p>
+      <div class="row"><label>전체 데이터 개수<input type="number" id="s12Total" value="1000" min="1"></label></div>
+      <div class="split" aria-hidden="true"><div class="tr">학습용 70%</div><div class="va">검증용 30%</div></div>
+      <div class="numbig" id="s12Out" aria-live="polite"></div>
+
+      <p class="q" style="margin-top:14px">내 AI의 정확도는 몇 %였나요? (기준: 90~100% 최고 수준, 70~90% 우수, 30~70% 보통, 30% 미만 개선 필요)</p>
+      <div class="row"><label>내 AI 정확도 (%)<input type="number" id="a12In" value="98.2" min="0" max="100" step="0.1"></label></div>
+      <div class="gauge acc" aria-hidden="true"><i class="g1"></i><i class="g2"></i><i class="g3"></i><i class="g4"></i></div>
+      <div class="pin" aria-hidden="true"><b id="a12Pin">▲</b></div>
+      <div class="scale" aria-hidden="true"><span>0%</span><span>30%</span><span>70%</span><span>90%</span><span>100%</span></div>
+      <span class="lvl" id="a12Lvl" aria-live="polite"></span>
+    </div>
+
+    <details class="gd guide">
+      <summary>🗂 교사용 지도안 · 1교시</summary>
+      <p><b>학습 목표</b> 학생이 AI 가상 실험실의 6단계를 직접 조작하며 분류 알고리즘, 7:3 분할 학습, 정확도·재현율·F1-Score로 AI의 성능을 확인하는 원리를 이해한다.</p>
+      <div class="tw"><table><tbody>
+        <tr><th>단계</th><th>시간</th><th>교사 활동</th><th>학생 활동</th><th>자료·유의점</th></tr>
+        <tr><td>도입</td><td>5분</td><td>사진이나 특징만 보고 식용 버섯과 독버섯을 구분할 수 있을지 질문하고, 오늘 실습할 가상 실험실 화면을 안내합니다. 야생 버섯은 어른과 전문가의 확인 없이 절대 먹지 않도록 안전 지도를 합니다.</td><td>독버섯을 구분할 때 필요한 단서(냄새, 색, 모양 등)를 자유롭게 말합니다.</td><td>가상 실험실 접속 링크, 야생 버섯 안전 지도</td></tr>
+        <tr><td>실습</td><td>25분</td><td>실험실 1~6단계를 순서대로 안내합니다. 6개 특징 중 독 여부와 관련이 큰 것을 고르게 하고(예: ‘버섯 크기’는 관련이 있을지 생각 나누기), 전처리, 분류 알고리즘, 7:3 분할, 성능 지표 확인, 예측 활용까지 관찰하게 돕습니다.</td><td>가상 실험실 미션을 수행하고 체크리스트를 확인하며 정확도·재현율·F1과 성능 등급을 확인합니다.</td><td>개인별 PC/태블릿 실습 지원</td></tr>
+        <tr><td>정리</td><td>10분</td><td>정확도가 높아도 AI가 틀릴 수 있으므로 실제 버섯의 안전 여부는 반드시 사람이 확인해야 함을 짚고, 성능 개선 가이드(이상치 제거 등)를 함께 읽습니다.</td><td>자신의 AI 정확도를 짝과 비교하고, 실험 보고서의 학습·예측 기록을 확인한 뒤 성능을 더 올릴 방법을 말합니다.</td><td>실험 보고서, 형성평가</td></tr>
+      </tbody></table></div>
+    </details>
+    `,
+    `
+    <div class="step-h watch"><i>①</i>2교시 영상 시청 · AI Canvas 버섯 독성 유무 예측<small>겉모습만으로 독버섯인지 알 수 있을까요?</small></div>
+    <p style="font-size:18px;line-height:1.6;margin:8px 0 12px">자연에서 만난 버섯의 겉모습(모양, 색깔, 냄새 등)만으로 독버섯인지 알 수 있을까요? 영상을 보며 인공지능이 버섯의 독성을 분류하는 원리와 혼동 행렬을 살펴보고, 퀴즈로 학습 내용을 점검해요.</p>
+    <div class="pmt">
+      <b>▶️ 영상 속 핵심 개념 3가지</b>
+      <p>1. <b>버섯 데이터셋</b>: 총 <b>8,124개</b> 버섯의 모자 모양, 색, 냄새, 주름살 등 <b>22개 부위 특성</b>과 정답 레이블(<code>e</code> 식용 / <code>p</code> 독성)이 담겨 있어요.<br>
+      2. <b>로지스틱 회귀</b>: 6차시의 ‘숫자 맞히기’와 달리, 버섯이 독성인지 식용인지 <b>둘 중 하나로 나누는 이진 분류(Classification)</b> 모델이에요.<br>
+      3. <b>혼동 행렬 &amp; 특성 중요도</b>: 모델의 맞힌 개수와 틀린 개수를 표로 비교해요. 독성 판별에 가장 큰 영향을 준 1위 특성은 <b>주름살 크기(<code>gill-size</code>)</b>였어요!</p>
+    </div>
+
+    <div class="leak-card">
+      <b>⚠️ 생각해 보기 · 혼동 행렬 속 가장 치명적인 오류는?</b>
+      <p style="margin:6px 0">AI가 버섯을 검증용 2,437개로 시험했을 때 <b>정확도는 96.5%</b>로 매우 뛰어났지만, <b>독버섯인데 식용으로 잘못 판단한 버섯이 38개</b>나 있었어요. 만약 사람이 이 결과를 믿고 먹는다면 생명이 위험해집니다. 따라서 <b>AI가 높은 확률로 추천하더라도 야생 버섯은 절대 함부로 먹어서는 안 돼요!</b></p>
+      <div class="cmw"><table class="cm">
+        <tr><th>구분</th><th>AI 예측: 식용 (e)</th><th>AI 예측: 독성 (p)</th></tr>
+        <tr><th>실제 식용 (e)</th><td class="ok">1,220개 (정답 맞힘 ⭕)</td><td>47개 (안 먹으니 안전함)</td></tr>
+        <tr><th>실제 독성 (p)</th><td class="bad">38개 (🚨 먹으면 위험한 치명적 오류!)</td><td class="ok">1,132개 (정답 맞힘 ⭕)</td></tr>
+      </table></div>
+    </div>
+
+    <div class="step-h"><i>②</i>영상 학습 체크 퀴즈<small>영상을 보며 배운 내용을 4문제로 점검해요</small></div>
+    <div class="quiz" id="l12QuizBox">
+      <div class="quiz-h"><b>🧠 2교시 영상 학습 체크 퀴즈</b><small>4문제 · 즉시 채점과 해설 제공</small></div>
+
+      <div class="qq" data-a="1">
+        <p class="qt"><span>1</span>버섯의 독성 유무(독버섯 p vs 식용 e)처럼 대상을 두 부류 중 하나로 구분하는 인공지능 학습 방법은 무엇인가요?</p>
+        <div class="qo">
+          <button type="button" data-i="0">① 숫자 회귀 (칼로리 맞히기)</button>
+          <button type="button" data-i="1">② 이진 분류 (로지스틱 회귀)</button>
+          <button type="button" data-i="2">③ 소리 크기 측정</button>
+          <button type="button" data-i="3">④ 바둑판 좌표 이동</button>
+        </div>
+        <p class="qe" aria-live="polite" hidden data-t="독성 유무는 숫자가 아니라 정해진 칸(식용 / 독성) 중 하나를 고르는 것이므로 '이진 분류'이며, 가장 빠른 기본 알고리즘은 로지스틱 회귀예요."></p>
+      </div>
+      <div class="qq" data-a="2">
+        <p class="qt"><span>2</span><em class="qtx">혼동 행렬(Confusion Matrix)의 4가지 결과 중 사람에게 <b>가장 위험하고 치명적인 오분류</b>는 어느 경우일까요?</em></p>
+        <div class="qo">
+          <button type="button" data-i="0">① 실제 식용인데 모델도 식용으로 맞힌 경우</button>
+          <button type="button" data-i="1">② 실제 독버섯인데 모델도 독버섯으로 맞힌 경우</button>
+          <button type="button" data-i="2">③ 실제 독버섯인데 모델이 '식용 버섯'으로 잘못 예측한 경우</button>
+          <button type="button" data-i="3">④ 실제 식용인데 모델이 '독버섯'으로 잘못 예측한 경우</button>
+        </div>
+        <p class="qe" aria-live="polite" hidden data-t="독버섯을 식용으로 잘못 판단하면 사람이 버섯을 먹고 생명이 위험해질 수 있으므로 가장 치명적인 위험이에요!"></p>
+      </div>
+      <div class="qq" data-a="0">
+        <p class="qt"><span>3</span><em class="qtx">AI Canvas의 [특성 중요도] 노드로 분석했을 때, 독버섯을 가르는 데 <b>가장 큰 기여를 한 1위 특성(27.8%)</b>은 무엇이었나요?</em></p>
+        <div class="qo">
+          <button type="button" data-i="0">① 주름살 크기 (gill-size)</button>
+          <button type="button" data-i="1">② 버섯 모자의 무게</button>
+          <button type="button" data-i="2">③ 버섯이 자란 계절</button>
+          <button type="button" data-i="3">④ 버섯을 발견한 사람 이름</button>
+        </div>
+        <p class="qe" aria-live="polite" hidden data-t="영상 분석 결과, 주름살 크기(gill-size, 27.8%)가 가장 결정적인 특성이었고, 뿌리 형태(17.7%), 턱받이 모양(13.3%)이 뒤를 이었어요."></p>
+      </div>
+      <div class="qq" data-a="3">
+        <p class="qt"><span>4</span>인공지능 모델이 96.5%의 높은 정확도로 어떤 야생 버섯을 "식용 버섯"이라고 판별했습니다. 이때 올바른 태도는?</p>
+        <div class="qo">
+          <button type="button" data-i="0">① AI는 절대 틀리지 않으므로 바로 먹는다.</button>
+          <button type="button" data-i="1">② 친구들에게 맛보라고 나눠준다.</button>
+          <button type="button" data-i="2">③ 사진을 찍어 SNS에 무조건 안전하다고 올린다.</button>
+          <button type="button" data-i="3">④ AI도 틀릴 확률이 있으므로 전문가 감정 없이 절대 채취·섭취하지 않는다.</button>
+        </div>
+        <p class="qe" aria-live="polite" hidden data-t="인공지능은 훌륭한 보조 도구이지만 38개의 오분류처럼 생명에 위험을 줄 수 있으므로, 최종 판단과 안전 결정은 사람과 전문가가 해야 해요."></p>
+      </div>
+
+      <div class="quiz-f"><span class="qprog" id="l12Prog">0 / 4 풀었어요</span><button type="button" class="btn" id="l12Reset">다시 풀기</button></div>
+    </div>
+
+    <details class="gd guide">
+      <summary>🗂 교사용 지도안 · 2교시</summary>
+      <p><b>학습 목표</b> 학생이 AI Canvas 버섯 독성 분류 영상을 시청하고, 로지스틱 회귀 분류 모델과 혼동 행렬의 4가지 결과, 그리고 ‘독버섯을 식용으로 오분류하는 위험’을 설명할 수 있다.</p>
+      <div class="tw"><table><tbody>
+        <tr><th>단계</th><th>시간</th><th>교사 활동</th><th>학생 활동</th><th>자료·유의점</th></tr>
+        <tr><td>도입</td><td>5분</td><td>산에서 버섯을 본 경험을 묻고, 겉모습만으로 독버섯인지 알 수 있는지 질문합니다.</td><td>화려한 색깔의 버섯 등 독버섯에 대한 생각을 말합니다.</td><td>동기유발 발문</td></tr>
+        <tr><td>영상 시청</td><td>20분</td><td>영상을 시청하며 <b>범주형 분류(로지스틱 회귀)</b>와 <b>혼동 행렬의 4가지 경우</b>를 짚어줍니다. 특히 38개의 오분류가 왜 치명적인지 강조합니다.</td><td>영상을 집중해 보고, AI가 분류할 때 ‘주름살 크기(<code>gill-size</code>)’를 가장 중요하게 보았음을 확인합니다.</td><td>버섯 독성 분류 영상</td></tr>
+        <tr><td>체크 퀴즈</td><td>10분</td><td>4문항 인터랙티브 퀴즈를 풀게 하고, 2번(치명적 오분류)과 4번(AI 한계 인식)의 해설을 함께 읽도록 지도합니다.</td><td>직접 퀴즈를 풀고 피드백을 확인하며 3교시 AI Canvas 직접 실습을 준비합니다.</td><td>즉각 피드백</td></tr>
+        <tr><td>정리</td><td>5분</td><td>AI는 96.5%로 매우 똑똑하지만 100% 완벽하지 않으므로 인간의 최종 안전 확인이 필수임을 정리합니다.</td><td>배운 점을 짝과 한 문장으로 나눕니다.</td><td>형성평가</td></tr>
+      </tbody></table></div>
+    </details>
+    `,
+    `
+    <div class="step-h"><i>①</i>3교시 AI Canvas 직접 실습<small>영상에서 배운 버섯 독성 분류 워크플로우를 그대로 만들어 봐요</small></div>
+    <div class="cta-row"><a class="btn primary" href="https://application.ai-canvas.io" target="_blank" rel="noopener">🚀 AI Canvas 플랫폼 열기 ↗</a><span class="hint">교사가 안내한 계정으로 접속하여 새 프로젝트를 만들어요.</span></div>
+
+    <div class="act">
+      <h4><span>실습 가이드</span>AI Canvas 5단계 노드 연결 흐름</h4>
+      <div class="node-flow-box">
+        <div class="node-item"><b>1. 예제 데이터</b><em>버섯 독성 유무 예측 (8,124개)</em></div>
+        <div class="node-item"><b>2. 데이터 분할</b><em>학습용 70% · 검증용 30%</em></div>
+        <div class="node-item"><b>3. 로지스틱 회귀</b><em>식용(e) / 독성(p) 이진 분류 학습</em></div>
+        <div class="node-item"><b>4. 모델 평가</b><em>정확도와 혼동 행렬 확인</em></div>
+        <div class="node-item"><b>5. 특성 중요도 &amp; 보고서</b><em>1위 특성 찾기 및 AI 보고서 생성</em></div>
+      </div>
+      <p class="q">나의 노드 연결 미션 체크:</p>
+      <ul class="checks">
+        <li><label><input type="checkbox">[예제 데이터]에서 ‘버섯 독성 유무 예측’ 데이터를 가져와 8,124개 버섯과 22개 특성을 확인했어요.</label></li>
+        <li><label><input type="checkbox">[데이터 분할]에서 학습용 70%, 검증용 30%(약 2,437개)로 나누었어요.</label></li>
+        <li><label><input type="checkbox">[로지스틱 회귀]로 버섯이 식용(e)인지 독성(p)인지 분류하는 모델을 학습시켰어요.</label></li>
+        <li><label><input type="checkbox">[모델 평가]에서 정확도(약 96%)와 혼동 행렬을 확인하고, 독버섯을 식용으로 잘못 예측한 개수를 찾았어요.</label></li>
+        <li><label><input type="checkbox">[특성 중요도] 노드로 독성을 가르는 데 가장 중요한 특성(주름살 크기)을 확인했어요.</label></li>
+        <li><label><input type="checkbox">[AI 보고서 생성] 노드로 실험 보고서를 완성했어요.</label></li>
+      </ul>
+    </div>
+
+    <div class="step-h"><i>②</i>12차시 최종 탐구보고서<small>오늘 배운 내용을 나의 언어로 정리해요</small></div>
+    <div class="act">
+      <h4><span>탐구보고서</span>AI Canvas &amp; 분류 모델 탐구 기록</h4>
+      <div class="report">
+        <label>1. 오늘 인공지능으로 해결하고자 한 문제<br><small>어떤 데이터로 무엇을 예측하려 했나요?</small><textarea placeholder="예: 버섯의 모양, 색, 냄새 등 22개 특성으로 그 버섯이 식용인지 독성인지 예측하려 했습니다."></textarea></label>
+        <label>2. AI Canvas에서 연결한 가장 핵심적인 노드 3가지와 그 역할<textarea placeholder="예: 1) 예제 데이터: 8,124개 버섯 정보를 가져옴 / 2) 로지스틱 회귀: 식용과 독성 둘 중 하나로 분류함 / 3) 모델 평가: 정확도와 혼동 행렬을 확인함"></textarea></label>
+        <label>3. 혼동 행렬에서 가장 치명적인 오류는 무엇이며, 왜 위험할까요?<br><small>정확도가 높아도 조심해야 하는 까닭을 써 보세요.</small><textarea placeholder="예: 실제 독버섯인데 AI가 식용으로 잘못 예측한 경우입니다. 정확도가 96.5%여도 그런 버섯이 38개나 있어서, 믿고 먹으면 생명이 위험할 수 있습니다."></textarea></label>
+        <label>4. 독성을 가르는 데 가장 큰 영향을 준 특성은 무엇이었나요?<br><small>1교시 가상 실험실에서 골랐던 특징과 비교해 보세요.</small><textarea placeholder="예: 주름살 크기(gill-size)가 27.8%로 1위였고 뿌리 형태도 중요했습니다. 1교시에서 내가 골랐던 뿌리 형태가 중요한 특성으로 나와서 신기했습니다."></textarea></label>
+        <label>5. AI의 판단을 믿고 행동하기 전에 사람이 꼭 해야 할 일, 그리고 다음에 분류해 보고 싶은 주제<textarea placeholder="예: 야생 버섯은 전문가가 확인하기 전에는 절대 먹지 않겠습니다. 다음에는 과일이 익었는지 안 익었는지 분류해 보고 싶습니다."></textarea></label>
+      </div>
+      <div class="printbar" style="margin-top:16px"><button type="button" class="btn" onclick="window.print()">🖨️ 탐구보고서 인쇄하기</button></div>
+    </div>
+
+    <details class="gd guide">
+      <summary>🗂 교사용 지도안 · 3교시</summary>
+      <p><b>학습 목표</b> 학생이 AI Canvas에서 노드를 직접 연결하여 데이터셋 불러오기, 7:3 분할, 로지스틱 회귀 분류 학습, 모델 평가(혼동 행렬)와 특성 중요도 확인, AI 보고서 생성을 완수하고 탐구보고서를 작성한다.</p>
+      <div class="tw"><table><tbody>
+        <tr><th>단계</th><th>시간</th><th>교사 활동</th><th>학생 활동</th><th>자료·유의점</th></tr>
+        <tr><td>도입</td><td>5분</td><td>실제 AI Canvas 접속 및 5단계 노드 연결 워크플로우를 화면에 띄워 순서를 안내하고, 2교시의 혼동 행렬 38개 오분류를 떠올리게 합니다.</td><td>AI Canvas에 로그인하고 새 캔버스를 준비합니다.</td><td>AI Canvas 계정 및 접속 환경</td></tr>
+        <tr><td>실습</td><td>25분</td><td>학생들이 노드(데이터 ➔ 분할 ➔ 로지스틱 회귀 ➔ 모델 평가 ➔ 특성 중요도)를 바르게 연결하는지 순회 지도합니다. 학생마다 데이터가 나뉘는 방식에 따라 정확도와 오분류 개수가 영상과 조금 다를 수 있음을 안내합니다.</td><td>직접 노드를 끌어다 놓고 연결선을 이으며 모델 학습과 평가를 완료하고, 혼동 행렬에서 독버섯을 식용으로 잘못 예측한 개수를 찾습니다.</td><td>노드 연결 오류 시 선을 다시 잇도록 지도</td></tr>
+        <tr><td>보고서&amp;정리</td><td>10분</td><td>탐구보고서의 5가지 질문을 작성하게 하고, 정확도가 높아도 최종 안전 판단은 사람이 해야 함을 한 번 더 강조합니다. 야생 버섯은 어른과 전문가의 확인 없이 절대 먹지 않도록 지도합니다.</td><td>탐구보고서를 작성하고 배운 점과 안전 약속을 기록합니다.</td><td>결과물 점검 및 형성평가</td></tr>
+      </tbody></table></div>
+    </details>
+    `
+  ];
+  function renderLab12(){
+    makeNav();
+    $('lesson').innerHTML='<div class="head"><div><div class="tags"><span class="tag mint">AI canvas 교육</span><span class="tag">인공지능 가상 실험실</span><span class="tag">결과물 1개</span></div><h2>12차시 · AI canvas 교육</h2><p class="intro">초등학교 3~4학년 · 가상실험실 체험(독버섯 분류) ➔ AI Canvas 영상 학습 ➔ 버섯 독성 유무 예측 실습</p></div><div class="period-count">3교시</div></div>'
+      +'<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><p>AI는 어떤 특징을 보고 식용 버섯과 독버섯을 구분할 수 있을까요?</p></div></div>'
+      +'<div class="tabs">'+LAB12_TABS.map((t,i)=>'<button class="tab'+(i===0?' on':'')+'" data-i="'+i+'" type="button">'+t+'</button>').join('')+'</div>'
+      +'<div class="panes">'+L12_PANES.map((p,i)=>'<div class="pane'+(i===0?' on':'')+'" data-i="'+i+'"><div class="l6">'+p+'</div></div>').join('')+'</div>';
+    const R=$('lesson'), q=s=>R.querySelector(s), nf=n=>Number(n).toLocaleString('ko-KR');
+    const a=q('.lab12-link');
+    if(a){ if(LAB12_URL){a.href=LAB12_URL}else{a.classList.add('off');a.title='실험실 링크 준비 중'} }
+    const split=()=>{const t=parseFloat(q('#s12Total').value);q('#s12Out').textContent=t>0?('학습용 '+nf(Math.round(t*0.7))+'개 · 검증용 '+nf(Math.round(t*0.3))+'개'):'숫자를 넣어요'};
+    q('#s12Total').addEventListener('input',split);split();
+    const lv=v=>v>=90?['🏆 최고 수준',false]:v>=70?['👍 우수',false]:v>=30?['😊 보통',true]:['🥲 개선 필요',true];
+    const acc=()=>{
+      const v=parseFloat(q('#a12In').value), out=q('#a12Lvl');
+      if(isNaN(v)||v<0||v>100){out.textContent='0~100 사이 숫자를 넣어요';out.className='lvl warn';return}
+      const l=lv(v);out.textContent='정확도 '+v+'% → '+l[0];out.className='lvl'+(l[1]?' warn':'');
+      q('#a12Pin').style.left=v+'%';
+    };
+    q('#a12In').addEventListener('input',acc);acc();
+    initL6Quiz('l12QuizBox','l12Prog','l12Reset');
   }
 
   const base=render;
@@ -1388,7 +1803,7 @@ L[11].empty=true;
       {q:'‘물 마시기 도우미’에서 버튼을 한 번 눌렀는데 숫자가 2씩 늘어나는 오류가 생겼어요. ‘기대한 동작’은 무엇일까요?',o:['버튼을 누를 때마다 마신 횟수가 1씩만 늘어나야 한다','버튼을 누르면 숫자가 0으로 초기화되어야 한다','버튼을 누르면 앱이 멈춰야 한다','버튼을 눌러도 숫자가 안 바뀌어야 한다'],a:0,e:'버튼을 1번 누르면 1회만 증가하는 것처럼 사용자가 원래 바랐던 올바른 동작이 바로 ‘기대한 동작’이에요.',skill:'기대한 동작 찾기',tip:'문제가 생기기 전 정상적인 기댓값을 먼저 정의하게 합니다.'},
       {q:'2·3교시에 작성하는 ‘최종 탐구보고서’에 가장 솔직하게 적어야 할 내용은 무엇일까요?',o:['내가 직접 앱을 만들고 시험하며 확인한 실제 결과와 내 생각','AI가 작성한 영어 프로그램 코드','예시 답안을 그대로 베껴 쓴 글','선생님이 칠판에 적어 준 글'],a:0,e:'탐구보고서는 내가 직접 겪은 불편, AI 요청문, 발견한 오류와 해결 과정, 실제 결과와 내 생각을 적는 기록이에요.',skill:'탐구보고서의 의미와 작성 내용',tip:'모범답안을 모방하기보다 자신의 경험을 진솔하게 쓰도록 지도합니다.'}]},
     11:{title:'10·11차시 되돌아보기',qs:[
-      {q:'‘냥이 우주택배 게임’에서 “별을 8개 모았는데 포털이 안 열려.”처럼 오류를 똑같이 다시 만들어 확인해보는 것을 무엇이라고 할까요?',o:['문제 재현','화면 캡처','데이터 전처리','배포 완료'],a:0,e:'오류가 어떤 순서로 발생했는지 똑같이 다시 실행해 보는 과정을 ‘문제 재현’이라고 해요.',skill:'문제 재현의 뜻 알기',tip:'문제를 재현할 수 있어야 AI에게도 수정 순서를 정확히 설명할 수 있습니다.'},
+      {q:'‘냥이 우주택배 게임’에서 “별을 다 모아 포털이 열리는 순간 화면이 멈춰 버려.”처럼 오류를 똑같이 다시 만들어 확인해보는 것을 무엇이라고 할까요?',o:['문제 재현','화면 캡처','데이터 전처리','배포 완료'],a:0,e:'오류가 어떤 순서로 발생했는지 똑같이 다시 실행해 보는 과정을 ‘문제 재현’이라고 해요.',skill:'문제 재현의 뜻 알기',tip:'문제를 재현할 수 있어야 AI에게도 수정 순서를 정확히 설명할 수 있습니다.'},
       {q:'‘바른 자세·눈 휴식 타이머’에서 멈춤을 눌렀는데 시간이 계속 줄어드는 문제를 고친 뒤 올바른 확인 방법은?',o:['시작 후 멈춤을 눌렀을 때 시간이 멈추고, 다시 시작하면 남은 시간부터 이어지는지 확인한다','시작하자마자 창을 닫아버린다','타이머 숫자를 0으로 바꾸고 그냥 둔다','새로고침하고 아무것도 누르지 않는다'],a:0,e:'멈춤 상태에서 시간이 멈추는지, 다시 시작했을 때 이어서 흐르는지 직접 조작해 확인해야 해결된 것이에요.',skill:'수정 확인 방법',tip:'기능의 정상 동작 조건을 직접 테스트하는 태도를 확인합니다.'},
       {q:'1~11차시 동안 바이브코딩으로 앱을 만들며 배운 가장 중요한 문제 해결 방법은 무엇일까요?',o:['복잡한 코딩 명령어를 외워서 혼자 다 치는 것','원하는 앱의 목적과 기능을 말로 분명히 설명하고, 결과를 직접 시험하며 개선하는 것','AI가 만든 것은 틀린 게 없다고 무조건 믿는 것','다른 사람보다 무조건 제일 빨리 만드는 것'],a:1,e:'바이브코딩은 코드를 외우기보다 원하는 앱을 명확히 설명하고, 실제 실행 결과를 관찰하고 비교하며 함께 고쳐나가는 과정이에요.',skill:'바이브코딩의 핵심 가치와 태도',tip:'말로 설명하고 결과를 검증하며 발전시키는 문제 해결 역량을 정리합니다.'}]}
   };
@@ -1511,13 +1926,16 @@ L[11].empty=true;
     if(x.n===6){
       renderLab();
       wireFree();
+    }else if(x.n===12){
+      renderLab12();
+      wireFree();
     }else if(x.empty){
       makeNav();
       $('lesson').innerHTML='<div class="head"><div><div class="tags"><span class="tag mint">'+x.unit+'</span><span class="tag">심화 프로젝트</span><span class="tag">결과물 1개</span></div><h2>'+String(x.n).padStart(2,'0')+'차시 · '+x.title+'</h2><p class="intro">초등학교 3~4학년 · AI canvas를 활용한 나만의 프로젝트</p></div><div class="period-count">3교시</div></div>'
       +'<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><p>AI canvas로 나만의 인공지능 앱을 어떻게 완성하고 공유할 수 있을까요?</p></div>'
       +'<button type="button" class="btn-demo-toggle" id="demoToggleBtn" aria-expanded="false"><span>📱</span> <b>예시 앱 보기</b> <i class="demo-arrow">▼</i></button></div>'
       +'<div class="demo-app-container" id="demoAppBox" hidden>'
-      +'<div class="demo-app-header"><div><span class="demo-badge">체험용 시제품</span><b>'+x.title+' 예시 앱</b></div><button type="button" class="demo-close-btn" id="demoCloseBtn" title="닫기">✕</button></div>'
+      +'<div class="demo-app-header"><div><b>'+x.title+' 예시 앱</b></div><button type="button" class="demo-close-btn" id="demoCloseBtn" title="닫기">✕</button></div>'
       +'<div id="demoAppBody"></div></div>'
       +'<div class="tabs">'+TOPIC_TABS_EMPTY.map((t,i)=>'<button class="tab'+(i===0?' on':'')+'" data-i="'+i+'" type="button">'+t+'</button>').join('')+freeTabs+'</div><div class="panes"><div class="pane on" data-i="0"><div class="pmt"><b>📌 1교시 준비</b><p>AI canvas에서 진행할 프로젝트 주제와 필요한 데이터를 계획해요.</p></div></div><div class="pane" data-i="1"><div class="pmt"><b>📌 2교시 준비</b><p>인공지능 모델을 학습시키고 성능을 점검해요.</p></div></div><div class="pane" data-i="2"><div class="pmt"><b>📌 3교시 준비</b><p>완성된 모델을 연결하고 탐구보고서를 작성해요.</p></div></div>'+freePanes+'</div>';
       initDemoToggle(12);
