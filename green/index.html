@@ -507,6 +507,11 @@ body{line-height:1.8}
 @media (max-width:820px){
   #lesson .l6 .road,#lesson .l6 .wgrid{grid-template-columns:1fr}
 }
+.cover-actions{margin-top:18px}
+.head-side{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:flex-end}
+.report-link{font-size:16px;padding:4px 14px}
+@media (max-width:820px){.head-side{justify-content:flex-start}}
+@media print{.cover-actions,.report-link{display:none}}
 </style></head><body>
 <header class="cover">
   <div class="wrap">
@@ -520,6 +525,7 @@ body{line-height:1.8}
       <div><b>2</b><span>게임 제작 (5·10차시)</span></div>
       <div><b>2</b><span>AI canvas 교육 (6·12차시)</span></div>
     </div>
+    <div class="cover-actions"><a class="btn primary" href="green-report.html" target="_blank" rel="noopener">📝 탐구보고서 전체 보기 (1~12차시) ↗</a></div>
   </div>
 </header>
 
@@ -1934,4 +1940,25 @@ L[11].empty=true;
 
 document.head.appendChild(document.getElementById('theme'));
 render();
-</script></body></html>
+</script><script>
+/* 차시별 탐구보고서 연결: green-report.html#chasiN 로 이동 */
+(function(){
+  var REPORT='green-report.html';
+  function addReportLink(){
+    var x=L[idx]; if(!x) return;
+    var pc=document.querySelector('#lesson .head .period-count');
+    if(!pc || pc.parentNode.classList.contains('head-side')) return;
+    var side=document.createElement('div'); side.className='head-side';
+    pc.parentNode.insertBefore(side,pc); side.appendChild(pc);
+    var a=document.createElement('a');
+    a.className='btn primary report-link';
+    a.href=REPORT+'#chasi'+x.n; a.target='_blank'; a.rel='noopener';
+    a.textContent='📝 '+x.n+'차시 탐구보고서 열기 ↗';
+    side.insertBefore(a,pc);
+  }
+  var _render=render;
+  render=function(){ _render.apply(this,arguments); addReportLink(); };
+  addReportLink();
+})();
+</script>
+</body></html>
