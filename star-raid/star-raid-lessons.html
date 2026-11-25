@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스타레이드 제작 7차시(21교시) 수업 자료</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Jua&display=swap" rel="stylesheet">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap\" rel=\"stylesheet\">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap\" rel=\"stylesheet\">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap\" rel=\"stylesheet\">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap\" rel=\"stylesheet\">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap\" rel=\"stylesheet\">
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+<link href=\"https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap\" rel=\"stylesheet\">
+<style id="theme">:root{
+  --ink:#1f2a27; --muted:#62706b; --line:#e3e7e4; --soft:#f6f7f4; --bg:#f6fbf8; --card:#fff;
+  --acc:#2e8b57; --acc-d:#1d6a41; --acc-s:#e6f5ec;
+  --ok:#1f7a55;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:19px;line-height:1.7;word-break:keep-all}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+a{color:var(--acc-d);text-underline-offset:3px}
+h1,h2,h3,h4{line-height:1.3;margin:0}
+p{margin:.6em 0}
+
+/* cover */
+.cover{background:linear-gradient(160deg,#effaf3 0%,#d9f1e2 60%,#bfe5cf 100%);border-bottom:1px solid #b9dfc8;padding:56px 0 40px}
+.cover .tag{display:inline-block;font-size:16px;font-weight:700;color:var(--acc-d);background:#fff;border:1px solid #b9dfc8;border-radius:999px;padding:3px 12px}
+.cover h1{font-size:44px;font-weight:900;margin:16px 0 10px;letter-spacing:-.02em}
+.cover h1 span{color:var(--acc-d)}
+.cover .sum{max-width:720px;color:#2f4a3b;font-size:20px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:26px}
+.kpis div{background:rgba(255,255,255,.75);border:1px solid #b9dfc8;border-radius:14px;padding:14px 16px}
+.kpis b{display:block;font-size:33px;font-weight:900;color:var(--acc-d);font-variant-numeric:tabular-nums;line-height:1.1}
+.kpis span{font-size:16px;color:#4f6b5a}
+
+/* 메인 탭 (1. 수업 구성 / 2. 12차시 한눈에 보기 / 3. 차시별 수업) */
+.main-tabs-wrap{margin-top:20px;margin-bottom:8px}
+.main-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:8px}
+.mtab{display:flex;align-items:center;justify-content:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:18px;font-weight:700;color:var(--ink);cursor:pointer;transition:.15s}
+.mtab i{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--acc-d);font-style:normal;font-weight:900;font-size:15px;border:1px solid #b9dfc8;flex:none}
+.mtab:hover{border-color:var(--acc);color:var(--acc-d)}
+.mtab.active{background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 3px 8px rgba(46,139,87,.25)}
+.mtab.active i{background:#fff;color:var(--acc-d);border-color:#fff}
+@media (max-width:820px){.main-tabs{grid-template-columns:1fr}}
+
+/* 메인 패널 탭 전환 */
+.main-panel{display:none}
+.main-panel.active{display:block}
+
+/* 차시 바로가기 박스 */
+.lesson-picker-box{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:18px}
+.picker-title{display:flex;align-items:baseline;gap:10px;margin-bottom:12px}
+.picker-title b{font-size:19px;font-weight:900;color:var(--acc-d)}
+.picker-title small{font-size:15px;color:var(--muted);font-weight:500}
+
+/* toc = lesson picker */
+.toc{margin-top:0;margin-bottom:0}
+.toc .unit-label,.toc small{display:none}
+.toc .nav{display:flex;flex-wrap:wrap;gap:8px}
+.toc .nav button{display:inline-flex;align-items:center;gap:7px;font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 13px 5px 6px;cursor:pointer;width:auto;text-align:left}
+.toc .nav button:hover{border-color:var(--acc)}
+.toc .nav button b{font-size:16px;font-weight:500;line-height:1.3}
+.toc .nav .num{width:20px;height:20px;flex:none;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;font-size:15px;display:inline-flex;align-items:center;justify-content:center}
+.toc .nav button.active{background:var(--acc);border-color:var(--acc);color:#fff}
+.toc .nav button.active .num{background:#fff;color:var(--acc-d)}
+.toc .nav button.active b{font-weight:700}
+.toc .nav button:focus-visible,.tab:focus-visible,.btn:focus-visible{outline:3px solid #a8dbbd;outline-offset:2px}
+
+/* sections */
+.layout{display:block}
+main>section{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 32px 26px;margin:22px 0;scroll-margin-top:16px}
+.sec-no{position:absolute;top:28px;left:-14px;width:30px;height:30px;border-radius:9px;background:var(--acc);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 6px rgba(29,106,65,.25)}
+main h2{font-size:29px;font-weight:900;margin-bottom:12px;letter-spacing:-.01em}
+main h3{font-size:20px;font-weight:700;margin:26px 0 10px;padding-left:10px;border-left:4px solid var(--acc)}
+.muted{color:var(--muted);font-size:17px}
+.key{margin:14px 0 6px;background:var(--acc-s);border-radius:14px;padding:18px 22px;color:#25503a}
+.key b{display:block;font-size:24px;font-weight:900;color:var(--acc-d);margin-bottom:6px}
+
+/* key-value */
+.info{margin:14px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ir{display:grid;grid-template-columns:130px 1fr;border-top:1px solid var(--line)}
+.ir:first-child{border-top:0}
+.info dt{background:var(--soft);font-weight:700;padding:10px 14px;font-size:17px;color:#46524e}
+.info dd{margin:0;padding:10px 14px}
+
+/* flow */
+.flow3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:8px 0 6px}
+.fcol{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.fh{font-weight:900;font-size:19px;margin-bottom:8px}
+.fh em{font-style:normal;display:inline-block;background:var(--ink);color:#fff;font-size:15px;border-radius:6px;padding:1px 8px;margin-right:8px;vertical-align:2px}
+.fcol ol{margin:0;padding-left:20px;font-size:17px}
+.fcol li{margin:3px 0}
+.stages{list-style:none;counter-reset:s;padding:0;margin:10px 0;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.stages li{counter-increment:s;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:16px;display:flex;flex-direction:column;gap:2px}
+.stages li::before{content:counter(s);width:24px;height:24px;border-radius:50%;background:var(--acc);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.stages b{font-size:17px}
+.stages small{color:var(--acc-d);font-weight:700;font-size:15px}
+
+/* overview table */
+.scroll{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%}
+.grid{font-size:16px;min-width:900px}
+.grid th{background:var(--ink);color:#fff;font-weight:700;text-align:left;padding:9px 10px;font-size:16px;white-space:nowrap}
+.grid td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top}
+.grid tbody tr{cursor:pointer}
+.grid tbody tr:hover td{background:#f2fbf5}
+.grid tr.hl td{background:#f2fbf5}
+.grid .cn{font-weight:900;font-size:19px;color:var(--acc-d);text-align:center;font-variant-numeric:tabular-nums}
+.grid .concept{font-weight:700;min-width:150px}
+
+/* lesson */
+#lesson .head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+#lesson .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+#lesson .tag{display:inline-block;font-size:16px;font-weight:700;color:var(--acc-d);background:#fff;border:1px solid #b9dfc8;border-radius:999px;padding:3px 12px}
+#lesson .tag.mint{background:var(--acc-s)}
+#lesson h2{font-size:29px;font-weight:900;margin:0 0 6px}
+#lesson .intro{margin:0;color:var(--muted);font-size:17px}
+#lesson .period-count{font-size:16px;font-weight:700;color:var(--acc-d);background:var(--acc-s);border-radius:999px;padding:3px 12px;white-space:nowrap}
+#lesson .question{margin:18px 0 14px;background:var(--acc-s);border-radius:14px;padding:16px 22px;color:#25503a;border:0}
+#lesson .question small{display:block;font-size:16px;font-weight:700;color:var(--acc-d);margin-bottom:2px;letter-spacing:0}
+#lesson .question p{margin:0;font-size:23px;font-weight:900;color:var(--acc-d)}
+
+/* 예시 앱 토글 및 컨테이너 */
+.question-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:18px 0 14px;background:var(--acc-s);border-radius:18px;padding:18px 22px}
+.question-wrap .question{margin:0;padding:0;background:none;border-radius:0;flex:1}
+.btn-demo-toggle{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--acc);color:var(--acc-d);padding:10px 18px;border-radius:999px;font:inherit;font-size:17px;font-weight:900;cursor:pointer;white-space:nowrap;transition:.2s;box-shadow:0 3px 8px rgba(46,139,87,.15);flex:none}
+.btn-demo-toggle:hover{background:var(--acc-s);transform:translateY(-1px)}
+.btn-demo-toggle.active{background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 3px 10px rgba(29,106,65,.3)}
+.btn-demo-toggle .demo-arrow{font-style:normal;font-size:13px;transition:transform .2s;display:inline-block}
+.btn-demo-toggle.active .demo-arrow{transform:rotate(180deg)}
+.demo-app-container{background:#fffaf0;border:3px dashed #ffb48a;border-radius:28px;padding:22px;margin:0 0 20px;box-shadow:0 8px 0 #ffe3d0;animation:demoSlide .25s ease-out}
+@keyframes demoSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.demo-app-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.demo-app-header b{font-family:Jua,"Noto Sans KR",sans-serif;font-size:24px;color:#e8743b;font-weight:400}
+.demo-close-btn{background:none;border:0;color:var(--muted);font-size:22px;cursor:pointer;line-height:1;padding:4px 8px;border-radius:8px}
+.demo-close-btn:hover{background:var(--soft);color:var(--ink)}
+
+/* 예시 앱 내부 위젯 공통 스타일 */
+.mini-box{background:#fff;border:3px solid #ffe3d0;border-radius:24px;padding:18px;margin:8px 0}
+.mini-box>p:first-child{background:#fff3bf;border-radius:16px;padding:8px 14px;color:#8a5a00!important;font-weight:700}
+.mini-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.mini-input{flex:1;min-width:140px;padding:10px 14px;border:3px solid #ffd9c2;border-radius:16px;font:inherit;font-size:17px;background:#fffdf8}
+.mini-input:focus{outline:0;border-color:#ff8a5c;box-shadow:0 0 0 4px #ffe3d0}
+.mini-btn{font-family:Jua,"Noto Sans KR",sans-serif;font-size:18px;padding:9px 20px;border-radius:999px;border:0;background:#ff8a5c;color:#fff;cursor:pointer;white-space:nowrap;box-shadow:0 4px 0 #d9622f;transition:transform .1s,box-shadow .1s}
+.mini-btn:hover{filter:brightness(1.06)}
+.mini-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #d9622f}
+.mini-btn.alt{background:#fff;color:#e8743b;border:3px solid #ffd0b5;box-shadow:0 4px 0 #ffd0b5;padding:6px 16px}
+.mini-list{display:grid;gap:10px;margin-top:12px}
+.mini-item{background:#fff8ee;border:2px solid #ffe3c2;border-radius:18px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:17px}
+.mini-item.done{text-decoration:line-through;color:#a89b8c;background:#f3f0ea}
+.mini-item input[type=checkbox],.chip input{width:22px;height:22px;accent-color:#ff8a5c;vertical-align:-5px}
+.mini-acts{display:flex;gap:6px;align-items:center}
+.mini-item .edit-btn{background:#e3efff;border:0;cursor:pointer;font-size:15px;width:30px;height:30px;border-radius:50%}
+.mini-item .del-btn{background:#ffe1e6;border:0;color:#d6455d;font-weight:900;cursor:pointer;font-size:15px;width:30px;height:30px;border-radius:50%}
+.chip{background:#fff;border:3px solid #ffe3d0;border-radius:999px;padding:4px 14px;cursor:pointer;font-weight:700}
+.chip:has(input:checked){background:#fff3bf;border-color:#ffc93c}
+.game-canvas-wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+.game-cv{background:#fff6e8;border:4px solid #ffd0b5;border-radius:22px;box-shadow:0 6px 0 #ffe3d0;cursor:pointer;max-width:100%;touch-action:none}
+.btn-demo-toggle{font-family:Jua,"Noto Sans KR",sans-serif;font-weight:400;border:3px solid #ffb48a;color:#e8743b;box-shadow:0 4px 0 #ffd0b5}
+.btn-demo-toggle:hover{background:#fff3e8}
+.btn-demo-toggle.active{background:#ff8a5c;border-color:#ff8a5c;color:#fff;box-shadow:0 4px 0 #d9622f}
+.mini-btn.dayb{display:flex;flex-direction:column;align-items:center;line-height:1.15;padding:7px 14px;border:3px solid transparent}
+.mini-btn.alt.dayb{padding:7px 14px}
+.mini-btn .dd{font-family:"Noto Sans KR",sans-serif;font-size:12px;font-weight:700;opacity:.9}
+.mini-btn.sat{background:#4d8fe8;box-shadow:0 4px 0 #2f6fc2}
+.mini-btn.sun{background:#ee5a6f;box-shadow:0 4px 0 #c43c52}
+.mini-btn.sat:active{box-shadow:0 1px 0 #2f6fc2}
+.mini-btn.sun:active{box-shadow:0 1px 0 #c43c52}
+.mini-btn.alt.sat{background:#fff;color:#2f6fc2;border-color:#bcd6fb;box-shadow:0 4px 0 #bcd6fb}
+.mini-btn.alt.sun{background:#fff;color:#c43c52;border-color:#ffc4cc;box-shadow:0 4px 0 #ffc4cc}
+.p11-tabs{display:flex;gap:10px;margin:2px 0 12px}
+.p11-tabs .mini-btn{flex:1;font-size:19px}
+.p11-stage{background:linear-gradient(#e8f8ef,#f4fbe8);border:3px solid #cdeedb;border-radius:24px;padding:12px;text-align:center}
+.p11-stage.eye{background:linear-gradient(#e0f4ff,#e8fbef);border-color:#bfe6ff}
+.p11-svg{width:100%;max-width:560px;height:auto;max-height:290px;display:block;margin:0 auto}
+.p11-pick{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 10px}
+.p11-pick .mini-btn{font-size:16px;padding:7px 16px}
+.p11-say{background:#fff;border:3px solid #cfe8f7;border-radius:18px;padding:8px 14px;margin:0 auto 10px;max-width:520px}
+.p11-say small{display:block;font-weight:900;color:#2f8fd4;font-size:13px}
+.p11-say b{font-size:17px}
+.p11-chk{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px;text-align:left}
+.p11-chk label{display:flex;gap:10px;align-items:flex-start;background:#fff;border:2px solid #d6f0e0;border-radius:16px;padding:8px 12px;cursor:pointer;font-size:16px;line-height:1.45}
+.p11-chk li.on label{background:#e9f9ee;border-color:#8fd8ac}
+.p11-chk input{width:22px;height:22px;accent-color:#2e8b57;margin-top:2px;flex:none}
+.p11-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.p11-ex{background:#fff;border:3px solid #ffe3d0;border-radius:18px;padding:8px 4px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.p11-ex span{font-size:26px}
+.p11-ex.on{background:#fff3bf;border-color:#ffc93c}
+.p11-course{background:#fff;border:3px solid #cfe8f7;border-radius:20px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;text-align:left}
+.p11-bar{height:12px;background:#e1f1ff;border-radius:999px;overflow:hidden;margin-top:10px}
+.p11-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7cc9ff,#3fa4ff);transition:width .3s}
+.p11-tip{margin-top:10px;background:#fff3bf;color:#8a5a00;border-radius:14px;padding:8px 14px;font-weight:700;font-size:15px}
+@media (max-width:520px){.p11-grid{grid-template-columns:repeat(2,1fr)}}
+@keyframes p11Sit{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes p11Spine{0%,100%{stroke:#10b981;stroke-width:4.5;filter:drop-shadow(0 0 2px #10b981)}50%{stroke:#047857;stroke-width:6;filter:drop-shadow(0 0 6px #34d399)}}
+@keyframes p11Gaze{to{stroke-dashoffset:-20}}
+@keyframes p11Scan{0%{transform:translateY(0);opacity:.9}50%{transform:translateY(170px);opacity:.4}100%{transform:translateY(0);opacity:.9}}
+@keyframes p11Stand{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.015) translateY(-2px)}}
+@keyframes p11Belly{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.3) translateY(-2px)}}
+@keyframes p11Zzz{0%{transform:translate(0,0) scale(.8);opacity:0}50%{opacity:.9}100%{transform:translate(14px,-18px) scale(1.2);opacity:0}}
+@keyframes p11Blink{0%,92%,100%{transform:scaleY(0);opacity:0}95%{transform:scaleY(1);opacity:1}98%{transform:scaleY(0);opacity:0}}
+@keyframes p11Blink2{0%,100%{transform:scaleY(0);opacity:0}35%,65%{transform:scaleY(1);opacity:1}}
+@keyframes p11Roll{0%{transform:translate(0,0)}20%{transform:translate(0,-15px)}40%{transform:translate(16px,0)}60%{transform:translate(0,15px)}80%{transform:translate(-16px,0)}100%{transform:translate(0,-15px)}}
+@keyframes p11Focus{0%,100%{transform:scale(1);filter:drop-shadow(0 0 2px #38bdf8)}50%{transform:scale(.75);filter:drop-shadow(0 0 8px #0284c7)}}
+.p11-sit{animation:p11Sit 3.2s ease-in-out infinite;transform-origin:center bottom}
+.p11-spine{animation:p11Spine 2.4s ease-in-out infinite}
+.p11-gaze{animation:p11Gaze 1.2s linear infinite}
+.p11-stand{animation:p11Stand 3.5s ease-in-out infinite;transform-origin:center bottom}
+.p11-belly{animation:p11Belly 3.6s ease-in-out infinite;transform-origin:175px 125px}
+.p11-z1{animation:p11Zzz 3s ease-out infinite}
+.p11-z2{animation:p11Zzz 3s ease-out infinite 1.2s}
+.p11-iris{transition:transform .4s cubic-bezier(.25,1,.5,1);transform-origin:0 0}
+.p11-iris.roll{animation:p11Roll 2.6s linear infinite}
+.p11-iris.focus{animation:p11Focus 2s ease-in-out infinite}
+.p11-lid{animation:p11Blink 4s ease-in-out infinite;transform-origin:center}
+.p11-lid.fast{animation:p11Blink2 1.2s ease-in-out infinite}
+.w9-root{position:relative}
+.w9-sect{position:relative;border:3px solid #cfe8f7;border-radius:24px;padding:14px;overflow:hidden;transition:background .7s;background:linear-gradient(#e0f2fe,#eff6ff,#fffbeb)}
+.w9-bannerbox{position:absolute;top:8px;left:0;right:0;z-index:50;display:flex;justify-content:center;pointer-events:none;padding:0 12px}
+.w9-banner{background:linear-gradient(90deg,#f59e0b,#f97316);color:#fff;border:3px solid #fcd34d;border-radius:999px;padding:7px 16px;font-family:Jua,"Noto Sans KR",sans-serif;font-size:clamp(12px,3vw,15px);box-shadow:0 6px 14px rgba(245,158,11,.35);animation:w9Banner 2.2s ease-out forwards;text-align:center}
+.w9-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0}
+.w9-top small{display:block;font-weight:700;color:#2f8fd4;font-size:13px}
+.w9-top b{font-family:Jua,"Noto Sans KR",sans-serif;font-weight:400;font-size:22px;color:#0b4a72}
+.w9-top b span{color:#2f8fd4;font-size:32px}
+.w9-badge{background:rgba(255,255,255,.9);border:3px solid #cfe8f7;border-radius:999px;padding:4px 14px;font-family:Jua,"Noto Sans KR",sans-serif;font-size:16px;color:#0b4a72}
+.w9-bar{height:14px;background:rgba(255,255,255,.8);border:2px solid #cfe8f7;border-radius:999px;overflow:hidden;margin:6px 0 4px}
+.w9-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#7cc9ff,#3fa4ff);border-radius:999px;transition:width .5s}
+.w9-scene{position:relative;width:min(100%,500px);aspect-ratio:549/430;margin:10px auto 0;user-select:none}
+.w9-svg{width:100%;height:100%;display:block}
+.w9-tbl{position:absolute;inset:0;z-index:2;pointer-events:none}
+.w9-stu{position:absolute;left:50%;bottom:25.5%;width:41%;transform:translateX(-50%);z-index:1;pointer-events:none}
+.w9-body{position:relative;aspect-ratio:120/130;animation:w9Idle 3.2s ease-in-out infinite;transform-origin:50% 100%}
+.w9-body.gulp{animation:w9Gulp .85s ease-in-out}
+.w9-hand{position:absolute;top:38%;right:14%;font-size:clamp(24px,7vw,36px);transform:rotate(12deg);filter:drop-shadow(0 3px 3px rgba(0,0,0,.25))}
+.w9-hand[hidden]{display:none}
+.w9-say{position:absolute;left:50%;bottom:84%;transform:translateX(-50%);z-index:5;width:max-content;max-width:80%;text-align:center;background:#fff;border:3px solid #7cc9ff;border-radius:16px;padding:6px 12px;font-family:Jua,"Noto Sans KR",sans-serif;font-size:clamp(12px,3.2vw,16px);line-height:1.35;color:#0b4a72;transition:all .3s}
+.w9-say::after{content:"";position:absolute;left:50%;bottom:-9px;width:13px;height:13px;background:#fff;border-right:3px solid #7cc9ff;border-bottom:3px solid #7cc9ff;transform:translateX(-50%) rotate(45deg)}
+.w9-cups{position:absolute;left:8%;width:84%;bottom:23.5%;padding:0 5.7%;box-sizing:border-box;display:flex;justify-content:space-between;align-items:flex-end;z-index:3}
+.w9-cup{position:relative;width:17.2%;aspect-ratio:40/65;cursor:pointer;transition:all .4s;transform-origin:bottom}
+.w9-cup:hover{transform:scale(1.06)}
+.w9-cup.w9-drunk{opacity:.5}
+.w9-cup svg{filter:drop-shadow(0 3px 3px rgba(0,0,0,.28))}
+.w9-no{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:900;color:#fef3c7;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.w9-t{transition:all .7s ease-in-out}
+.w9-wave{animation:w9Wave 2.2s ease-in-out infinite;transform-origin:bottom center}
+.w9-p{position:absolute;pointer-events:none;font-size:20px;z-index:40}
+.w9-foot{margin-top:12px;padding-top:10px;border-top:2px solid rgba(207,232,247,.8);display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.w9-foot>.mini-btn{font-size:clamp(17px,4.4vw,23px);padding:12px 18px}
+.w9-foot>.mini-btn:disabled{opacity:.9;cursor:not-allowed;background:linear-gradient(90deg,#f59e0b,#eab308);box-shadow:0 4px 0 #b45309}
+.w9-row2{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.w9-status{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:13px;font-weight:700;color:#5a6a7a}
+.w9-status b{color:#2f8fd4}
+.w9-modal{position:absolute;inset:0;z-index:60;background:rgba(15,23,42,.55);display:flex;align-items:center;justify-content:center;padding:16px;border-radius:20px}
+.w9-modal[hidden]{display:none}
+.w9-mc{background:#fff;border:3px solid #fcd34d;border-radius:28px;padding:22px;max-width:340px;width:100%;text-align:center;transform:scale(.95);opacity:0;transition:all .3s}
+.w9-mc.on{transform:scale(1);opacity:1}
+.w9-mc h3{font-family:Jua,"Noto Sans KR",sans-serif;font-weight:400;font-size:26px;color:#78350f;margin:6px 0}
+.w9-mc p{font-size:15px;color:#475569;margin:6px 0;line-height:1.5}
+.w9-mc .w9-gift{background:#fffbeb;border:2px solid #fde68a;border-radius:16px;padding:8px;font-size:13px;font-weight:700;color:#92400e;margin:10px 0}
+@keyframes w9Idle{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-3px) rotate(-.6deg)}}
+@keyframes w9Gulp{0%{transform:translateY(0) scale(1) rotate(0)}25%{transform:translateY(-7px) scale(1.03) rotate(3deg)}50%{transform:translateY(-2px) scale(1.01) rotate(1deg)}75%{transform:translateY(-7px) scale(1.03) rotate(3deg)}100%{transform:translateY(0) scale(1) rotate(0)}}
+@keyframes w9Wave{0%,100%{transform:translateY(0) scaleY(1)}50%{transform:translateY(-2.5px) scaleY(1.05)}}
+@keyframes w9Banner{0%{transform:scale(.7) translateY(20px);opacity:0}20%{transform:scale(1.05) translateY(-3px);opacity:1}30%,85%{transform:scale(1) translateY(0);opacity:1}100%{transform:scale(.9) translateY(-15px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.mini-btn,.demo-app-container{transition:none;animation:none}}
+
+@media (max-width:820px){
+  .question-wrap{flex-direction:column;align-items:stretch}
+  .btn-demo-toggle{justify-content:center}
+}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 14px}
+.tab{flex:1 1 180px;font:inherit;font-size:17px;font-weight:700;color:#46524e;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:9px 14px;cursor:pointer;text-align:center}
+.tab:hover{border-color:var(--acc)}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:none}
+.panes{padding:0}
+.pane{display:none;padding:0;background:none;border:0}
+.pane.on{display:block}
+
+.pmt{margin:12px 0;background:var(--acc-s);border:0;border-radius:12px;padding:12px 16px;color:#25503a;font-size:17px}
+.pmt b{display:block;color:var(--acc-d);font-size:18px;font-weight:900;margin-bottom:2px}
+.pmt p{margin:4px 0 0;line-height:1.7}
+.pmt p b{display:inline;font-size:inherit;margin:0}
+.qt .qtx{font-style:normal;flex:1}
+
+.prompt-form{display:grid;gap:12px;margin:12px 0}
+.prompt-group{padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--soft)}
+.prompt-group h4{margin:0 0 8px;color:var(--ink);font-size:18px;font-weight:900;padding-left:10px;border-left:4px solid var(--acc)}
+.prompt-row{display:flex;align-items:center;gap:10px;margin:6px 0}
+.prompt-row span{flex:none;width:24px;height:24px;border-radius:50%;background:var(--acc);color:#fff;font-weight:900;font-size:15px;display:inline-flex;align-items:center;justify-content:center}
+.prompt-row input{min-width:0;flex:1;padding:9px 12px;border:1px solid #d9dfdb;border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:17px}
+.prompt-row input:focus{outline:3px solid #a8dbbd;border-color:var(--acc)}
+.line-actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.btn{font:inherit;font-size:16px;font-weight:700;border:1px solid #a8dbbd;background:#fff;color:var(--acc-d);border-radius:999px;padding:6px 14px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--acc-s)}
+.btn:disabled{opacity:.45;cursor:not-allowed;background:#fff}
+.line-actions .btn{font-size:16px;padding:6px 14px}
+.copy-student{background:var(--acc);border-color:var(--acc);color:#fff;font-size:17px;padding:9px 18px}
+.copy-student:hover{background:var(--acc-d)}
+.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:14px 0}
+.copy-msg{align-self:center;color:var(--ok);font-size:16px;font-weight:700}
+
+#lesson .section{display:block;font-size:20px;font-weight:700;margin:26px 0 10px;padding-left:10px;border-left:4px solid var(--acc);color:var(--ink)}
+#lesson .section:before{display:none}
+.report-label{display:block;margin:14px 0;color:var(--ink);font-size:17px;font-weight:700}
+.report-label textarea,.student-prompt{display:block;width:100%;min-height:72px;margin-top:6px;padding:10px 12px;border:1px solid #d9dfdb;border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:17px;line-height:1.7;resize:vertical}
+.report-label textarea:focus,.student-prompt:focus{outline:3px solid #a8dbbd;border-color:var(--acc)}
+.model{margin:10px 0;padding:11px 14px;border:1px solid #b9dfc8;border-radius:12px;background:var(--acc-s)}
+.model p,.model pre{color:#25503a;font:inherit;font-size:17px}
+
+/* teacher guide */
+.gd{margin-top:18px;border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+.gd summary{cursor:pointer;padding:12px 16px;font-size:17px;font-weight:700;color:var(--acc-d);background:var(--soft);list-style-position:inside}
+.gd[open] summary{border-bottom:1px solid var(--line)}
+.gd p{margin:10px 16px;font-size:17px;color:var(--ink)}
+.gd p b{color:var(--acc-d)}
+.gdt{overflow-x:auto;margin:10px 16px;border:1px solid var(--line);border-radius:10px}
+.gdt table{width:100%;border-collapse:collapse;font-size:16px;min-width:520px}
+.gdt th,.gdt td{border-top:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;color:var(--ink)}
+.gdt tr:first-child th,.gdt tr:first-child td{border-top:0}
+.gdt th{background:var(--soft);font-weight:700;color:#46524e;white-space:nowrap}
+.gdt tr:first-child th{background:var(--ink);color:#fff}
+.gdt td:first-child,.gdt td:nth-child(2){white-space:nowrap}
+.teacher-rationale h4{margin:16px 16px 4px;font-size:18px;font-weight:900;padding-left:10px;border-left:4px solid var(--acc);color:var(--ink)}
+.deliver{margin-top:18px;padding:14px 0 0;border:0;border-top:1px dashed var(--line);border-radius:0;background:none;color:#46524e;font-size:17px}
+.deliver b{color:var(--acc-d)}
+
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,12px);opacity:0;transition:.2s;background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;font-size:16px;font-weight:700;pointer-events:none;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.foot{color:#9aa5a1;font-size:15px;padding:10px 24px 40px;text-align:center}
+
+@media (max-width:820px){
+  .cover h1{font-size:33px}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .flow3{grid-template-columns:1fr}
+  .stages{grid-template-columns:1fr 1fr}
+  main>section{padding:24px 18px 20px}
+  .sec-no{left:auto;right:16px;top:20px}
+  .ir{grid-template-columns:96px 1fr}
+  #lesson .head{flex-direction:column}
+  .wrap{padding:0 14px}
+}
+@media print{
+  @page{size:A4;margin:12mm}
+  body{background:#fff;font-size:15px}
+  .toc{display:none}
+  .cover{padding:28px 0 22px}
+  main>section{break-inside:auto;border:0;padding:8px 0;margin:14px 0}
+  .sec-no{position:static;display:inline-flex;margin-bottom:6px}
+  .tabs{display:none}
+  .pane{display:block!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .scroll{overflow:visible}.grid{min-width:0;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* higher-specificity overrides for late-injected legacy styles */
+#lesson .teacher-rationale{margin:0;padding:0 0 12px;border:0;border-radius:0;background:none;color:var(--ink)}
+#lesson .teacher-rationale h4{margin:16px 16px 4px;font-size:18px;font-weight:900;padding-left:10px;border-left:4px solid var(--acc);color:var(--ink)}
+#lesson .teacher-rationale p{margin:8px 16px;font-size:17px;line-height:1.75;color:var(--ink)}
+#lesson .teacher-rationale p b{color:var(--acc-d)}
+#lesson .teacher-rationale table{width:100%;border-collapse:collapse;font-size:16px}
+#lesson .teacher-rationale th,#lesson .teacher-rationale td{padding:8px 10px;border:0;border-top:1px solid var(--line);text-align:left;vertical-align:top;color:var(--ink)}
+#lesson .teacher-rationale th{color:#46524e;background:var(--soft);white-space:nowrap}
+#lesson .teacher-rationale tr:first-child th{background:var(--ink);color:#fff;border-top:0}
+#lesson .gd{background:#fff;color:var(--ink)}
+#lesson .gd summary{color:var(--acc-d);background:var(--soft)}
+#lesson .gd p{color:var(--ink)}
+#lesson .gdt table{font-size:16px}
+#lesson .gdt th,#lesson .gdt td{border:0;border-top:1px solid var(--line);color:var(--ink)}
+#lesson .gdt th{background:var(--soft);color:#46524e}
+#lesson .gdt tr:first-child th{background:var(--ink);color:#fff;border-top:0}
+#lesson .prompt-group{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+#lesson .prompt-group h4{color:var(--ink);font-size:18px}
+#lesson .prompt-row span{color:#fff;font-size:15px;flex:none;width:24px}
+#lesson .prompt-row input{background:#fff;color:var(--ink);border:1px solid #d9dfdb;border-radius:10px;font:inherit;font-size:17px;padding:9px 12px}
+#lesson .report-label{color:var(--ink);font-size:17px}
+#lesson .report-label textarea,#lesson .student-prompt{background:#fff;color:var(--ink);border:1px solid #d9dfdb;border-radius:10px;font:inherit;font-size:17px}
+#lesson .model{background:var(--acc-s);border:1px solid #b9dfc8;color:#25503a}
+#lesson .copy-msg{color:var(--ok);font-size:16px}
+
+/* free-topic tab + blank form */
+.tab.free{border-style:dashed;border-color:var(--acc);color:var(--acc-d);background:#fff}
+.tab.free.on{background:var(--acc);color:#fff;border-style:solid}
+.report-label input.free-topic{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid #d9dfdb;border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:17px}
+.report-label input.free-topic:focus{outline:3px solid #a8dbbd;border-color:var(--acc)}
+.copy-free{background:var(--acc);border-color:var(--acc);color:#fff;font-size:17px;padding:9px 18px}
+.copy-free:hover{background:var(--acc-d)}
+.pane:empty{min-height:0}
+
+/* readability for grade 3-4 */
+body{line-height:1.8}
+.toc .nav button{padding:8px 16px 8px 8px;gap:9px}
+.toc .nav .num{width:26px;height:26px;font-size:15px}
+.tab{padding:13px 16px}
+.btn{padding:10px 20px}
+.line-actions .btn{padding:10px 18px}
+.copy-student,.copy-free{padding:13px 26px;font-size:18px}
+#lesson .prompt-row input,.prompt-row input,.report-label input.free-topic{padding:13px 15px;font-size:18px}
+.report-label textarea,#lesson .report-label textarea,.student-prompt{font-size:18px;min-height:96px;padding:13px 15px}
+.prompt-row span,#lesson .prompt-row span{width:30px;height:30px;font-size:15px}
+.prompt-group,#lesson .prompt-group{padding:18px 20px}
+.grid{min-width:1060px}
+.gdt table{min-width:620px}
+
+/* 6 tabs: 이번 주제 3 + 자유 주제 3 */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0 14px}
+.tab{flex:none;border-radius:18px;padding:12px 14px;line-height:1.35;min-height:64px;display:flex;align-items:center;justify-content:center;text-align:center}
+@media (max-width:820px){.tabs{grid-template-columns:1fr}}
+
+/* step headers (영상 보기 → 영상대로 쓰기) */
+.step-h{display:flex;align-items:center;gap:10px;margin:22px 0 10px;font-size:20px;font-weight:900;color:var(--acc-d)}
+.step-h:first-child{margin-top:6px}
+.step-h i{font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;flex:none}
+.step-h.watch i{background:var(--ink)}
+.step-h small{font-size:15px;font-weight:700;color:var(--muted)}
+
+/* 복습 퀴즈 */
+.quiz{background:#f1f9ee;border:2px solid var(--bd,#bfdcca);border-radius:18px;padding:18px 20px 16px;margin:6px 0 10px}
+.quiz-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.quiz-h b{font-size:21px;color:var(--acc-d);font-weight:900}
+.quiz-h small{font-size:15px;color:var(--muted);font-weight:700}
+.qq{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:12px 0}
+.qt{margin:0 0 10px;font-size:19px;font-weight:700;line-height:1.55;display:flex;gap:10px}
+.qt span{flex:none;width:32px;height:32px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900}
+.qo{display:grid;gap:8px}
+.qo button{font:inherit;font-size:18px;text-align:left;background:#fff;border:2px solid #d9dfdb;border-radius:12px;padding:12px 14px;cursor:pointer;color:var(--ink);line-height:1.45}
+.qo button:hover:not(:disabled){border-color:var(--acc);background:var(--acc-s)}
+.qo button:disabled{cursor:default;opacity:1;color:var(--ink)}
+.qo button.ok{border-color:var(--acc);background:var(--acc-s);font-weight:700}
+.qo button.no{border-color:#e3a14f;background:#fff4e2}
+.qe{margin:10px 0 0;padding:10px 14px;border-radius:10px;font-size:17px;line-height:1.6}
+.qe.good{background:var(--acc-s);color:var(--acc-d)}
+.qe.try{background:#fff4e2;color:#7a4a0a}
+.quiz-f{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+.qprog{font-size:16px;font-weight:700;color:var(--acc-d)}
+
+/* ───── 6차시 · AI canvas 스타일 ───── */
+#lesson .l6 .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:14px 0}
+#lesson .l6 .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:18px;padding:11px 22px}
+#lesson .l6 .btn.primary{background:var(--acc);border-color:var(--acc);color:#fff}
+#lesson .l6 .btn.primary:hover{background:var(--acc-d)}
+#lesson .l6 .hint{font-size:16px;color:var(--muted)}
+#lesson .l6 .road{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+#lesson .l6 .rg{background:var(--acc-s);border:1px solid #bfdcca;border-radius:14px;padding:10px 14px}
+#lesson .l6 .rg h4{font-size:17px;color:var(--acc-d);font-weight:900;margin:0 0 6px}
+#lesson .l6 .rg ol{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+#lesson .l6 .rg li{display:flex;align-items:center;gap:8px;font-size:16.5px}
+#lesson .l6 .rg li i{font-style:normal;flex:none;width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center}
+#lesson .l6 details.words{background:#fff;border:1px solid var(--line);border-radius:16px;margin:10px 0 4px}
+#lesson .l6 details.words summary{cursor:pointer;padding:12px 18px;font-weight:900;color:var(--acc-d);font-size:18px}
+#lesson .l6 .wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 18px;padding:0 18px 16px}
+#lesson .l6 .wgrid div{font-size:17px;line-height:1.6}
+#lesson .l6 .wgrid b{color:var(--acc-d)}
+
+#lesson .l6 h3.mis{font-size:20px;font-weight:900;margin:18px 0 8px;padding-left:10px;border-left:5px solid var(--acc);color:var(--ink)}
+#lesson .l6 .checks{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+#lesson .l6 .checks label{display:flex;gap:12px;align-items:flex-start;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--soft);cursor:pointer;font-size:18px;line-height:1.55}
+#lesson .l6 .checks input{width:24px;height:24px;margin-top:3px;accent-color:var(--acc);flex:none}
+#lesson .l6 .checks label:has(input:checked){background:var(--acc-s);border-color:#bfdcca}
+#lesson .l6 .act{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0}
+#lesson .l6 .act h4{font-size:20px;font-weight:900;margin:0 0 6px;color:var(--ink)}
+#lesson .l6 .act h4 span{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:0 10px;font-size:15px;margin-right:8px;vertical-align:2px}
+#lesson .l6 .act p.q{font-weight:700;margin:10px 0 4px}
+#lesson .l6 textarea,#lesson .l6 input[type=text],#lesson .l6 input[type=number]{width:100%;font:inherit;font-size:18px;line-height:1.7;padding:11px 14px;border:1px solid #d9dfdb;border-radius:12px;background:#fff;color:var(--ink)}
+#lesson .l6 textarea{min-height:92px;resize:vertical;display:block}
+#lesson .l6 textarea:focus,#lesson .l6 input:focus{outline:3px solid #a8dbbd;border-color:var(--acc)}
+#lesson .l6 .row{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+#lesson .l6 .row label{flex:1 1 180px;font-weight:700;font-size:16.5px}
+#lesson .l6 .row label input{margin-top:4px}
+#lesson .l6 .numbig{font-size:20px;font-weight:900;color:var(--acc-d)}
+
+#lesson .l6 .split{display:flex;height:54px;border-radius:14px;overflow:hidden;border:1px solid #bfdcca;margin:10px 0}
+#lesson .l6 .split div{display:flex;align-items:center;justify-content:center;font-weight:900;font-size:17px;color:#fff;white-space:nowrap}
+#lesson .l6 .split .tr{background:var(--acc);width:70%}
+#lesson .l6 .split .va{background:#d98e2f;width:30%}
+#lesson .l6 .gauge{position:relative;height:30px;border-radius:999px;overflow:hidden;display:flex;margin:12px 0 6px}
+#lesson .l6 .gauge i{display:block;height:100%}
+#lesson .l6 .gauge .g1{width:16.67%;background:#10b981}
+#lesson .l6 .gauge .g2{width:16.67%;background:#8bd450}
+#lesson .l6 .gauge .g3{width:33.33%;background:#f59e0b}
+#lesson .l6 .gauge .g4{width:33.33%;background:#dc2626}
+#lesson .l6 .pin{position:relative;height:26px}
+#lesson .l6 .pin b{position:absolute;top:0;transform:translateX(-50%);font-size:22px;line-height:1;transition:left .25s}
+#lesson .l6 .scale{display:flex;justify-content:space-between;font-size:14.5px;color:var(--muted)}
+#lesson .l6 .lvl{display:inline-block;margin-top:8px;padding:6px 16px;border-radius:999px;font-weight:900;font-size:19px;background:var(--acc-s);color:var(--acc-d)}
+#lesson .l6 .lvl.warn{background:#fff4e2;color:#7a4a0a}
+#lesson .l6 .gauge.acc .g1{width:30%;background:#dc2626}
+#lesson .l6 .gauge.acc .g2{width:40%;background:#f59e0b}
+#lesson .l6 .gauge.acc .g3{width:20%;background:#8bd450}
+#lesson .l6 .gauge.acc .g4{width:10%;background:#10b981}
+#lesson .l6 .btn.off{opacity:.55;pointer-events:none}
+#lesson .l6 .cmw{overflow-x:auto;margin-top:10px}
+#lesson .l6 .cm{width:100%;border-collapse:collapse;text-align:center;font-size:17px;background:#fff}
+#lesson .l6 .cm th,#lesson .l6 .cm td{border:1px solid var(--line);padding:9px 8px}
+#lesson .l6 .cm th{background:var(--soft)}
+#lesson .l6 .cm .ok{color:var(--acc-d);font-weight:900}
+#lesson .l6 .cm .bad{background:#ffe3e3;color:#b42318;font-weight:900}
+
+#lesson .l6 .leak-card{background:#fff3e0;border:2px solid #ffb74d;border-radius:14px;padding:16px 18px;margin:14px 0}
+#lesson .l6 .leak-card b{color:#d35400;font-size:19px}
+#lesson .l6 .node-flow-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:12px 0}
+#lesson .l6 .node-item{background:#fff;border:2px solid var(--acc);border-radius:12px;padding:12px;text-align:center}
+#lesson .l6 .node-item em{font-style:normal;display:block;font-size:14px;color:var(--muted);margin-top:4px}
+
+#lesson .l6 .guide .tw{overflow-x:auto;margin:10px 16px;border:1px solid var(--line);border-radius:10px}
+#lesson .l6 .guide table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:640px}
+#lesson .l6 .guide th,#lesson .l6 .guide td{padding:8px 10px;text-align:left;vertical-align:top;border-top:1px solid var(--line);color:var(--ink)}
+#lesson .l6 .guide tr:first-child th{background:var(--ink);color:#fff;border-top:0}
+#lesson .l6 .guide td:first-child,#lesson .l6 .guide td:nth-child(2){white-space:nowrap}
+#lesson .l6 .guide h4{margin:14px 16px 4px;padding-left:10px;border-left:4px solid var(--acc);font-size:17px}
+#lesson .l6 .guide ul{margin:6px 16px 12px 36px;padding:0;font-size:16.5px}
+#lesson .l6 .guide p{margin:10px 16px;font-size:16.5px}
+
+@media (max-width:820px){
+  #lesson .l6 .road,#lesson .l6 .wgrid{grid-template-columns:1fr}
+}
+</style>
+<style>
+.cover-actions{margin-top:18px}
+.sr-pane{display:none}.sr-pane.on{display:block}
+.sr-list{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px;font-size:18px}
+.sr-list li{background:#fff;border:1px solid #b9dfc8;border-radius:12px;padding:8px 14px}
+.report-label{display:block;margin:12px 0;font-weight:700}
+@media print{.cover-actions{display:none}}
+</style>
+</head>
+<body>
+<header class="cover"><div class="wrap">
+<div class="tag">2단계 그린 · 학생용 수업 자료 · 스타레이드 제작 프로젝트</div>
+<h1>우주 슈팅 게임 스타레이드를,<br><span>기능을 하나씩 붙여 완성해요</span></h1>
+<p class="sum">게임을 한 번에 만들어 달라고 하지 않아요. 요청하고, 직접 플레이하고, 어색한 곳을 고치고, 기능을 더하는 순서로 7차시 동안 완성해요.</p>
+<div class="kpis"><div><b>7</b><span>차시</span></div><div><b>21</b><span>교시 (교시당 40분 안팎)</span></div><div><b>12</b><span>무기 단계 (4단계 × 3)</span></div><div><b>30</b><span>웨이브 · 보스 3번</span></div></div>
+<div class="cover-actions"><a class="btn primary" href="star-raid.html" target="_blank" rel="noopener">🎮 완성된 스타레이드 먼저 해 보기 ↗</a></div>
+</div></header>
+<main class="wrap layout"><section class="main-panel active">
+<div class="lesson-picker-box"><div class="picker-title"><b>차시 바로가기</b><small>차시를 누르면 해당 수업으로 바로 바뀌어요</small></div><nav class="toc" aria-label="차시 고르기"><div id="nav"></div></nav></div>
+<div id="lesson"></div></section></main>
+<footer class="wrap foot">스타레이드 제작 7차시(21교시) 수업 자료 · 2026. 11. 25.</footer>
+<div id="toast" class="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let idx=0,tt;
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>e.classList.remove('show'),1500)}
+function copy(t){(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}a.remove()}).finally(()=>toast('요청문을 복사했어요'))}
+const ROLE='너는 초등학생이 즐기기 쉬운 웹 게임을 만드는 친절한 개발 도우미야.',KEEP='기존에 잘 작동하는 기능과 화면 모양은 그대로 유지해줘.',VERIFY='같은 순서로 다시 플레이해 보고, 기대한 결과가 나오면 해결이야.',UPKEEP='앞 차시까지 만든 조작, 발사, 점수 기능은 계속 잘 작동해야 해.';
+const NOTES=['오늘 내가 만든 것은 무엇인가요?','AI에게 한 요청 중 가장 잘 통한 문장은 무엇인가요?','어떤 문제를 찾았고, 어떻게 고쳤나요?','내가 더한 개선은 무엇이고 왜 필요한가요?','친구에게 알려 주고 싶은 점은 무엇인가요?'];
+const L=[
+{n:1,title:'출격 준비',concept:'화면 나누기 · 좌표 · 입력',q:'우주선이 키보드와 손가락을 따라 움직이게 하려면 화면을 어떻게 나누고 무엇을 요청해야 할까요?',
+ ctx:['스타레이드는 우주선을 움직여 적과 보스를 물리치는 세로형 우주 슈팅 게임이야.','사용자는 PC 키보드나 휴대폰 터치로 우주선을 자유롭게 움직이고 싶어 해.'],
+ scr:['왼쪽에는 세로로 긴 게임 화면을 보여줘.','오른쪽에는 SCORE, WAVE, SHIPS, WEAPON 상태 칸의 자리를 만들어줘.','아래쪽에는 FIRE 버튼, 일시정지 버튼, 이동 조작부를 나란히 놓아줘.'],
+ task:['화면 아래쪽에 우주선을 그려줘.','방향키나 이동 조작부를 움직이면 우주선이 그 방향으로 따라 움직이게 해줘.','왼쪽이나 오른쪽으로 움직이면 기체가 그쪽으로 기울고, 움직이는 동안 엔진 불꽃이 켜지게 해줘.'],
+ guard:['우주선이 게임 화면 밖으로 나가지 않게 해줘.','글자와 버튼은 휴대폰에서도 크고 알아보기 쉽게 해줘.','손가락으로 조작해도 화면이 확대되거나 흔들리지 않게 해줘.'],
+ ex:['왼쪽 방향키를 누르면 우주선이 왼쪽으로 가고 기체가 왼쪽으로 기울어야 해.','조작부 가운데를 누르지 않아도 손가락을 댄 곳에서 끌어당긴 방향으로 움직여야 해.'],
+ done:'방향키와 이동 조작부로 우주선이 부드럽게 움직이고, 화면 끝까지 밀어도 밖으로 나가지 않으면 완성이야.',
+ dbg:['우주선을 화면 끝까지 밀어도 게임 화면 안에 있어야 해.','우주선이 화면 밖으로 나가서 보이지 않아.','우주선을 오른쪽 끝까지 계속 밀어 보고 같은 문제가 나타나는지 확인해줘.','우주선의 위치가 게임 화면 안에서만 움직이도록 가장자리 한계를 정해줘.'],
+ up:['움직이는 우주선 뒤에서 별이 아래로 흐르는 배경을 더해줘.','우주선이 앞으로 날아가는 느낌이 나서 더 재미있어.','별은 게임 중에 계속 흐르고, 우주선 조작과 겹쳐도 방해하지 않아야 해.','별 때문에 게임이 느려지지 않게 개수를 알맞게 정해줘.','별이 흐르는 상태에서도 우주선이 잘 움직이면 완성이야.'],
+ ups:['별 배경 더하기','우주선 색을 내 마음대로 바꾸기','게임 화면 테두리 꾸미기']},
+{n:2,title:'발사와 점수판',concept:'발사체 · 사라짐 · 상태 표시',q:'발사체가 나가고 화면 위에서 사라지며, 점수와 웨이브가 보이게 하려면 무엇이 필요할까요?',
+ ctx:['앞 차시에서 만든 스타레이드를 이어서 만들어요. 이제 적을 맞힐 발사 기능이 필요해.','사용자는 발사 버튼을 누르고 점수와 웨이브를 보며 게임하고 싶어 해.'],
+ scr:['아래쪽 FIRE 버튼을 크게 보여줘.','오른쪽 상태 칸에 SCORE, WAVE, SHIPS(♥ ♥ ♥), WEAPON(LV 1)을 보여줘.','일시정지 버튼을 눌렀을 때 멈춤 글자가 보이게 해줘.'],
+ task:['FIRE 버튼이나 스페이스바를 누르면 우주선 위쪽으로 발사체가 나가게 해줘.','발사체는 위로 날아가다 화면 밖으로 나가면 사라지게 해줘.','시작할 때 SCORE는 000000, WAVE는 01, SHIPS는 ♥ ♥ ♥, WEAPON은 LV 1로 보여줘.','일시정지 버튼으로 게임을 멈추고 다시 이어갈 수 있게 해줘.'],
+ guard:['발사체가 너무 많이 쌓여 게임이 느려지지 않게 해줘.','FIRE를 꾹 눌러도 일정한 간격으로만 발사되게 해줘.'],
+ ex:['FIRE를 한 번 누르면 발사체가 위로 나가야 해.','일시정지를 누르면 우주선과 발사체가 모두 멈춰야 해.'],
+ done:'FIRE로 발사체가 나가고 화면 위에서 사라지며, 상태 칸에 처음 값이 보이면 완성이야.',
+ dbg:['FIRE를 꾹 눌러도 게임이 부드럽게 움직여야 해.','발사체를 많이 쏠수록 점점 게임이 느려져.','FIRE를 10초 동안 계속 눌러 보고 느려지는지 확인해줘.','화면 위로 나간 발사체는 목록에서 지워줘.'],
+ up:['발사할 때 짧은 효과음을 더해줘.','발사했다는 느낌이 소리로도 전해져서 더 재미있어.','FIRE를 누를 때마다 짧은 소리가 나고, 일시정지 중에는 소리가 나지 않아야 해.','소리가 너무 크거나 길지 않게 해줘.','발사할 때만 소리가 나고 게임이 느려지지 않으면 완성이야.'],
+ ups:['발사체 색깔 바꾸기','점수 숫자가 오를 때 반짝이기','일시정지 글자 꾸미기']},
+{n:3,title:'적 출현과 목숨',concept:'적 종류 · 체력 · 목숨',q:'크기가 다른 적의 체력을 따로 관리하고, 목숨이 줄면 게임이 끝나게 하려면 어떻게 할까요?',
+ ctx:['앞 차시까지 만든 스타레이드에 적과 목숨을 더해요.','사용자는 크기가 다른 적과 싸우며 목숨을 지키고 싶어 해.'],
+ scr:['게임 화면 위쪽에 적을 줄지어 보여줘.','소형, 중형, 대형 적을 크기로 구분해서 보여줘.','목숨을 모두 잃으면 게임오버 글자와 다시 시작 버튼을 보여줘.'],
+ task:['적을 소형(체력 2), 중형(체력 3), 대형(체력 4)으로 나눠줘.','발사체에 맞을 때마다 체력이 1씩 줄고 0이 되면 적이 터지며 점수가 오르게 해줘.','적이 화면 아래로 내려가면 사라지지 말고 위쪽에서 다시 돌아오게 해줘.','적이나 적 발사체에 맞으면 ♥가 하나 줄고, 모두 잃으면 게임오버가 되게 해줘.'],
+ guard:['적의 발사체는 천천히 날아와서 피할 수 있게 해줘.','맞은 직후에는 잠깐 다시 맞지 않게 해줘.'],
+ ex:['소형 적은 두 번 맞히면 터지고 대형 적은 네 번 맞혀야 터져야 해.','♥가 한 개 남았을 때 맞으면 게임오버 화면이 나와야 해.'],
+ done:'크기별로 맞아야 하는 횟수가 다르고, 목숨이 줄어 게임오버와 다시 시작까지 되면 완성이야.',
+ dbg:['소형 적은 두 번, 대형 적은 네 번 맞아야 터져야 해.','모든 적이 한 번만 맞아도 터져.','소형 적과 대형 적을 각각 한 번씩만 맞혀 보고 결과를 비교해줘.','적 종류마다 체력을 따로 저장하고, 발사체에 맞을 때 1씩 줄여줘.'],
+ up:['적이 터질 때 적의 색을 살린 폭발 효과를 더해줘.','적을 물리친 느낌이 눈에 잘 보여서 더 신나.','적이 터지는 자리에 짧은 폭발이 나타났다가 사라지게 해줘.','폭발 때문에 다른 적이나 발사체가 가려지지 않게 해줘.','모든 적이 터질 때 폭발이 보이고 게임이 느려지지 않으면 완성이야.'],
+ ups:['적 종류별로 색 다르게 하기','웨이브가 오를수록 적 늘리기','적 크기별로 점수를 다르게 주기']},
+{n:4,title:'무기와 보호막',concept:'무기 단계 · 아이템 · 최대값',q:'무기가 단계별로 강해지고 보호막이 최대 3개까지만 모이게 하려면 어떤 규칙이 필요할까요?',
+ ctx:['앞 차시까지 만든 스타레이드에 무기 업그레이드와 보호막을 더해요.','사용자는 적을 물리칠수록 무기가 강해지고, 위험할 때 보호막으로 버티고 싶어 해.'],
+ scr:['오른쪽 WEAPON 칸에 현재 무기 단계를 보여줘.','SHIPS 옆에 보호막 개수를 ◈ 모양과 숫자로 보여줘.','보호막이 있을 때 우주선 주위에 전기가 도는 둥근 효과를 보여줘.'],
+ task:['무기는 4단계로 만들고, 각 단계 안에서 세 번 더 강해지며 한 번에 나가는 발사체가 늘어나게 해줘. 1단계는 1·2·3발, 2단계는 2·3·4발, 3단계는 3·4·5발, 4단계는 4·5·6발이야.','1~2단계는 곧게 나가는 기본 발사체, 3~4단계는 적을 따라가는 유도 발사체로 해줘.','업그레이드 아이템을 먹으면 무기가 한 칸 강해지고, 맞으면 한 칸만 약해지게 해줘.','보호막 아이템을 먹으면 공격 한 번을 막고, 최대 3개까지만 모이게 해줘.'],
+ guard:['무기 단계는 가장 낮은 단계보다 내려가거나 가장 높은 단계를 넘지 않게 해줘.','보호막은 3개가 넘게 모이지 않게 해줘.'],
+ ex:['무기가 세 번째 칸에서 업그레이드를 먹으면 2단계 첫 칸이 되어 발사체가 2발 나가야 해.','보호막이 3개일 때 또 먹으면 보호막은 그대로이고 100점이 올라야 해.'],
+ done:'업그레이드로 발사체 수가 늘고 맞아도 무기가 한 칸만 내려가며, 보호막이 최대 3개이면 완성이야.',
+ dbg:['맞았을 때 무기가 한 칸만 약해져야 해.','한 번 맞았더니 무기가 1단계로 떨어져.','무기를 몇 번 강하게 만든 뒤 적에게 한 번 맞고 WEAPON 칸을 확인해줘.','맞았을 때 무기 단계는 한 칸만 내려가고, 가장 낮은 단계 아래로는 내려가지 않게 해줘.'],
+ up:['보호막을 정이십면체 모양의 전기 효과로 그려줘.','보호막이 몇 개 남았는지 눈으로 바로 알 수 있어서 좋아.','보호막 개수에 따라 효과의 투명도가 달라지게 해줘.','효과가 우주선을 가리지 않게 투명하게 해줘.','보호막 개수마다 효과가 다르게 보이고 우주선도 잘 보이면 완성이야.'],
+ ups:['유도 발사체 속도 조절하기','무기가 강해질 때 알림 소리 넣기','맞은 뒤 잠깐 반짝이는 무적 표시 넣기']},
+{n:5,title:'보스전과 보상',concept:'보스 패턴 · 체력 막대 · 보상',q:'10, 20, 30웨이브의 보스가 서로 다르게 싸우고 보상을 주게 하려면 무엇을 정해야 할까요?',
+ ctx:['앞 차시까지 만든 스타레이드에 10, 20, 30웨이브 보스를 더해요.','사용자는 큰 보스를 물리치고 특별한 보상을 얻고 싶어 해.'],
+ scr:['보스 위에 체력 막대를 보여줘.','10웨이브 보스 아래에 작은 소환물 3마리를 함께 보여줘.','30웨이브 보스 양옆에 소환물 2마리를 함께 보여줘.'],
+ task:['10, 20, 30웨이브에는 일반 적 대신 보스가 나오게 하고 체력은 300, 500, 800으로 해줘.','10웨이브 보스는 작은 소환물 3마리를 불러내 함께 싸우게 해줘.','20웨이브 보스는 화면 위에서 빠르게 돌진한 뒤 위쪽 가운데에서 다시 나타나게 해줘.','보스를 물리치면 보상 아이템이 떨어지고, 먹으면 우주선 곁에서 함께 싸우는 동료가 생기게 해줘.'],
+ guard:['보스의 공격은 천천히 퍼져서 피할 수 있게 해줘.','보스 체력 막대는 0보다 아래로 내려가지 않게 해줘.'],
+ ex:['20웨이브 보스는 돌진한 뒤에도 화면 안으로 돌아와서 계속 싸워야 해.','30웨이브 보스를 물리치면 양옆 소환물도 함께 사라져야 해.'],
+ done:'보스마다 체력과 공격이 다르고, 보스를 물리치면 보상이 나오며 싸움이 이어지면 완성이야.',
+ dbg:['20웨이브 보스는 돌진한 뒤 위쪽 가운데에서 다시 나타나야 해.','보스가 돌진하고 나서 화면 밖에서 돌아오지 않아.','20웨이브까지 가서 보스가 한 번 돌진한 뒤를 지켜봐줘.','돌진이 끝나면 보스가 화면 위쪽 가운데로 돌아와 다시 나타나게 해줘.'],
+ up:['보스의 공격 간격과 탄속을 알맞게 조절해줘.','너무 어렵거나 쉬우면 재미가 없어서 피할 수 있는 수준으로 맞추고 싶어.','보스의 발사 간격과 속도를 조금씩 바꿔 가며 여러 번 플레이해도 피할 수 있게 해줘.','보스를 물리칠 수 없을 만큼 어렵게 만들지 마.','여러 번 플레이해도 보스의 공격을 피할 수 있고 끝까지 싸울 수 있으면 완성이야.'],
+ ups:['보스 폭발 효과 키우기','보스마다 다른 색과 모양 정하기','보스 등장 때 경고 글자 띄우기']},
+{n:6,title:'내 그림으로 꾸미기',concept:'이미지 생성 · 투명 배경 · 그림 적용',tabs:['1교시 · 제미나이로 그림 그리기','2교시 · 그림 오류 찾고 고치기','3교시 · 그림 적용·탐구보고서'],
+ q:'도형으로 만든 우주선과 적을 내가 그린 그림으로 바꾸려면 어떤 그림을 어떻게 요청하고, 게임에는 어떻게 넣어야 할까요?',
+ p1:[['역할',['너는 우주 슈팅 게임에 쓸 그림을 그려 주는 친절한 일러스트레이터야.']],
+  ['배경과 목적',['나는 초등학생이고 우주 슈팅 게임 스타레이드에 쓸 그림을 만들고 있어.','그림은 게임 화면에 작게 보이니까 줄여도 모양이 또렷하게 보여야 해.']],
+  ['그릴 그림',['내 우주선 1장: 위쪽을 향한 파란색과 회색의 전투기.','소형, 중형, 대형 적 3장: 크기가 다른 우주 괴물.','보스 3종류와 소환물: 10웨이브는 보라색, 20웨이브는 초록색, 30웨이브는 붉은색 계열의 큰 괴물.','발사체: 내 발사체 2종류와 적 발사체를 세로로 길쭉하게.','아이템: 무기를 강하게 하는 표시와 보호막 표시.']],
+  ['그리는 순서와 모양',['한 번에 그림 한 장씩만 그려 줘. 먼저 내 우주선부터 그려 줘.','내 우주선과 내 발사체는 위쪽을, 적과 보스와 적 발사체는 아래쪽을 향하게 그려 줘.','마음에 드는 우주선이 나오면 그 그림과 같은 느낌으로 적, 보스, 발사체, 아이템을 차례로 그려 줘.']],
+  ['지켜야 할 점',['배경은 투명하게 그려 줘. 투명이 어려우면 배경을 한 가지 색으로만 칠해 줘.','그림을 가운데에 두고 가장자리가 잘리지 않게 여백을 남겨 줘.','글자, 숫자, 로고, 워터마크는 넣지 마.','유명한 게임이나 만화 캐릭터를 따라 그리지 마. 너무 무섭거나 잔인한 모습도 그리지 마.']],
+  ['예시',['예를 들어 소형 적은 작고 가벼워 보이는 푸른 해파리 모양 괴물로 그려 줘.','보스는 일반 적보다 훨씬 크고 강해 보이게, 무기 강화 아이템은 반짝이는 둥근 모양으로 그려 줘.']],
+  ['완성 확인',['모든 그림이 같은 그림체로 보이고, 작게 줄여도 무엇인지 알아볼 수 있으며, 우주선은 위쪽 적은 아래쪽을 향하면 완성이야.']]],
+ dbg:['그림을 게임에 넣으면 배경이 투명해서 뒤의 우주 배경이 그대로 보여야 해.','그림 둘레에 검은 사각형이 보여.','그림 두 개를 겹쳐 놓고 검은 사각형이 보이는지 확인해줘.','그림의 배경을 투명하게 바꾸고, 그림이 겹쳐도 검은 사각형이 보이지 않게 해줘.'],
+ dlist:['검은 사각형이나 체크무늬가 보여요 → 배경이 투명하지 않아요. 투명 배경으로 다시 그려 달라고 하거나 배경을 없애 달라고 요청해요.','우주선이 거꾸로 보여요 → 방향이 반대예요. 위쪽을 향하게 다시 그려 달라고 해요.','그림이 눌려 보여요 → 가로세로 비율이 달라졌어요. 원래 비율을 지켜 크기를 맞춰 달라고 해요.','그림마다 느낌이 달라요 → 마음에 드는 그림을 기준으로 같은 느낌으로 다시 그려 달라고 해요.','그림에 글자가 섞였어요 → 글자 없이 다시 그려 달라고 해요.'],
+ up:['내가 준비한 그림을 게임에 적용해줘. 우주선, 소형·중형·대형 적, 보스와 소환물, 발사체, 강화 아이템, 보호막 그림을 각각 알맞은 자리에 보여줘.','내가 그린 그림이 나오면 나만의 게임이라는 느낌이 들어서 좋아.','그림은 투명 배경으로 넣고, 원래 비율을 지켜 크기를 맞추고, 겹쳐도 검은 사각형이 보이지 않게 해줘.','그림 때문에 맞는 위치가 어긋나거나 게임이 느려지지 않게 해줘.','모든 그림이 알맞은 자리에 보이고 겹쳐도 검은 사각형이 없으면 완성이야.'],
+ sheet:['내 우주선 1장','적 3장 (소형, 중형, 대형)','아이템 2장 (무기 강화, 보호막)','내 발사체 2장 (기본, 유도)','적 발사체 3장 (소형, 중형, 대형 적)','10웨이브 보스 1장 + 소환물 1장 + 소환물 발사체 1장','20웨이브 보스 2장 (평소, 돌진) + 발사체 1장','30웨이브 보스 1장 + 소환물 1장 + 발사체 1장'],
+ ups:['폭발 효과 색을 그림의 색에 맞추기','적이 터질 때 그림이 번쩍이게 하기','그림을 더 다듬어 다시 그려 보기'],
+ tip:'교사 안내: 이미지 생성 도구는 학교·기관의 사용 기준과 연령 기준을 먼저 확인해요. 그림 도구가 투명 배경을 바로 만들지 못하면 배경을 한 가지 색으로 칠하게 한 뒤 코딩 AI에게 배경 제거를 요청해요.'},
+{n:7,title:'완성과 공유',concept:'닉네임 · 기록 저장 · 배포',q:'30웨이브를 깨고 내 기록을 남겨 친구와 겨루려면 마지막에 무엇이 더 필요할까요?',
+ ctx:['앞 차시까지 만든 스타레이드를 끝까지 플레이하고 친구에게 공유하는 게임으로 완성해요.','사용자는 30웨이브를 깨고 내 닉네임으로 기록을 남겨 친구와 겨루고 싶어 해.'],
+ scr:['시작 화면에 영어 3글자 닉네임 선택 칸과 출격 버튼을 보여줘.','시작, 게임오버, 클리어 화면에 TOP 5 기록을 보여줘.','30웨이브 보스를 물리치면 MISSION CLEAR와 제작자 이름이 마지막 전투 화면 위로 올라오게 해줘.'],
+ task:['처음에 영어 3글자 닉네임을 고르게 해줘.','게임이 끝나면 닉네임과 점수를 AI Canvas 데이터 저장소에 보내 저장해줘.','시작 화면에서 저장된 기록 중 점수가 높은 5개를 불러와 보여줘.','끝난 뒤에는 다시 시작 버튼으로 처음부터 다시 플레이하게 해줘.'],
+ guard:['이름이나 전화번호 같은 개인정보가 들어가지 않게 영어 3글자만 받아줘.','개인 인증 키(Bearer 키)는 코드에 넣지 마.'],
+ ex:['ACE로 5000점을 얻고 끝내면 TOP 5에 ACE와 5000점이 나타나야 해.','기록을 불러오지 못하면 “기록을 불러오지 못했어요”라고 알려줘.'],
+ done:'닉네임을 고르고 끝까지 플레이한 뒤 TOP 5가 보이며, PC·태블릿·휴대폰에서 모두 열리면 완성이야.',
+ dbg:['새로고침해도 TOP 5 기록이 그대로 보여야 해.','새로고침하면 방금 남긴 기록이 사라져.','점수를 남긴 뒤 새로고침하고 TOP 5를 다시 확인해줘.','게임이 끝나면 닉네임과 점수를 데이터 저장소에 보내고, 시작 화면에서 다시 불러와 보여줘.'],
+ up:['끝난 뒤 TOP 5 목록에서 내 닉네임 줄만 다른 색으로 보여줘.','내 기록이 몇 등인지 한눈에 알 수 있어서 좋아.','게임이 끝난 뒤 TOP 5에 내 닉네임과 점수가 있으면 그 줄을 강조해줘.','다른 사람의 닉네임과 점수는 그대로 보여줘.','TOP 5에서 내 줄만 다르게 보이고 순위 순서는 그대로면 완성이야.'],
+ ups:['AI Canvas 배포 노드로 주소를 만들고 QR코드로 휴대폰에서 열기','PC, 태블릿, 휴대폰에서 화면과 조작 점검하기','크레딧에 어울리는 음악 넣기','내 그림이 들어간 완성 화면을 캡처해 친구에게 소개하기'],
+ tip:'교사 안내: 배포 주소(API URL)는 공개 주소라서 코드에 넣어도 되지만, 개인 Bearer 키는 절대 코드에 넣지 않아요.'}
+];
+const row=(i,v)=>'<label class="prompt-row"><span>'+i+'</span><input type="text" value="'+esc(v)+'"></label>';
+const group=(t,rows)=>'<section class="prompt-group"><h4>'+t+'</h4><div class="prompt-rows">'+rows.map((v,i)=>row(i+1,v)).join('')+'</div><div class="line-actions"><button type="button" class="btn add-line"'+(rows.length>=12?' disabled':'')+'>＋ 문장 추가</button><button type="button" class="btn remove-line"'+(rows.length<=1?' disabled':'')+'>－ 마지막 문장 지우기</button></div></section>';
+const form=(gs,label)=>'<form class="prompt-form">'+gs.map(g=>group(g[0],g[1])).join('')+'<div class="actions"><button type="button" class="btn copy-student">'+label+'</button></div></form>';
+function makeNav(){$('nav').innerHTML='<div class="nav">'+L.map((x,i)=>'<button class="'+(idx===i?'active':'')+'" data-i="'+i+'"><span class="num">'+x.n+'</span><span><b>'+esc(x.title)+'</b><small>'+esc(x.concept)+'</small></span></button>').join('')+'</div>';
+ document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{idx=+b.dataset.i;render()})}
+function render(){const x=L[idx];makeNav();
+ const tabs=x.tabs||['1교시 · AI 요청문 작성','2교시 · 오류 찾고 고치기','3교시 · 앱 개선·탐구보고서'];
+ const step=(n,t)=>'<div class="step-h"><i>'+n+'</i>'+t+'</div>';
+ const p1=step('①','영상 보기')+'<div class="pmt"><b>▶️ 영상에서 찾아요</b><p>영상을 보며 역할, 배경과 목적, 화면, 기능과 순서, 지켜야 할 점, 예시, 완성 확인이 어떤 문장인지 찾아요.</p></div>'+step('②','영상대로 AI 요청문 쓰기')+'<div class="pmt"><b>🎯 AI 요청문을 완성해요</b><p>각 칸에 모범 문장이 들어 있어요. 문장은 칼럼마다 최대 12줄까지 추가할 수 있어요.</p></div>'+
+  form(x.p1||[['역할',[ROLE]],['배경과 목적',x.ctx],['만들어야 할 화면',x.scr],['기능과 순서',x.task],['지켜야 할 점',x.guard],['예시',x.ex],['완성 확인',[x.done]]],x.p1?'그림 요청문 복사':'완성한 AI 요청문 복사')+'<div class="pmt"><b>확인하기</b><p>'+(x.p1?'역할, 배경과 목적, 그릴 그림, 그리는 순서와 모양, 지킬 점, 예시, 완성 확인 문장이 모두 들어갔나요?':'역할, 배경과 목적, 화면, 기능, 지킬 점, 예시, 완성 확인 문장이 모두 들어갔나요?')+'</p></div>';
+ const d=x.dbg,p2=step('①','영상 보기')+'<div class="pmt"><b>▶️ 영상에서 찾아요</b><p>기대한 동작과 실제 동작이 어떻게 다른지, 문제가 생기는 순서는 무엇인지, 한 번에 한 가지씩 고치는 요청은 어떻게 쓰는지 확인해요.</p></div>'+step('②','영상대로 오류 찾고 고치기 쓰기')+'<div class="pmt"><b>🪲 오류를 고치는 요청을 완성해요</b><p>스타레이드를 직접 플레이하며 문제를 찾고, 한 문장씩 입력해요.</p></div>'+
+  form([['기대와 실제',[d[0],d[1]]],['문제 재현',[d[2]]],['수정 요청',[d[3],KEEP]],['수정 확인',[VERIFY]]],'수정 요청 복사')+(x.dlist?'<div class="pmt"><b>🧩 자주 생기는 그림 문제</b></div><ul class="sr-list">'+x.dlist.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ul>':'');
+ const u=x.up,p3=step('①','영상 보기')+'<div class="pmt"><b>▶️ 영상에서 찾아요</b><p>새 기능을 요청하는 방법(추가할 기능, 필요한 까닭과 사용 방법, 지켜야 할 점, 완성 확인)과 탐구보고서 다섯 가지 질문에 답하는 방법을 확인해요.</p></div>'+step('②','영상대로 앱 개선 요청 쓰기')+'<div class="pmt"><b>🚀 앱 개선 요청을 완성해요</b><p>새 기능과 필요한 까닭, 사용 방법을 문장별로 입력해요.</p></div>'+
+  form([['추가할 기능',[u[0]]],['필요한 까닭과 사용 방법',[u[1],u[2]]],['지켜야 할 점',[u[3],UPKEEP]],['완성 확인',[u[4]]]],'앱 개선 요청 복사')+
+  (x.sheet?'<div class="pmt"><b>🖼 준비할 그림 20장</b><p>게임에 넣을 그림을 하나씩 확인해요.</p></div><ul class="sr-list">'+x.sheet.map(v=>'<li><label><input type="checkbox"> '+esc(v)+'</label></li>').join('')+'</ul>':'')+'<div class="pmt"><b>💡 다른 개선 아이디어</b></div><ul class="sr-list">'+x.ups.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ul>'+(x.tip?'<div class="pmt"><b>👩‍🏫</b><p>'+esc(x.tip)+'</p></div>':'')+
+  step('③','탐구 노트 쓰기')+NOTES.map((q,i)=>'<label class="report-label">'+(i+1)+'. '+esc(q)+'<textarea rows="3" style="width:100%;font:inherit;font-size:17px"></textarea></label>').join('');
+ $('lesson').innerHTML='<div class="head"><div><div class="tags"><span class="tag mint">스타레이드 '+x.n+'/7</span><span class="tag">'+esc(x.concept)+'</span><span class="tag">결과물 1개</span></div><h2>'+String(x.n).padStart(2,'0')+'차시 · '+esc(x.title)+'</h2><p class="intro">초등학교 3~4학년 · 앞 차시에서 만든 게임에 기능을 하나씩 더하며 완성해요.</p></div><div class="period-count">3교시</div></div>'+
+  '<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><b>'+esc(x.q)+'</b></div></div>'+
+  '<div class="tabs">'+tabs.map((t,i)=>'<button class="tab'+(i?'':' on')+'" data-i="'+i+'">'+t+'</button>').join('')+'</div>'+
+  [p1,p2,p3].map((h,i)=>'<div class="sr-pane'+(i?'':' on')+'">'+h+'</div>').join('');
+ document.querySelectorAll('#lesson .tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('#lesson .tab').forEach(t=>t.classList.toggle('on',t===b));document.querySelectorAll('#lesson .sr-pane').forEach((p,i)=>p.classList.toggle('on',i===+b.dataset.i))})}
+document.addEventListener('click',e=>{const b=e.target.closest('.add-line,.remove-line,.copy-student');if(!b)return;
+ if(b.classList.contains('copy-student')){copy([...b.closest('form').querySelectorAll('.prompt-group')].map(g=>g.querySelector('h4').textContent+'\n'+[...g.querySelectorAll('input')].map(i=>i.value.trim()).filter(Boolean).join('\n')).join('\n\n'));return}
+ const g=b.closest('.prompt-group'),rows=g.querySelector('.prompt-rows'),n=rows.children.length;
+ if(b.classList.contains('add-line')&&n<12)rows.insertAdjacentHTML('beforeend',row(n+1,''));
+ if(b.classList.contains('remove-line')&&n>1)rows.lastElementChild.remove();
+ const m=rows.children.length;g.querySelector('.add-line').disabled=m>=12;g.querySelector('.remove-line').disabled=m<=1});
+render();
+</script>
+
+</body>
+</html>
