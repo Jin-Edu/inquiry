@@ -103,6 +103,23 @@ a.card:hover .cta .ar{transform:translateX(5px)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,191,113,.55)}100%{box-shadow:0 0 0 9px rgba(47,191,113,0)}}
 .card.ready .step{margin-top:26px}
 
+/* 단계 아래 바로가기 */
+.col{display:flex; flex-direction:column; gap:14px}
+.col>.card{flex:1}
+.sub{
+  --c:#2e8b57; display:flex; align-items:center; gap:14px; padding:14px 18px; text-decoration:none; color:inherit;
+  background:#fff; border:2px solid var(--c); border-radius:22px; box-shadow:0 8px 24px rgba(20,60,45,.08);
+  opacity:0; transform:translateY(14px); animation:rise .6s ease .35s forwards;
+  transition:transform .22s ease, box-shadow .22s ease;
+}
+.sub:hover,.sub:focus-visible{transform:translateY(-4px); box-shadow:0 14px 32px rgba(20,60,45,.16)}
+.sub:focus-visible{outline:4px solid var(--c); outline-offset:3px}
+.sub .ico{flex:none; width:54px; height:54px; border-radius:16px; background:var(--c); display:grid; place-items:center; font-size:28px}
+.sub b{display:block; font-size:19px; font-weight:900; line-height:1.3}
+.sub small{display:block; color:var(--muted); font-size:14.5px; line-height:1.4}
+.sub .ar{margin-left:auto; flex:none; font-size:22px; font-weight:900; color:var(--c); transition:transform .2s}
+.sub:hover .ar{transform:translateX(5px)}
+
 /* locked */
 .card.locked{box-shadow:0 4px 14px rgba(20,60,45,.05); cursor:default}
 .card.locked .band{filter:saturate(.55) brightness(1.04)}
@@ -123,9 +140,9 @@ footer{padding:34px 24px 46px; text-align:center; color:#7d8a85; font-size:14.5p
   .name{font-size:32px}
 }
 @media (prefers-reduced-motion:reduce){
-  .card{animation:none; opacity:1; transform:none; transition:none}
+  .card,.sub{animation:none; opacity:1; transform:none; transition:none}
   .open-chip i{animation:none}
-  .cta .ar{transition:none}
+  .cta .ar,.sub .ar{transition:none}
 }
 </style>
 </head>
@@ -149,7 +166,7 @@ footer{padding:34px 24px 46px; text-align:center; color:#7d8a85; font-size:14.5p
   <div class="track" aria-hidden="true"></div>
   <div class="grid" id="grid"></div>
   <p class="now" id="now"></p>
-  <noscript><p class="now"><a href="green/">2단계 그린 시작하기</a></p></noscript>
+  <noscript><p class="now"><a href="green/">2단계 그린 시작하기</a> · <a href="star-raid/star-raid-lessons.html">스타레이드 학습 시작하기</a></p></noscript>
 </main>
 
 <footer>AI 디지털 리터러시 인쿼리 교육과정</footer>
@@ -170,7 +187,8 @@ var STAGES = [
     href:'green/', ready:true,
     title:'AI로 앱·게임 만들기',
     desc:'생활에 필요한 앱과 게임을 말로 설명해서 만들고, 더 좋게 고쳐요.',
-    items:['AI 요청문 쓰기','오류 찾고 고치기','앱 개선과 탐구보고서','내가 정한 자유 주제로 도전'] },
+    items:['AI 요청문 쓰기','오류 찾고 고치기','앱 개선과 탐구보고서','내가 정한 자유 주제로 도전'],
+    sub:{ href:'star-raid/star-raid-lessons.html', icon:'🚀', title:'스타레이드 학습 시작하기', desc:'우주 슈팅 게임을 7차시로 만들어요' } },
   { no:3, name:'레드', color:'#d64545', ink:'#ffffff', soft:'#fde8e8',
     href:'red/', ready:false,
     title:'준비 중이에요',
@@ -196,7 +214,13 @@ var STAGES = [
       + (s.ready ? '시작하기 <span class="ar" aria-hidden="true">→</span>' : '준비 중')
       + '</span></div>';
     if (s.ready){
-      return '<a class="card ready" style="'+style+'" href="'+s.href+'" aria-label="'+s.no+'단계 '+s.name+' 시작하기">'+inner+'</a>';
+      var card = '<a class="card ready" style="'+style+'" href="'+s.href+'" aria-label="'+s.no+'단계 '+s.name+' 시작하기">'+inner+'</a>';
+      if (!s.sub) return card;
+      var sub = '<a class="sub" style="'+style+'" href="'+s.sub.href+'" aria-label="'+s.sub.title+'">'
+        + '<span class="ico" aria-hidden="true">'+s.sub.icon+'</span>'
+        + '<span><b>'+s.sub.title+'</b><small>'+s.sub.desc+'</small></span>'
+        + '<span class="ar" aria-hidden="true">→</span></a>';
+      return '<div class="col">'+card+sub+'</div>';
     }
     return '<div class="card locked" style="'+style+'" role="group" aria-label="'+s.no+'단계 '+s.name+' 준비 중">'+inner+'</div>';
   }).join('');
