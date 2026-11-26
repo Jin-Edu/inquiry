@@ -536,6 +536,8 @@ body{line-height:1.8}
 .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:8px 0}
 .chip{background:#fff;border:2px solid #2e8b57;border-radius:12px;padding:6px 12px;font-weight:700;font-size:16px}
 .arr{color:#2e8b57;font-weight:900}
+.prompt-row textarea{flex:1;min-width:0;width:100%;resize:none;overflow:hidden;font:inherit;font-size:17px;line-height:1.55;padding:11px 14px;border:1px solid #cfe0d6;border-radius:14px;background:#fff;color:inherit}
+.prompt-row textarea:focus{outline:3px solid #9fd8b6;border-color:#2e8b57}
 .sr-pane{display:none}.sr-pane.on{display:block}
 .sr-list{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px;font-size:18px}
 .sr-list li{background:#fff;border:1px solid #b9dfc8;border-radius:12px;padding:8px 14px}
@@ -677,7 +679,7 @@ const L=[
  deploy:['페이지(샌드박스 넣기) → 애플리케이션 → 배포하기 노드로 게임을 배포하고 주소를 받아요','데이터 추가·데이터 보기 워크플로우 API 주소가 게임 코드에 들어 있는지 확인해요','배포 주소에서 콜사인을 고르고 한 판을 끝까지 해요','순위에 내 기록이 저장되고 보이는지 확인해요','PC, 태블릿, 휴대폰에서 모두 열어 봐요','코드를 고친 뒤에는 페이지(샌드박스 넣기)에서 고치고 다시 배포해요'],
  tip:'교사 안내: 배포 주소를 QR코드로 만들어 칠판에 띄우면 학생들이 각자 휴대폰으로 바로 열어 볼 수 있어요.'}
 ];
-const row=(i,v)=>'<label class="prompt-row"><span>'+i+'</span><input type="text" value="'+esc(v)+'"></label>';
+const row=(i,v)=>'<label class="prompt-row"><span>'+i+'</span><textarea rows="1">'+esc(v)+'</textarea></label>';
 const group=(t,rows)=>'<section class="prompt-group"><h4>'+t+'</h4><div class="prompt-rows">'+rows.map((v,i)=>row(i+1,v)).join('')+'</div><div class="line-actions"><button type="button" class="btn add-line"'+(rows.length>=12?' disabled':'')+'>＋ 문장 추가</button><button type="button" class="btn remove-line"'+(rows.length<=1?' disabled':'')+'>－ 마지막 문장 지우기</button></div></section>';
 const form=(gs,label)=>'<form class="prompt-form">'+gs.map(g=>group(g[0],g[1])).join('')+'<div class="actions"><button type="button" class="btn copy-student">'+label+'</button></div></form>';
 const flowCard=n=>'<div class="pmt"><b>🔗 '+esc(n.t)+'</b><div class="flow">'+n.flow.map(v=>'<span class="chip">'+esc(v)+'</span>').join('<span class="arr" aria-hidden="true">'+(n.sep||'→')+'</span>')+'</div><p>'+esc(n.note)+'</p></div>';
@@ -701,11 +703,16 @@ function render(){const x=L[idx];makeNav();
   '<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><b>'+esc(x.q)+'</b></div></div>'+
   '<div class="tabs">'+tabs.map((t,i)=>'<button class="tab'+(i?'':' on')+'" data-i="'+i+'">'+t+'</button>').join('')+'</div>'+
   [p1,p2,p3].map((h,i)=>'<div class="sr-pane'+(i?'':' on')+'">'+h+'</div>').join('');
- document.querySelectorAll('#lesson .tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('#lesson .tab').forEach(t=>t.classList.toggle('on',t===b));document.querySelectorAll('#lesson .sr-pane').forEach((p,i)=>p.classList.toggle('on',i===+b.dataset.i))})}
+ document.querySelectorAll('#lesson .tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('#lesson .tab').forEach(t=>t.classList.toggle('on',t===b));document.querySelectorAll('#lesson .sr-pane').forEach((p,i)=>p.classList.toggle('on',i===+b.dataset.i));fitAll()});fitAll()}
+const fit=t=>{t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px'};
+const fitAll=()=>document.querySelectorAll('.sr-pane.on .prompt-row textarea').forEach(fit);
+document.addEventListener('input',e=>{if(e.target.matches('.prompt-row textarea'))fit(e.target)});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.prompt-row textarea'))e.preventDefault()});
+window.addEventListener('resize',fitAll);
 document.addEventListener('click',e=>{const b=e.target.closest('.add-line,.remove-line,.copy-student');if(!b)return;
- if(b.classList.contains('copy-student')){copy([...b.closest('form').querySelectorAll('.prompt-group')].map(g=>g.querySelector('h4').textContent+'\n'+[...g.querySelectorAll('input')].map(i=>i.value.trim()).filter(Boolean).join('\n')).join('\n\n'));return}
+ if(b.classList.contains('copy-student')){copy([...b.closest('form').querySelectorAll('.prompt-group')].map(g=>g.querySelector('h4').textContent+'\n'+[...g.querySelectorAll('textarea')].map(i=>i.value.trim()).filter(Boolean).join('\n')).join('\n\n'));return}
  const g=b.closest('.prompt-group'),rows=g.querySelector('.prompt-rows'),n=rows.children.length;
- if(b.classList.contains('add-line')&&n<12)rows.insertAdjacentHTML('beforeend',row(n+1,''));
+ if(b.classList.contains('add-line')&&n<12){rows.insertAdjacentHTML('beforeend',row(n+1,''));fit(rows.lastElementChild.querySelector('textarea'))}
  if(b.classList.contains('remove-line')&&n>1)rows.lastElementChild.remove();
  const m=rows.children.length;g.querySelector('.add-line').disabled=m>=12;g.querySelector('.remove-line').disabled=m<=1});
 render();
