@@ -538,6 +538,8 @@ body{line-height:1.8}
 .arr{color:#2e8b57;font-weight:900}
 .prompt-row textarea{flex:1;min-width:0;width:100%;resize:none;overflow:hidden;font:inherit;font-size:17px;line-height:1.55;padding:11px 14px;border:1px solid #cfe0d6;border-radius:14px;background:#fff;color:inherit}
 .prompt-row textarea:focus{outline:3px solid #9fd8b6;border-color:#2e8b57}
+.qguide{margin-top:10px;font-size:16px}.qguide summary{cursor:pointer;font-weight:700;color:#1b633c}
+.qguide table{border-collapse:collapse;width:100%;margin-top:8px;background:#fff}.qguide th,.qguide td{border:1px solid #cfe0d6;padding:8px 10px;text-align:left;vertical-align:top}
 .sr-pane{display:none}.sr-pane.on{display:block}
 .sr-list{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px;font-size:18px}
 .sr-list li{background:#fff;border:1px solid #b9dfc8;border-radius:12px;padding:8px 14px}
@@ -686,19 +688,44 @@ const flowCard=n=>'<div class="pmt"><b>🔗 '+esc(n.t)+'</b><div class="flow">'+
 const nodeCards=a=>a.map(flowCard).join('');
 const deployBox=x=>'<div class="pmt"><b>✅ 배포 점검표</b><p>순서대로 확인하며 체크해요.</p></div><ul class="sr-list">'+x.deploy.map(v=>'<li><label><input type="checkbox"> '+esc(v)+'</label></li>').join('')+'</ul>';
 const REMIND='<div class="pmt"><b>🔁 고친 뒤에는 다시 배포해요</b><p>페이지(샌드박스 넣기)에서 고친 뒤 애플리케이션 → 배포하기 노드로 다시 배포하면, 주소에서 바뀐 게임을 볼 수 있어요.</p></div>';
+const CIRC=['①','②','③','④'];
+const QUIZ={
+ 3:{pos:'start',title:'1·2차시 되돌아보기',qs:[
+  {q:'“왼쪽에는 게임 화면, 오른쪽에는 상태 칸, 아래쪽에는 조작부를 보여줘”처럼 화면에 보이는 것을 적는 칸은 어디일까요?',o:['역할','배경과 목적','만들어야 할 화면','기능과 순서'],a:2,e:'눈에 보이는 화면 구성과 배치는 “만들어야 할 화면” 칸에 적어요. 움직이는 방법은 “기능과 순서” 칸에 적어요.',skill:'만들어야 할 화면 칸의 쓰임',tip:'화면 칸에는 눈에 보이는 것만, 기능 칸에는 동작과 순서만 쓴다고 짚어 주세요.'},
+  {q:'우주선을 화면 끝까지 밀었더니 화면 밖으로 사라졌어요. 고치는 요청으로 가장 알맞은 것은 무엇일까요?',o:['우주선을 더 작게 그려줘.','우주선이 게임 화면 안에서만 움직이도록 가장자리 한계를 정해줘.','FIRE 버튼을 없애줘.','화면을 어둡게 해줘.'],a:1,e:'문제가 생기는 곳(가장자리)과 원하는 결과(화면 안에서만 움직임)를 함께 말하면 AI가 정확히 고칠 수 있어요.',skill:'기대와 실제를 나누어 수정 요청 쓰기',tip:'“무엇이 어떻게 되어야 하는데 어떻게 된다”로 나누어 말해 보게 하세요.'},
+  {q:'FIRE를 오래 눌렀더니 게임이 점점 느려졌어요. 가장 알맞은 원인은 무엇일까요?',o:['발사체가 화면 밖으로 나가도 지워지지 않아서','우주선이 너무 빨라서','상태 칸이 너무 커서','일시정지 버튼이 있어서'],a:0,e:'화면 위로 나간 발사체를 지우지 않으면 보이지 않는 발사체가 계속 쌓여 느려져요. 그래서 “화면 밖으로 나가면 지워줘”라고 요청해요.',skill:'원인을 짐작하고 고치기',tip:'눈에 보이지 않아도 계속 계산되는 것이 있다는 점을 예로 설명해 주세요.'}]},
+ 5:{pos:'start',title:'3·4차시 되돌아보기',qs:[
+  {q:'대형 적(체력 4)은 내 발사체에 몇 번 맞아야 터질까요?',o:['1번','2번','3번','4번'],a:3,e:'맞을 때마다 체력이 1씩 줄고 0이 되면 터져요. 소형은 2번, 중형은 3번, 대형은 4번이에요.',skill:'종류별 체력 규칙 이해',tip:'소형·중형·대형의 체력을 표로 그려 보게 하세요.'},
+  {q:'무기 2단계는 한 번에 2·3·4발이 나가요. 2단계의 세 번째 칸에서는 몇 발이 나갈까요?',o:['2발','3발','4발','5발'],a:2,e:'2단계의 세 번째 칸은 4발이에요. 여기서 한 번 더 강해지면 3단계 첫 칸이 되어 3발이 나가고, 이때부터 적을 따라가는 유도 발사체가 돼요.',skill:'단계 안의 칸 개념 이해',tip:'4단계 × 3칸을 1~12칸 표로 이어서 그려 보게 하세요.'},
+  {q:'보호막이 3개일 때 보호막 아이템을 또 먹으면 어떻게 되어야 할까요?',o:['보호막이 4개가 된다.','보호막은 그대로이고 100점을 얻는다.','목숨이 하나 늘어난다.','무기가 한 단계 강해진다.'],a:1,e:'보호막은 최대 3개예요. 3개일 때 먹으면 보호막은 그대로이고 100점을 받도록 정했어요.',skill:'최대값 규칙 확인',tip:'최대값이 없으면 어떤 문제가 생길지 먼저 생각해 보게 하세요.'}]},
+ 7:{pos:'start',title:'5·6차시 되돌아보기',qs:[
+  {q:'20웨이브 보스가 아래로 돌진한 뒤에는 어떻게 되어야 할까요?',o:['화면 밖으로 나가 사라진다.','위쪽 가운데에서 다시 나타난다.','그 자리에 멈춘다.','다음 웨이브로 바로 넘어간다.'],a:1,e:'돌진이 끝나면 위쪽 가운데로 돌아와 다시 싸워야 해요. 돌아오지 않으면 “돌진한 뒤 위쪽 가운데로 다시 나타나게 해줘”라고 요청해요.',skill:'보스 패턴을 기능과 순서로 말하기',tip:'보스가 한 일을 순서대로 말해 보게 하세요.'},
+  {q:'30웨이브 보스를 물리쳤을 때 양옆의 소환물은 어떻게 되어야 할까요?',o:['그대로 남아 계속 공격한다.','보스와 함께 사라진다.','체력이 두 배가 된다.','동료가 되어 따라온다.'],a:1,e:'보스를 물리치면 소환물도 함께 사라져야 웨이브가 끝나요. 남아 있으면 “소환물이 남아 있어”라고 문제를 말해요.',skill:'보스와 소환물의 관계 이해',tip:'보스와 소환물이 따로 움직이면 어떤 문제가 생기는지 물어 보세요.'},
+  {q:'게임에 넣은 그림 둘레에 검은 사각형이 보여요. 가장 알맞은 원인은 무엇일까요?',o:['그림 배경이 투명하지 않아서','그림이 너무 작아서','그림이 위쪽을 향해서','그림이 너무 많아서'],a:0,e:'배경이 투명하지 않으면 그림 둘레가 네모 모양으로 보여요. 투명 배경으로 다시 그리거나 배경을 없애 달라고 요청해요.',skill:'그림 오류의 원인 찾기',tip:'그림 두 장을 겹쳐 놓고 직접 확인해 보게 하세요.'}]},
+ 8:{pos:'end',title:'7·8차시 되돌아보기',qs:[
+  {q:'게임이 끝났을 때 콜사인과 점수를 저장하는 노드 흐름은 무엇일까요?',o:['API 데이터 → 데이터 저장소(데이터 추가) → 워크플로우 API 배포','API 데이터 → 데이터 저장소(데이터 보기) → 워크플로우 API 배포','페이지(샌드박스 넣기) → 애플리케이션 → 배포하기','애플리케이션 → 배포하기 → 페이지(샌드박스 넣기)'],a:0,e:'기록을 쌓을 때는 데이터 추가, 쌓인 기록을 꺼내 순위를 보여줄 때는 데이터 보기를 써요. 게임 자체를 주소로 올리는 흐름은 페이지 → 애플리케이션 → 배포하기예요.',skill:'세 가지 노드 흐름 구분',tip:'저장하기, 불러오기, 게임 올리기 세 가지로 나누어 다시 말해 보게 하세요.'},
+  {q:'순위에서 두 사람의 점수가 같을 때 어느 쪽을 위에 놓을까요?',o:['콜사인이 알파벳 앞쪽인 사람','웨이브가 높은 사람','먼저 저장한 사람','나중에 저장한 사람'],a:1,e:'순위는 점수가 높은 순이고, 점수가 같으면 웨이브가 높은 쪽이 앞이에요. 그중 앞의 5개만 보여줘요.',skill:'순위 정렬 규칙 이해',tip:'점수와 웨이브가 같은 기록 두 줄을 직접 줄 세워 보게 하세요.'},
+  {q:'게임 코드를 고쳤는데 배포 주소로 열면 예전 게임 그대로예요. 어떻게 해야 할까요?',o:['페이지(샌드박스 넣기)에서 고친 뒤 다시 배포한다.','휴대폰을 껐다 켠다.','콜사인을 다시 고른다.','데이터 저장소를 지운다.'],a:0,e:'고친 코드는 페이지(샌드박스 넣기)에서 고친 뒤 애플리케이션과 배포하기로 다시 배포해야 주소의 게임이 바뀌어요.',skill:'수정 후 재배포하기',tip:'고친 곳이 주소의 게임에 바로 반영되지 않는 까닭을 말해 보게 하세요.'}]}
+};
+function quizHtml(z){
+  return '<div class="quiz"><div class="quiz-h"><b>🧠 복습 퀴즈 · '+z.title+'</b><small>3문제 · 점수는 없어요</small></div>'
+   +z.qs.map((q,qi)=>'<div class="qq" data-a="'+q.a+'"><p class="qt"><span>'+(qi+1)+'</span>'+esc(q.q)+'</p><div class="qo">'+q.o.map((o,oi)=>'<button type="button" data-i="'+oi+'">'+CIRC[oi]+' '+esc(o)+'</button>').join('')+'</div><p class="qe" aria-live="polite" data-t="'+esc(q.e)+'" hidden></p></div>').join('')
+   +'<div class="quiz-f"><span class="qprog">0 / 3 풀었어요</span><button type="button" class="btn qreset">다시 풀기</button></div>'
+   +'<details class="qguide"><summary>👩‍🏫 교사용: 문항별 확인할 요령</summary><table><tbody><tr><th>문항</th><th>확인할 요령</th><th>틀렸을 때 지도</th></tr>'+z.qs.map((q,i)=>'<tr><th>'+(i+1)+'번</th><td>'+esc(q.skill)+'</td><td>'+esc(q.tip)+'</td></tr>').join('')+'</tbody></table></details></div>';
+}
 function makeNav(){$('nav').innerHTML='<div class="nav">'+L.map((x,i)=>'<button class="'+(idx===i?'active':'')+'" data-i="'+i+'"><span class="num">'+x.n+'</span><span><b>'+esc(x.title)+'</b><small>'+esc(x.concept)+'</small></span></button>').join('')+'</div>';
  document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{idx=+b.dataset.i;render()})}
-function render(){const x=L[idx];makeNav();
+function render(){const x=L[idx],Q=QUIZ[x.n];makeNav();
  const tabs=x.tabs||['1교시 · AI 요청문 작성','2교시 · 오류 찾고 고치기','3교시 · 앱 개선·탐구보고서'];
  const step=(n,t)=>'<div class="step-h"><i>'+n+'</i>'+t+'</div>';
- const p1=step('①','영상 보기')+'<div class="pmt"><b>▶️ 영상에서 찾아요</b><p>영상을 보며 역할, 배경과 목적, 화면, 기능과 순서, 지켜야 할 점, 예시, 완성 확인이 어떤 문장인지 찾아요.</p></div>'+step('②','영상대로 AI 요청문 쓰기')+'<div class="pmt"><b>🎯 AI 요청문을 완성해요</b><p>각 칸에 모범 문장이 들어 있어요. 문장은 칼럼마다 최대 12줄까지 추가할 수 있어요.</p></div>'+(x.nodes?nodeCards(x.nodes):'')+
+ const p1=(Q&&Q.pos==='start'?quizHtml(Q):'')+step('①','영상 보기')+'<div class="pmt"><b>▶️ 영상에서 찾아요</b><p>영상을 보며 역할, 배경과 목적, 화면, 기능과 순서, 지켜야 할 점, 예시, 완성 확인이 어떤 문장인지 찾아요.</p></div>'+step('②','영상대로 AI 요청문 쓰기')+'<div class="pmt"><b>🎯 AI 요청문을 완성해요</b><p>각 칸에 모범 문장이 들어 있어요. 문장은 칼럼마다 최대 12줄까지 추가할 수 있어요.</p></div>'+(x.nodes?nodeCards(x.nodes):'')+
   form(x.p1||[['역할',[ROLE]],['배경과 목적',x.ctx],['만들어야 할 화면',x.scr],['기능과 순서',x.task],['지켜야 할 점',x.guard],['예시',x.ex],['완성 확인',Array.isArray(x.done)?x.done:[x.done]]],x.p1?'그림 요청문 복사':'완성한 AI 요청문 복사')+'<div class="pmt"><b>확인하기</b><p>'+(x.p1?'역할, 배경과 목적, 그릴 그림, 그리는 순서와 모양, 지킬 점, 예시, 완성 확인 문장이 모두 들어갔나요?':'역할, 배경과 목적, 화면, 기능, 지킬 점, 예시, 완성 확인 문장이 모두 들어갔나요?')+'</p></div>';
  const d=x.dbg,p2=step('①','영상 보기')+'<div class="pmt"><b>▶️ 영상에서 찾아요</b><p>기대한 동작과 실제 동작이 어떻게 다른지, 문제가 생기는 순서는 무엇인지, 한 번에 한 가지씩 고치는 요청은 어떻게 쓰는지 확인해요.</p></div>'+step('②','영상대로 오류 찾고 고치기 쓰기')+'<div class="pmt"><b>🪲 오류를 고치는 요청을 완성해요</b><p>스타레이드를 직접 플레이하며 문제를 찾고, 한 문장씩 입력해요.</p></div>'+
   form([['기대와 실제',[d[0],d[1]]],['문제 재현',[d[2]]],['수정 요청',[d[3],KEEP]],['수정 확인',[VERIFY]]],'수정 요청 복사')+(x.dlist?'<div class="pmt"><b>🧩 '+(x.dlabel||'자주 생기는 문제')+'</b></div><ul class="sr-list">'+x.dlist.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ul>':'');
  const u=x.up,p3=step('①','영상 보기')+'<div class="pmt"><b>▶️ 영상에서 찾아요</b><p>새 기능을 요청하는 방법(추가할 기능, 필요한 까닭과 사용 방법, 지켜야 할 점, 완성 확인)과 탐구보고서 다섯 가지 질문에 답하는 방법을 확인해요.</p></div>'+step('②','영상대로 앱 개선 요청 쓰기')+'<div class="pmt"><b>🚀 앱 개선 요청을 완성해요</b><p>새 기능과 필요한 까닭, 사용 방법을 문장별로 입력해요.</p></div>'+
   form([['추가할 기능',[u[0]]],['필요한 까닭과 사용 방법',[u[1],u[2]]],['지켜야 할 점',[u[3],x.upkeep||UPKEEP]],['완성 확인',[u[4]]]],'앱 개선 요청 복사')+
   (x.deploy?deployBox(x):REMIND)+(x.sheet?'<div class="pmt"><b>🖼 준비할 그림 20장</b><p>게임에 넣을 그림을 하나씩 확인해요.</p></div><ul class="sr-list">'+x.sheet.map(v=>'<li><label><input type="checkbox"> '+esc(v)+'</label></li>').join('')+'</ul>':'')+'<div class="pmt"><b>💡 다른 개선 아이디어</b></div><ul class="sr-list">'+x.ups.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ul>'+(x.tip?'<div class="pmt"><b>👩‍🏫</b><p>'+esc(x.tip)+'</p></div>':'')+
-  step('③','탐구 노트 쓰기')+NOTES.map((q,i)=>'<label class="report-label">'+(i+1)+'. '+esc(q)+'<textarea rows="3" style="width:100%;font:inherit;font-size:17px"></textarea></label>').join('');
+  step('③','탐구 노트 쓰기')+NOTES.map((q,i)=>'<label class="report-label">'+(i+1)+'. '+esc(q)+'<textarea rows="3" style="width:100%;font:inherit;font-size:17px"></textarea></label>').join('')+(Q&&Q.pos==='end'?quizHtml(Q):'');
  $('lesson').innerHTML='<div class="head"><div><div class="tags"><span class="tag mint">스타레이드 '+x.n+'/8</span><span class="tag">'+esc(x.concept)+'</span><span class="tag">결과물 1개</span></div><h2>'+String(x.n).padStart(2,'0')+'차시 · '+esc(x.title)+'</h2><p class="intro">초등학교 3~4학년 · 앞 차시에서 만든 게임에 기능을 하나씩 더하며 완성해요.</p></div><div class="period-count">3교시</div></div>'+
   '<div class="question-wrap"><div class="question"><small>오늘의 탐구 질문</small><b>'+esc(x.q)+'</b></div></div>'+
   '<div class="tabs">'+tabs.map((t,i)=>'<button class="tab'+(i?'':' on')+'" data-i="'+i+'">'+t+'</button>').join('')+'</div>'+
@@ -709,6 +736,20 @@ const fitAll=()=>document.querySelectorAll('.sr-pane.on .prompt-row textarea').f
 document.addEventListener('input',e=>{if(e.target.matches('.prompt-row textarea'))fit(e.target)});
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.prompt-row textarea'))e.preventDefault()});
 window.addEventListener('resize',fitAll);
+$('lesson').addEventListener('click',e=>{
+ const b=e.target.closest('.qo button');
+ if(b){const qq=b.closest('.qq');if(qq.dataset.done)return;
+  const a=+qq.dataset.a,i=+b.dataset.i;qq.dataset.done='1';
+  qq.querySelectorAll('.qo button').forEach(x=>{x.disabled=true;if(+x.dataset.i===a)x.classList.add('ok')});
+  if(i!==a)b.classList.add('no');
+  const ex=qq.querySelector('.qe');ex.textContent=(i===a?'⭕ 좋아요! ':'💡 괜찮아요. 정답은 '+CIRC[a]+'번이에요. ')+ex.dataset.t;ex.hidden=false;ex.className='qe '+(i===a?'good':'try');
+  const quiz=qq.closest('.quiz'),n=quiz.querySelectorAll('.qq[data-done]').length;
+  quiz.querySelector('.qprog').textContent=n+' / 3 풀었어요'+(n===3?' · 해설을 확인하고 학습을 정리해요!':'');return}
+ const r=e.target.closest('.qreset');
+ if(r){const quiz=r.closest('.quiz');
+  quiz.querySelectorAll('.qq').forEach(qq=>{delete qq.dataset.done;qq.querySelectorAll('.qo button').forEach(x=>{x.disabled=false;x.className=''});const ex=qq.querySelector('.qe');ex.hidden=true;ex.textContent=''});
+  quiz.querySelector('.qprog').textContent='0 / 3 풀었어요'}
+});
 document.addEventListener('click',e=>{const b=e.target.closest('.add-line,.remove-line,.copy-student');if(!b)return;
  if(b.classList.contains('copy-student')){copy([...b.closest('form').querySelectorAll('.prompt-group')].map(g=>g.querySelector('h4').textContent+'\n'+[...g.querySelectorAll('textarea')].map(i=>i.value.trim()).filter(Boolean).join('\n')).join('\n\n'));return}
  const g=b.closest('.prompt-group'),rows=g.querySelector('.prompt-rows'),n=rows.children.length;
